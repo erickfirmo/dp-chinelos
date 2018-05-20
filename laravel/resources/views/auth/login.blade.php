@@ -76,6 +76,7 @@
             <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin" method="POST" action="{{ route('login') }}">
+            {{ csrf_field() }}
                 
                 <span id="reauth-email" class="reauth-email"></span>
                 
@@ -89,7 +90,7 @@
                 </div>
 
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                    <input type="password" id="email" class="form-control" placeholder="Senha" required>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Senha" required>
                     @if ($errors->has('password'))
                     <span class="help-block">
                     <strong>{{ $errors->first('password') }}</strong>

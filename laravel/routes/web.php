@@ -15,8 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', 'LoginController@index')->name('login');
+Route::get('/admin', 'AdminController@index')->name('admin');
 
 Auth::routes();
 
-Route::get('/admin', 'AdminController@index')->name('admin');
+
+Route::get('/panel', 'PanelController@index')->name('panel');
+
