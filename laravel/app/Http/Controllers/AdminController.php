@@ -22,7 +22,13 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('panel');
+    {   
+        if(Auth::check()) {
+            
+            return route('panel');
+
+        }
+
+        return route('admin');
     }
 }
