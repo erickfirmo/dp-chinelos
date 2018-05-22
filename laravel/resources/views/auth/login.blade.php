@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@extends('auth.admin.partials._styles')
-@extends('auth.admin.partials._scripts')
+@extends('auth.admin.partials.login._styles')
+@extends('auth.admin.partials.login._scripts')
 
 @section('content')
 <!--<div class="container">

@@ -1,25 +1,23 @@
-@extends('layouts.app')
+
+@extends('auth.admin.partials._styles')
+
+
+@extends('auth.admin.partials._sidebar')
+
+@include('auth.admin.partials._navbar')
 
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="vendor/adminlte/plugins/font-awesome/css/font-awesome.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="vendor/adminlte/dist/css/adminlte.min.css">
+  
+  
 
-  <link rel="stylesheet" href="vendor/adminlte/dist/css/style.css">
 
   <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
 
-
-
-
-@include('auth.admin.partials._sidebar')
-@include('auth.admin.partials._navbar')
 
  
 

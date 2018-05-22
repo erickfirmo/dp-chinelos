@@ -9,6 +9,7 @@
 
     <title>{{ 'Admin' }}</title>
 
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="vendor/adminlte/login/style.css">

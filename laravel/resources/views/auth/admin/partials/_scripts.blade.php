@@ -8,7 +8,6 @@
 <!-- AdminLTE App -->
 <script src="vendor/adminlte/dist/js/adminlte.js"></script>
 
-
 <!-- PAGE PLUGINS -->
 <!-- SparkLine -->
 <script src="vendor/adminlte/plugins/sparkline/jquery.sparkline.min.js"></script>
@@ -22,7 +21,5 @@
 
 <!-- PAGE SCRIPTS -->
 <script src="vendor/adminlte/dist/js/pages/dashboard2.js"></script>
-
-
 
 <script src="vendor/adminlte/login/main.js"></script>
