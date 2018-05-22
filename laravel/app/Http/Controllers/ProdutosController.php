@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Auth;
+use App\Produto;
 
-class AdminController extends Controller
+class ProdutosController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,8 +23,7 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-            
-            return redirect('panel');
+    {
+        return view('auth.admin.produtos');
     }
 }

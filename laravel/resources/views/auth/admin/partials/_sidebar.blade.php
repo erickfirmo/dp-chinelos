@@ -27,61 +27,42 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
 
-            <a href="./{{ Request::route()->getName() }}" class="nav-link active">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Painel</p>
+            <a href="#" class="nav-link active">
+                  <i class="fa fa-shopping-bag nav-icon"></i>
+                  <p>Loja</p>
                 </a>
             <ul class="nav nav-treeview">
               
               <li class="nav-item">
-                <a href="{{ Request::route()->getName() }}" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Painel</p>
+                <a href="{{ url('produtos') }}" class="nav-link">
+                  <p>Produtos</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('pedidos') }}" class="nav-link">
+                  <p>Pedidos</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a href="vendor/adminlte/pages/widgets.html" class="nav-link">
-              <i class="nav-icon fa fa-th"></i>
-              <p>
-                Widgets
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
+
+          <li class="nav-item has-treeview menu-open">
+
+            <a href="#" class="nav-link active">
+                  <i class="fa fa-envelope nav-icon"></i>
+                  <p>Contato</p>
+                </a>
+            <ul class="nav nav-treeview">
+              
+              <li class="nav-item">
+                <a href="{{ Request::route('/mensagens') }}" class="nav-link">
+                  <p>Mensagens</p>
+                </a>
+              </li>
+            </ul>
           </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-store"></i>
-              <p>
-                Estoque
-              </p>
-            </a>
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-pie-chart"></i>
-              <p>
-                Loja
-              </p>
-            </a>
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-pie-chart"></i>
-              <p>
-                Loja
-              </p>
-            </a>
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-pie-chart"></i>
-              <p>
-                Mensagens
-              </p>
-            </a>
-          </li>
+
+
 
           
         </ul>

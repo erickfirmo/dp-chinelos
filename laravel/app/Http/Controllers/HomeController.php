@@ -5,13 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Auth;
 
-class AdminController extends Controller
+class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+    
     public function __construct()
     {
         $this->middleware('auth');
@@ -23,8 +19,9 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
             
-            return redirect('panel');
+            return redirect('admin');
+
     }
 }
