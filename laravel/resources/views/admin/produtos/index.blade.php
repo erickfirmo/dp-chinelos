@@ -15,7 +15,8 @@
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><a href="#">Loja</a></li>
-          <li class="breadcrumb-item active">Pedidos</li>
+          <li class="breadcrumb-item active">Produtos</li>
+          <li class="breadcrumb-item active">Lista de Produtos</li>
         @if (Auth::guest())
         @else
           <li class="dropdown">

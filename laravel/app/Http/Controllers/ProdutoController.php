@@ -26,4 +26,9 @@ class ProdutoController extends Controller
     {
         return view('admin.produtos.index');
     }
+
+    public function create()
+    {
+        return view('admin.produtos.create');
+    }
 }

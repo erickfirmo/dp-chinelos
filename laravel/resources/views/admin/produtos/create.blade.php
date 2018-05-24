@@ -15,10 +15,9 @@
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><a href="#">Loja</a></li>
-          <li class="breadcrumb-item active">Pedidos</li>
+          <li class="breadcrumb-item active">Produtos</li>
+          <li class="breadcrumb-item active">Adicionar Produto</li>
         @if (Auth::guest())
-        <li><a href="{{ route('login') }}">Entrar</a></li>
-        <li><a href="{{ route('register') }}">Cadastrar-se</a></li>
         @else
           <li class="dropdown">
             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -49,7 +48,7 @@
   <div class="clearfix hidden-md-up"></div>
   <div class="col-12 col-sm-6 col-md-3">
     <div class="info-box mb-3">
-      <span class="info-box-icon bg-info elevation-1"><i class="fa fa-cubes"></i></span>
+      <span class="info-box-icon elevation-1 bg-info"><i class="fa fa-cubes"></i></span>
       <div class="info-box-content">
         <span class="info-box-text">Nº de Produtos</span>
         <span class="info-box-number">000</span>
@@ -70,31 +69,22 @@
           
           <!-- /.card-header -->
           <div class="card-body">
+            
+
+
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>Minimal</label>
-                  <select class="form-control select2" style="width: 100%;">
-                    <option selected="selected">Alabama</option>
-                    <option>Alaska</option>
-                    <option>California</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
-                    <option>Texas</option>
-                    <option>Washington</option>
-                  </select>
+                  <label>Nome do Produto</label>
+                  <input type="text" class="form-control" style="width: 100%;">
                 </div>
-                <!-- /.form-group -->
                 <div class="form-group">
-                  <label>Disabled</label>
-                  <select class="form-control select2" disabled="disabled" style="width: 100%;">
-                    <option selected="selected">Alabama</option>
-                    <option>Alaska</option>
-                    <option>California</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
-                    <option>Texas</option>
-                    <option>Washington</option>
+                  <label>Categoria</label>
+                  <select class="form-control select2" style="width: 100%;">
+                    <option disabled selected value> -- </option>
+                    <option>Times</option>
+                    <option>Casamento</option>
+                    <option>Formatura</option>
                   </select>
                 </div>
                 <!-- /.form-group -->
@@ -102,22 +92,41 @@
               <!-- /.col -->
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>Disabled Result</label>
-                  <select class="form-control select2" style="width: 100%;">
-                    <option selected="selected">Alabama</option>
-                    <option>Alaska</option>
-                    <option disabled="disabled">California (disabled)</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
-                    <option>Texas</option>
-                    <option>Washington</option>
-                  </select>
+                  <label>Quantidade</label>
+                  <input type="number" min="0" value="0" class="form-control" style="width: 100%;">
                 </div>
-                <!-- /.form-group -->
+                <div class="form-group">
+                  <label>Preço</label>
+                  <input type="text" class="form-control maskMoney" style="width: 100%;">
+                </div>
               </div>
+              <!-- /.col -->
+              <div class="col-md-12">
+              <div class="form-group">
+                <label>Descrição</label>
+                <textarea class="form-control" style="width:100%;"></textarea>
+              </div>
+            </div>
               <!-- /.col -->
             </div>
             <!-- /.row -->
+            <div class="row">
+              <div class="col-md-2">
+              </div>
+              <div class="col-md-2">
+              </div>
+              <div class="col-md-2">
+              </div>
+              <div class="col-md-2">
+              </div>
+              <div class="col-md-2">
+              </div>
+              <div class="col-md-2">
+                <a href="#">
+                  <button class="btn btn-success button-table"><i class="fa fa-plus"></i>&nbsp;&nbsp;Adicionar Produto</button>
+                </a>
+              </div>
+            </div>
             
           
         </div>
