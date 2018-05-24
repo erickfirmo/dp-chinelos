@@ -18,8 +18,3 @@
 <script src="vendor/adminlte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- ChartJS 1.0.2 -->
 <script src="vendor/adminlte/plugins/chartjs-old/Chart.min.js"></script>
-
-<!-- PAGE SCRIPTS -->
-<script src="vendor/adminlte/dist/js/pages/dashboard2.js"></script>
-
-<script src="vendor/adminlte/login/main.js"></script>

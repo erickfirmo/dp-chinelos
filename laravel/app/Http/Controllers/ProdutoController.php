@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Produto;
 
-class ProdutosController extends Controller
+class ProdutoController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -24,6 +24,6 @@ class ProdutosController extends Controller
      */
     public function index()
     {
-        return view('auth.admin.produtos');
+        return view('admin.produtos.index');
     }
 }

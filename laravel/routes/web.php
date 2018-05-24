@@ -15,13 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin', 'AdminController@index')->name('admin');
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/login', 'LoginController@index')->name('login');
+Route::get('/login', 'Auth/LoginController@showLoginForm')->name('login');
+
 
 Auth::routes();
 
-Route::get('/panel', 'PanelController@index')->name('panel');
-Route::get('/produtos', 'ProdutosController@index')->name('produtos');
-
+Route::prefix('admin')->name('admin.')->group(function () {
+   
+    Route::resource('produtos', 'ProdutoController');
+  
+});
 
