@@ -55,6 +55,13 @@
 <script src="{{ asset('vendor/adminlte/plugins/input-mask/jquery.inputmask.js') }}"></script>
 <script src="{{ asset('vendor/adminlte/plugins/input-mask/jquery.inputmask.date.extensions.js') }}"></script>
 <script src="{{ asset('vendor/adminlte/plugins/input-mask/jquery.inputmask.extensions.js') }}"></script>
+<!-- Custom mask -->
+<script src="{{ asset('vendor/adminlte/plugins/jquery-mask-plugin/dist/jquery.mask.min.js') }}"></script>
+<script src="{{ asset('vendor/adminlte/plugins/jquery-mask-money/dist/jquery.maskMoney.min.js') }}"></script>
+
+<script src="{{ asset('vendor/adminlte/plugins/jquery-mask-plugin/dist/custom-mask.js') }}"></script>
+<!-- Select2 -->
+<script src="{{ asset('vendor/adminlte/plugins/select2/select2.full.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('vendor/adminlte/dist/js/adminlte.js') }}"></script>
 <!-- PAGE PLUGINS -->
@@ -67,7 +74,6 @@
 <script src="{{ asset('vendor/adminlte/plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
 <!-- ChartJS 1.0.2 -->
 <script src="{{ asset('vendor/adminlte/plugins/chartjs-old/Chart.min.js') }}"></script>
-
 <!-- date-range-picker and moment -->
 <script src="{{ asset('vendor/adminlte/plugins/daterangepicker/moment.min.js') }}"></script>
 <script src="{{ asset('vendor/adminlte/plugins/daterangepicker/daterangepicker.js') }}"></script>
@@ -81,9 +87,9 @@
 <script src="{{ asset('vendor/adminlte/plugins/iCheck/icheck.min.js') }}"></script>
 <!-- FastClick -->
 <script src="{{ asset('vendor/adminlte/plugins/fastclick/fastclick.js') }}"></script>
-
 <!-- Select2 -->
 <script src="{{ asset('vendor/adminlte/plugins/select2/select2.full.min.js') }}"></script>
+
    
 </body>
 </html>

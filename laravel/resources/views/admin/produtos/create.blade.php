@@ -4,6 +4,7 @@
 @section('content')
 
 
+
 <div class="container-fluid">
   <!-- HEADER -->
 <div class="content-header">
@@ -69,64 +70,7 @@
           
           <!-- /.card-header -->
           <div class="card-body">
-            
-
-
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Nome do Produto</label>
-                  <input type="text" class="form-control" style="width: 100%;">
-                </div>
-                <div class="form-group">
-                  <label>Categoria</label>
-                  <select class="form-control select2" style="width: 100%;">
-                    <option disabled selected value> -- </option>
-                    <option>Times</option>
-                    <option>Casamento</option>
-                    <option>Formatura</option>
-                  </select>
-                </div>
-                <!-- /.form-group -->
-              </div>
-              <!-- /.col -->
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Quantidade</label>
-                  <input type="number" min="0" value="0" class="form-control" style="width: 100%;">
-                </div>
-                <div class="form-group">
-                  <label>Preço</label>
-                  <input type="text" class="form-control maskMoney" style="width: 100%;">
-                </div>
-              </div>
-              <!-- /.col -->
-              <div class="col-md-12">
-              <div class="form-group">
-                <label>Descrição</label>
-                <textarea class="form-control" style="width:100%;"></textarea>
-              </div>
-            </div>
-              <!-- /.col -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-              <div class="col-md-2">
-              </div>
-              <div class="col-md-2">
-              </div>
-              <div class="col-md-2">
-              </div>
-              <div class="col-md-2">
-              </div>
-              <div class="col-md-2">
-              </div>
-              <div class="col-md-2">
-                <a href="#">
-                  <button class="btn btn-success button-table"><i class="fa fa-plus"></i>&nbsp;&nbsp;Adicionar Produto</button>
-                </a>
-              </div>
-            </div>
+            @include('admin.produtos.components.form')
             
           
         </div>

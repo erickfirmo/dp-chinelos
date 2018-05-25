@@ -77,7 +77,7 @@
             <div class="col-md-2">
             </div>
             <div class="col-md-2">
-              <a href="#">
+              <a href="{{ url('admin/produtos/create') }}">
                 <button class="btn btn-success button-table"><i class="fa fa-plus"></i>&nbsp;&nbsp;Adicionar Produtos</button>
               </a>
             </div>
@@ -86,10 +86,6 @@
           <br>
             
           <table id="example1" class="table table-bordered table-hover">
-
-
-          
-
 
             <thead>
             <tr>
@@ -101,57 +97,15 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <td>Trident</td>
-              <td>Internet
-                Explorer 4.0
-              </td>
-              <td>Win 95+</td>
-              <td> 4</td>
-              <td>X</td>
-            </tr>
-            <tr>
-              <td>Trident</td>
-              <td>Internet
-                Explorer 5.0
-              </td>
-              <td>Win 95+</td>
-              <td>5</td>
-              <td>C</td>
-            </tr>
-            <tr>
-              <td>Trident</td>
-              <td>Internet
-                Explorer 5.5
-              </td>
-              <td>Win 95+</td>
-              <td>5.5</td>
-              <td>A</td>
-            </tr>
-            <tr>
-              <td>Trident</td>
-              <td>Internet
-                Explorer 6
-              </td>
-              <td>Win 98+</td>
-              <td>6</td>
-              <td>A</td>
-            </tr>
-            <tr>
-              <td>Trident</td>
-              <td>Internet Explorer 7</td>
-              <td>Win XP SP2+</td>
-              <td>7</td>
-              <td>A</td>
-            </tr>
-            <tr>
-              <td>Trident</td>
-              <td>AOL browser (AOL desktop)</td>
-              <td>Win XP</td>
-              <td>6</td>
-              <td>A</td>
-            </tr>
-            
+              @foreach($produtos as $produto)
+              <tr>
+                <td>{{ $produto->id }}</td>
+                <td>{{ $produto->nome }}</td>
+                <td>{{ $produto->descricao }}</td>
+                <td>{{ $produto->quantidade }}</td>
+                <td>R$ {{ $produto->preco }}</td>
+              </tr>
+              @endforeach
             </tbody>
             <tfoot>
             <tr>
