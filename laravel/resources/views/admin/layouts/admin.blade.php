@@ -32,7 +32,10 @@
 
 <div class="wrapper">
   <div class="content-wrapper" style="min-height: 733px;">
+
+        @include('admin.partials._header')
         @yield('content')
+        
   </div>
 </div>
 
@@ -89,6 +92,11 @@
 <script src="{{ asset('vendor/adminlte/plugins/fastclick/fastclick.js') }}"></script>
 <!-- Select2 -->
 <script src="{{ asset('vendor/adminlte/plugins/select2/select2.full.min.js') }}"></script>
+
+<script src="{{ asset('vendor/adminlte/dist/js/clickable-row.js') }}"></script>
+
+
+
 
    
 </body>

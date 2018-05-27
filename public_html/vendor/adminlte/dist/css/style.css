@@ -1,9 +1,25 @@
-.navbar {
-  padding-right: 20px;
-  padding-left: 20px; }
+#info-icon .info-box-icon {
+  background-color: #ff5722; }
 
-.button-table {
+#sidebar a.active, #header a.active, #footer a.active {
+  background-color: #ff5722; }
+#sidebar ol.breadcrumb li a, #header ol.breadcrumb li a, #footer ol.breadcrumb li a {
+  color: #ff5722; }
+
+table td, table th {
+  text-align: center;
+  vertical-align: middle; }
+  table td button, table th button {
+    margin-left: 5px; }
+  table td img, table th img {
+    width: 30px;
+    height: auto; }
+
+.pointer {
+  cursor: pointer; }
+
+#card .card-body .r-button {
   float: right;
-  margin-left: 20px; }
+  margin-left: 5px; }
 
 /*# sourceMappingURL=style.css.map */

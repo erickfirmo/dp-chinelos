@@ -1,12 +1,40 @@
-
 $primaryColor: #ff5722;
 
-.navbar {
-  padding-right: 20px;
-  padding-left: 20px;
+#info-icon {
+  .info-box-icon {
+    background-color: $primaryColor;
+  }
 }
 
-.button-table {
-  float: right;
-  margin-left: 20px;
+#sidebar, #header, #footer {
+  a.active {
+    background-color: $primaryColor;
+  }
+  ol.breadcrumb li a {
+    color: $primaryColor;
+  }
 }
+
+table {
+  td, th{
+    text-align: center;
+    vertical-align: middle;
+    button {
+      margin-left: 5px;
+    }
+    img {
+      width: 30px;
+      height: auto;
+    }
+  }
+}
+
+.pointer {cursor: pointer;}
+ #card {
+   .card-body {
+    .r-button {
+      float: right;
+      margin-left: 5px;
+    }
+   }
+ }

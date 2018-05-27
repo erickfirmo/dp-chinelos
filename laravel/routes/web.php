@@ -13,16 +13,17 @@
 
 Route::get('/', function () {
     return view('welcome');
+
 });
 
 Route::get('/login', 'Auth/LoginController@showLoginForm')->name('login');
 
-
 Auth::routes();
 
 Route::prefix('admin')->name('admin.')->group(function () {
-   
-    Route::resource('produtos', 'ProdutoController');
-  
+        Route::resource('produtos', 'ProdutoController');
+
 });
+
+
 
