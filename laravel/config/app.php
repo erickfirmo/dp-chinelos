@@ -177,11 +177,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        App\Providers\FormServiceProvider::class,
-
-        // Laravel Collective
-        Collective\Html\HtmlServiceProvider::class,
-
 
 
 

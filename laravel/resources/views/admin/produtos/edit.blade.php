@@ -4,7 +4,6 @@
 @section('content')
 
 
-
 <div class="container-fluid"> 
   <div id="info-icon" class="row">
     <div class="clearfix hidden-md-up"></div>
@@ -28,7 +27,6 @@
           <div class="card-header">
             <h3 class="card-title">Editar Produto</h3>
           </div>
-            <br>
             
             <!-- /.card-header -->
           <div class="card-body">
@@ -36,11 +34,11 @@
               {{method_field('PUT')}}
               <div class="box box-danger">
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-7">
                     <div class="form-group">
                         <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                         <label>Nome do Produto</label>
-                        <input value="{{ $produto->nome }}" name="nome" type="text" class="form-control" style="width: 100%;">
+                        <input value="{{ $produto->nome }}" name="nome" type="text" class="form-control titulo-produto" style="width: 100%;">
                     </div>
 
                     <div class="form-group">
@@ -53,34 +51,46 @@
                       </select>
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-7">
                     <div class="form-group">
-                        <label>Quantidade</label>
+                        <label>Unidades</label>
                         <input value="{{ $produto->quantidade }}" name="quantidade" type="number" min="0" class="form-control" style="width: 100%;">
                     </div>
                     <div class="form-group">
                         <label>Preço</label>
-                        <input value="{{ $produto->preco }}" name="preco" type="text" class="form-control mask-real" style="width: 100%;">
+                        <input data-thousands="" data-decimal="." value="{{ $produto->preco }}" name="preco" type="text" class="form-control mask-real" style="width: 100%;">
                     </div>
                   </div>
-                    <div class="col-md-12">
+                  <div class="col-md-5">
+                    <img src="#" alt="(Imagem do produto)">
+                  </div>
+
+                  <div class="col-md-12">
                     <div class="form-group">
                         <label>Descrição</label>
                         <textarea  value="{{ $produto->descricao }}" name="descricao" class="form-control" style="width:100%;"></textarea>
-                    </div>
+                  </div>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-12">
+
                     <button type="submit" class="btn btn-primary r-button">Salvar</button>
-                    
-                    <a href="#">
-                      <button class="btn btn-danger r-button">Excluir</button>
-                    </a>
+                
 
                     <a href="{{ url('admin/produtos/') }}">
                       <button type="button" class="btn btn-secondary r-button"></i>Cancelar</button>
                     </a>
+
+                    <form action="{{ route('admin.produtos.destroy', $produto->id) }}" method="POST">
+                      {{method_field('DELETE')}}
+                      <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+                      <button class="btn btn-danger button-table">Excluir</button>
+                    </form>
+
+
+
+
                   </div>
                 </div>
               </div>

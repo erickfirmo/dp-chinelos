@@ -18,3 +18,5 @@
 <script src="vendor/adminlte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- ChartJS 1.0.2 -->
 <script src="vendor/adminlte/plugins/chartjs-old/Chart.min.js"></script>
+<!-- SweetAlert -->
+<script src="vendor/adminlte/plugins/sweetalert/dist/sweetalert.min.js"></script>
