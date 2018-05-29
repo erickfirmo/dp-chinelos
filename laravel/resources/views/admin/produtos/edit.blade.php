@@ -30,7 +30,7 @@
             
             <!-- /.card-header -->
           <div class="card-body">
-            <form action="{{ route('admin.produtos.update', $produto->id)}}" method="POST">
+            <form id="update" action="{{ route('admin.produtos.update', $produto->id)}}" method="POST">
               {{method_field('PUT')}}
               <div class="box box-danger">
                 <div class="row">
@@ -58,7 +58,7 @@
                     </div>
                     <div class="form-group">
                         <label>Preço</label>
-                        <input data-thousands="" data-decimal="." value="{{ $produto->preco }}" name="preco" type="text" class="form-control mask-real" style="width: 100%;">
+                        <input data-thousands="" data-decimal="." maxlength="9" value="{{ $produto->preco }}" name="preco" type="text" class="form-control mask-real" style="width: 100%;">
                     </div>
                   </div>
                   <div class="col-md-5">
@@ -68,33 +68,33 @@
                   <div class="col-md-12">
                     <div class="form-group">
                         <label>Descrição</label>
-                        <textarea  value="{{ $produto->descricao }}" name="descricao" class="form-control" style="width:100%;"></textarea>
-                  </div>
+                        <textarea value="{{ $produto->descricao }}" name="descricao" class="form-control" style="width:100%;"></textarea>
+                    </div>
                   </div>
                 </div>
-                <div class="row">
+              </div>
+            </form>
+
+            <div class="row">
                   <div class="col-md-12">
 
-                    <button type="submit" class="btn btn-primary r-button">Salvar</button>
+                    <button form="update" type="submit" class="btn btn-primary r-button">Salvar</button>
                 
 
                     <a href="{{ url('admin/produtos/') }}">
                       <button type="button" class="btn btn-secondary r-button"></i>Cancelar</button>
                     </a>
 
-                    <form action="{{ route('admin.produtos.destroy', $produto->id) }}" method="POST">
+                    <form id="exclude" action="{{ route('admin.produtos.destroy', $produto->id) }}" method="POST">
                       {{method_field('DELETE')}}
                       <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-                      <button class="btn btn-danger button-table">Excluir</button>
+                      <button type="submit" form="exclude" class="btn btn-danger button-table">Excluir</button>
                     </form>
 
-
-
+                  
 
                   </div>
                 </div>
-              </div>
-            </form>
           </div>
         </div>
       </div>

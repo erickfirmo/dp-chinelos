@@ -64,7 +64,7 @@
                       </div>
                       <div class="form-group">
                         <label>Preço</label>
-                        <input name="preco" type="text" class="form-control mask-real" style="width: 100%;">
+                        <input data-thousands="" data-decimal="." maxlength="9" name="preco" type="text" class="form-control mask-real" style="width: 100%;">
                       </div>
                   </div>
                   
