@@ -43,7 +43,8 @@ class ProdutoController extends Controller
         $produto->preco = $request->preco;
         $produto->save();
 
-        return redirect()->route('admin.produtos.show', compact('produto'))->with('success', "Produto criado com sucesso !");
+        return redirect()->route('admin.produtos.edit', compact('produto'))
+            ->with('success', "Produto criado com sucesso !");
 
     }
 
@@ -80,7 +81,8 @@ class ProdutoController extends Controller
     {   
         $produto = Produto::findOrFail($id);
         $produto->delete();
-        return redirect()->route('admin.produtos.index')->with('success', "Produto removido com sucesso !");
+        return redirect()->route('admin.produtos.index')
+            ->with('success', "Produto removido com sucesso !");
 
     }
 

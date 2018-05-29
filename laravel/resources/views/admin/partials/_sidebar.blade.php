@@ -30,7 +30,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{ url('admin/produtos') }}" class="nav-link">
-                  <p>Produtos</p>
+                  <p>Lista de Produtos</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -42,11 +42,25 @@
           </li>
 
           <li class="nav-item has-treeview menu-open">
-
             <a href="#" class="nav-link active">
-            <i class="fa fa-envelope nav-icon"></i>
-                  <p>Contato</p>
+            <i class="fa fa-image"></i>
+              <p>Galeria</p>
+            </a>
+            <ul class="nav nav-treeview">
+              
+              <li class="nav-item">
+                <a href="{{ url('admin/imagens') }}" class="nav-link">
+                  
+                  <p>Imagens</p>
                 </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link active">
+              <i class="fa fa-envelope nav-icon"></i>
+              <p>Contato</p>
+            </a>
             <ul class="nav nav-treeview">
               
               <li class="nav-item">

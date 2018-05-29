@@ -34,7 +34,7 @@
               {{method_field('PUT')}}
               <div class="box box-danger">
                 <div class="row">
-                  <div class="col-md-7">
+                  <div class="col-md-8">
                     <div class="form-group">
                         <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                         <label>Nome do Produto</label>
@@ -50,8 +50,6 @@
                         <option>Formatura</option>
                       </select>
                     </div>
-                  </div>
-                  <div class="col-md-7">
                     <div class="form-group">
                         <label>Unidades</label>
                         <input value="{{ $produto->quantidade }}" name="quantidade" type="number" min="0" class="form-control" style="width: 100%;">
@@ -61,8 +59,8 @@
                         <input data-thousands="" data-decimal="." maxlength="9" value="{{ $produto->preco }}" name="preco" type="text" class="form-control mask-real" style="width: 100%;">
                     </div>
                   </div>
-                  <div class="col-md-5">
-                    <img src="#" alt="(Imagem do produto)">
+                  <div class="col-md-4">
+                    <img src="http://www.amplicel.com/wp-content/themes/highstand/assets/images/default.jpg" alt="#" class="img-fluid">
                   </div>
 
                   <div class="col-md-12">

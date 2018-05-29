@@ -22,4 +22,7 @@ table td, table th {
   float: right;
   margin-left: 5px; }
 
+.thumbnail-galery {
+  border: 4px solid red; }
+
 /*# sourceMappingURL=style.css.map */

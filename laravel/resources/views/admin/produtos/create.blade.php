@@ -1,6 +1,6 @@
 @extends('admin.layouts.admin')
 @section('title', 'Adicionar Produto')
-@section('description', 'Novo Poroduto')
+@section('description', 'Novo Produto')
 @section('content')
 
 
@@ -40,12 +40,13 @@
             <form action="{{ route('admin.produtos.store') }}" method="POST">
               <div class="box box-danger">
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-8">
                       <div class="form-group">
                         <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                         <label>Nome do Produto</label>
                         <input name="nome" type="text" class="form-control" style="width: 100%;">
                       </div>
+
                       <div class="form-group">
                         <label>Categoria</label>
                         <select class="form-control select2" style="width: 100%;">
@@ -55,9 +56,7 @@
                             <option>Formatura</option>
                         </select>
                       </div>
-                  </div>
-
-                  <div class="col-md-6">
+                  
                       <div class="form-group">
                         <label>Quantidade</label>
                         <input name="quantidade" type="number" min="0" class="form-control" style="width: 100%;">
@@ -66,6 +65,9 @@
                         <label>Preço</label>
                         <input data-thousands="" data-decimal="." maxlength="9" name="preco" type="text" class="form-control mask-real" style="width: 100%;">
                       </div>
+                  </div>
+                  <div class="col-md-4">
+                    <img src="http://www.amplicel.com/wp-content/themes/highstand/assets/images/default.jpg" alt="#" class="img-fluid">
                   </div>
                   
                   <div class="col-md-12">
@@ -79,7 +81,7 @@
                 <div class="row">
                   <div class="col-md-12">
                   
-                  <button type="submit" class="btn btn-success r-button">Adicionar Produto</button>
+                  <button type="submit" class="btn btn-primary r-button">Salvar</button>
                   
                       <a href="{{ url('admin/produtos/') }}">
                         <button type="button" class="btn btn-secondary r-button">Cancelar</button>
