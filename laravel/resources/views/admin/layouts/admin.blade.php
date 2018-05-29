@@ -95,10 +95,10 @@
 
 <script src="{{ asset('vendor/adminlte/dist/js/clickable-row.js') }}"></script>
 
+<script src="{{ asset('vendor/adminlte/plugins/sweetalert/dist/sweetalert.min.js') }}"></script>
 
+<script src="{{ asset('vendor/adminlte/plugins/sweetalert/dist/custom-sweetalert.js') }}"></script>
 
-
-   
 </body>
 </html>
     

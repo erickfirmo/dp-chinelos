@@ -30,7 +30,7 @@
             
             <!-- /.card-header -->
           <div class="card-body">
-            <form id="update" action="{{ route('admin.produtos.update', $produto->id)}}" method="POST">
+            <form id="save-form" action="{{ route('admin.produtos.update', $produto->id)}}" method="POST">
               {{method_field('PUT')}}
               <div class="box box-danger">
                 <div class="row">
@@ -78,18 +78,19 @@
             <div class="row">
                   <div class="col-md-12">
 
-                    <button form="update" type="submit" class="btn btn-primary r-button">Salvar</button>
+                    <button id="save-button" type="submit" class="btn btn-primary r-button">Salvar</button>
                 
 
                     <a href="{{ url('admin/produtos/') }}">
                       <button type="button" class="btn btn-secondary r-button"></i>Cancelar</button>
                     </a>
 
-                    <form id="exclude" action="{{ route('admin.produtos.destroy', $produto->id) }}" method="POST">
+                    <form id="exclude-form" action="{{ route('admin.produtos.destroy', $produto->id) }}" method="POST">
                       {{method_field('DELETE')}}
                       <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-                      <button type="submit" form="exclude" class="btn btn-danger button-table">Excluir</button>
+                
                     </form>
+                    <button id="exclude-button" type="submit" class="btn btn-danger button-table">Excluir</button>
 
                   
 
