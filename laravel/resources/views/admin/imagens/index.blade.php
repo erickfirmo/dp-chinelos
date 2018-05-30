@@ -1,6 +1,6 @@
 @extends('admin.layouts.admin')
-@section('title', 'Galeria de Imagens')
-@section('description', 'Galeria de Imagens')
+@section('title', 'Galeria')
+@section('description', 'Imagens')
 @section('content')
 
 <div class="container-fluid">
@@ -28,33 +28,40 @@
         </div>
         <div class="card-body">
           <div class="row">
-            <div class="col-md-12">
-              <a href="{{ url('admin/imagens/create') }}">
-                <button class="btn btn-success button-table"><i class="fa fa-plus"></i>&nbsp;&nbsp;Adicionar Imagem</button>
-              </a>
-                <div class="input-group-append" style="width:250px; float:right;">
-                  <input type="text" name="table_search" class="form-control float-right" placeholder="Buscar">
-                  &nbsp;&nbsp;
-                  <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                </div>
+
+            <div class="col-md-8">
+              <form action="{{ route('admin.imagens.store') }}" method="POST" enctype="multipart/form-data">
+                  <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+                  
+                  <button type="submit" class="btn btn-success">Fazer Upload</button>
+                  <input type="file" name="file[]" multiple>&nbsp;
+              </form>
             </div>
-            
+            <div class="col-md-4">
+              <div class="input-group-append" style="width:250px; float:right;">
+                <input type="text" name="table_search" class="form-control float-right" placeholder="Buscar">
+                &nbsp;&nbsp;
+                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
           </div>
 
           <br>
-
-          <div class="row">
-
+          
+          <div class="row box-galery">
           @foreach($images as $image)
-            <div class="col-md-2">
-              <img src='{{ asset("storage/images/{$image->url}") }}' alt='{{ $image->nome }}' class="img-fluid">
+            <div class="col-md-2 col-sm-2 col-4 box-image">
+              <img src='{{ asset("storage/images/{$image->url}") }}' alt='{{ $image->nome }}' class="img-fluid thumbnail-galery">
             </div>
           @endforeach
-
-          
-
-            
           </div>
+
+
+
+          <div class="row">
+            {{ $images->links() }}
+          </div>
+
         </div>
       </div>
     </div>

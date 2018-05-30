@@ -67,10 +67,7 @@
                 <td>R$ {{ str_replace('.', ',', number_format($produto->preco, 2, '.', '')) }}</td>
                 <td>
                   <a href='{{ url("admin/produtos/$produto->id/edit") }}'>
-                    <button class="btn btn-primary button-table">Editar</button>
-                  </a>
-                  <a href="{{ route('admin.produtos.show', $produto->id)}}">
-                    <button class="btn btn-secondary button-table">Ver</button>
+                    <button class="btn btn-primary button-table">Ver/Editar</button>
                   </a>
                 </td>
               </tr>
@@ -88,6 +85,13 @@
             </tr>
             </tfoot>
           </table>
+
+          <div class="row">
+              {{ $produtos->links() }}
+
+          </div>
+
+
         </div>
       </div>
     </div>

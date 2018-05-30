@@ -16,7 +16,7 @@ class ImageController extends Controller
 
     public function index()
     {
-        $images = Image::all();
+        $images = Image::orderBy('id', 'desc')->paginate(20);
         return view('admin.imagens.index',['images' => $images]);
 
     }
@@ -31,6 +31,11 @@ class ImageController extends Controller
     public function store(Request $request) 
     {
         // return $request->all();
+
+        $this->validate($request, [
+            'file' => 'required',
+        ]);
+
         // Verifica se informou o arquivo e se é válido
         if ($request->hasFile('file')) { 
 
@@ -52,8 +57,8 @@ class ImageController extends Controller
                 $image->save();
             }
 
-            return redirect()->route('admin.imagens.index', compact('image'))
-                ->with('success', "Imagem salva com sucesso !");
+            return redirect()->route('admin.imagens.index')
+                ->with('success', "Upload de imagem realizado com sucesso !");
         }
     }
 

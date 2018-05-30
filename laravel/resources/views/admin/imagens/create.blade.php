@@ -25,7 +25,7 @@
       @include('admin.partials._alert')
       <div id="card" class="card">
         <div class="card-header">
-          <h3 class="card-title">Novo Produto</h3>
+          <h3 class="card-title">Upload de Imagens</h3>
         </div>    
             <!-- /.card-header -->
         <div class="card-body">
@@ -34,7 +34,7 @@
               <div class="col-md-8">
                 <form action="{{ route('admin.imagens.store') }}" method="POST" enctype="multipart/form-data">
                   <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-                  <input class="form-control" type="file" name="file[]" multiple>&nbsp;
+                  <input type="file" name="file[]" multiple>&nbsp;
                   <button type="submit" class="btn btn-primary">Fazer Upload</button>
                 </form>
               </div>

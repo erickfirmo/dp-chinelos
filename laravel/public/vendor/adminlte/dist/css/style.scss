@@ -39,6 +39,22 @@ table {
    }
  }
 
- .thumbnail-galery {
-   border: 4px solid red;
- }
+.box-image {
+  box-shadow: 2px 1px 1px #cdcfd1;
+  padding: 10px;
+  border-radius: 0.25rem;
+  margin: 10px;
+}
+
+
+
+.pagination {
+  .active-paginate {
+    background-color: $primaryColor;
+    color: #fff;
+  }
+
+  a {
+    color: $primaryColor;
+  }
+}
