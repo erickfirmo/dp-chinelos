@@ -41,6 +41,8 @@
             
           </div>
 
+          <br>
+
           <div class="row">
 
           @foreach($images as $image)

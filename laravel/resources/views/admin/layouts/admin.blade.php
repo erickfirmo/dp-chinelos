@@ -43,7 +43,7 @@
     
 <footer class="main-footer">
   <div class="float-right d-sm-none d-md-block">
-  www.dpchinelos.com.br | www.erickfirmo.com.br
+    <span>www.dpchinelos.com.br | www.erickfirmo.com.br</span>
   </div>
   <strong>&copy; 2018 - <a href="#">Érick Firmo</a> | Desenvolvedor Web</strong>. Todos os Direitos Reservados.
 </footer>

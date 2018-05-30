@@ -100,14 +100,16 @@ return [
     */
 
     'custom' => [
+
         'nome' => [
             'required' => 'O nome do produto é obrigatorio !',
             'unique' => 'Este produto já existe !',
         ],
+
         'preco' => [
             'required' => 'O preço do produto é obrigatorio !',
-        ]
-        
+        ],
+
     ],
 
     /*

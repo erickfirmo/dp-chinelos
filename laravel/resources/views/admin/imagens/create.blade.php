@@ -34,15 +34,15 @@
               <div class="col-md-8">
                 <form action="{{ route('admin.imagens.store') }}" method="POST" enctype="multipart/form-data">
                   <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-                  <input type="file" name="image">&nbsp;
-                  <button type="submit" class="btn btn-primary">Salvar</button>
+                  <input class="form-control" type="file" name="file[]" multiple>&nbsp;
+                  <button type="submit" class="btn btn-primary">Fazer Upload</button>
                 </form>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
   </div>
 

@@ -64,7 +64,7 @@
                 <td><img src="http://www.amplicel.com/wp-content/themes/highstand/assets/images/default.jpg" alt="#" class="product-thumbnail img-thumbnail"></td>
                 <td>{{ $produto->descricao }}</td>
                 <td>{{ $produto->quantidade }}</td>
-                <td>R$ {{ str_replace('.', ',', $produto->preco) }}</td>
+                <td>R$ {{ str_replace('.', ',', number_format($produto->preco, 2, '.', '')) }}</td>
                 <td>
                   <a href='{{ url("admin/produtos/$produto->id/edit") }}'>
                     <button class="btn btn-primary button-table">Editar</button>

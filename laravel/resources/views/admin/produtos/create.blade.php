@@ -58,8 +58,8 @@
                       </div>
                   
                       <div class="form-group">
-                        <label>Quantidade</label>
-                        <input name="quantidade" type="number" min="0" class="form-control" style="width: 100%;">
+                        <label>Unidades</label>
+                        <input name="unidades" type="number" min="0" class="form-control" style="width: 100%;">
                       </div>
                       <div class="form-group">
                         <label>Preço</label>

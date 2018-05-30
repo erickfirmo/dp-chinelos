@@ -30,22 +30,27 @@ class ImageController extends Controller
 
     public function store(Request $request) 
     {
-        
+        // return $request->all();
         // Verifica se informou o arquivo e se é válido
-        if ($request->hasFile('image') && $request->file('image')->isValid()) { 
-            // Define um aleatório para o arquivo baseado no timestamps atual
-            $imageName = uniqid(date('HisYmd'));
-            // Recupera a extensão do arquivo
-            $extension = $request->image->extension();
-            // Difine o nome do arquivo
-            $nameFile = "{$imageName}.{$extension}";
-            // Faz o upload
-            $update = $request->image->storeAs('images', $nameFile);
-            
-            $image = new Image;
-            $image->nome = $imageName;
-            $image->url = $nameFile;
-            $image->save();
+        if ($request->hasFile('file')) { 
+
+            foreach ($request->file as $file)
+            {
+                // Define um aleatório para o arquivo baseado no timestamps atual
+                $imageName = uniqid(date('HisYmd'));
+                // Recupera a extensão do arquivo
+                $extension = $file->extension();
+                // Difine o nome do arquivo
+                $fileName = "{$imageName}.{$extension}";
+                
+                // Faz o upload
+                $upload = $file->storeAs('images', $fileName);
+    
+                $image = new Image;
+                $image->nome = $imageName;
+                $image->url = $fileName;
+                $image->save();
+            }
 
             return redirect()->route('admin.imagens.index', compact('image'))
                 ->with('success', "Imagem salva com sucesso !");

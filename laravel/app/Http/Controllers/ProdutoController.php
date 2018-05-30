@@ -32,15 +32,15 @@ class ProdutoController extends Controller
     {
         $this->validate($request, [
             'nome' => 'required|unique:produtos',
-            'quantidade' => 'required',
+            'unidades' => 'required',
             'preco' => 'required',
         ]);
 
         $produto = new Produto;
         $produto->nome = $request->nome;
         $produto->descricao = $request->descricao;
-        $produto->quantidade = $request->quantidade;
-        $produto->preco = $request->preco;
+        $produto->unidades = $request->unidades;
+        $produto->preco = number_format($request->preco, 2, '.', '');
         $produto->save();
 
         return redirect()->route('admin.produtos.edit', compact('produto'))
