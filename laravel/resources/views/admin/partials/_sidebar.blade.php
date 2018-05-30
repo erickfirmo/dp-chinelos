@@ -30,11 +30,16 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{ url('admin/produtos') }}" class="nav-link">
-                  <p>Lista de Produtos</p>
+                  <p>Produtos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ url('admin/pedidos') }}" class="nav-link">
+                <a href="{{ url('admin/categorias') }}" class="nav-link">
+                  <p>Categorias</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
                   <p>Pedidos</p>
                 </a>
               </li>

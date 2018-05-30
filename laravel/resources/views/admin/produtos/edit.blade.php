@@ -38,7 +38,7 @@
                     <div class="form-group">
                         <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                         <label>Nome do Produto</label>
-                        <input value="{{ $produto->nome }}" name="nome" type="text" class="form-control titulo-produto" style="width: 100%;">
+                        <input value="{{ $produto->nome }}" name="nome" type="text" class="form-control" style="width: 100%;">
                     </div>
 
                     <div class="form-group">
@@ -74,26 +74,25 @@
             </form>
 
             <div class="row">
-                  <div class="col-md-12">
+              <div class="col-md-12">
 
-                    <button id="save-button" type="submit" class="btn btn-primary r-button">Salvar</button>
-                
+                <button id="save-button" type="submit" class="btn btn-primary r-button">Salvar</button>
+            
 
-                    <a href="{{ url('admin/produtos/') }}">
-                      <button type="button" class="btn btn-secondary r-button"></i>Cancelar</button>
-                    </a>
+                <a href="{{ url('admin/produtos/') }}">
+                  <button type="button" class="btn btn-secondary r-button"></i>Cancelar</button>
+                </a>
 
-                    <form id="exclude-form" action="{{ route('admin.produtos.destroy', $produto->id) }}" method="POST">
-                      {{method_field('DELETE')}}
-                      <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-                
-                    </form>
-                    <button id="exclude-button" type="submit" class="btn btn-danger button-table">Excluir</button>
-
+                <form id="exclude-form" action="{{ route('admin.produtos.destroy', $produto->id) }}" method="POST">
+                  {{method_field('DELETE')}}
+                  <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                   
+                </form>
+                <button id="exclude-button" type="submit" class="btn btn-danger button-table">Excluir</button>
+                
 
-                  </div>
-                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

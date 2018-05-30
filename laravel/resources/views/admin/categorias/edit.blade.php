@@ -1,0 +1,77 @@
+@extends('admin.layouts.admin')
+@section('title', 'Editar')
+@section('description', $categoria->categoria)
+@section('content')
+
+
+<div class="container-fluid"> 
+  <div id="info-icon" class="row">
+    <div class="clearfix hidden-md-up"></div>
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="info-box mb-3">
+        <span class="info-box-icon elevation-1"><i class="fa fa-cubes"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">Nº de Categorias</span>
+          <span class="info-box-number">000</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+      <div class="col-12">
+
+      @include('admin.partials._alert')
+        <div id="card" class="card">
+          <div class="card-header">
+            <h3 class="card-title">Editar Categoria</h3>
+          </div>
+            
+            <!-- /.card-header -->
+          <div class="card-body">
+            <form id="save-form" action="{{ route('admin.categorias.update', $categoria->id)}}" method="POST">
+              {{method_field('PUT')}}
+              <div class="box box-danger">
+                <div class="row">
+
+                  <div class="col-md-8">
+                    <div class="form-group">
+                        <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+                        <label>Nome da Categoria</label>
+                        <input value="{{ $categoria->categoria }}" name="categoria" type="text" class="form-control" style="width: 100%;">
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </form>
+
+            <div class="row">
+              <div class="col-md-12">
+                <button id="save-button" type="submit" class="btn btn-primary r-button">Salvar</button>
+            
+                <a href="{{ url('admin/categorias/') }}">
+                  <button type="button" class="btn btn-secondary r-button"></i>Cancelar</button>
+                </a>
+
+                <form id="exclude-form" action="{{ route('admin.categorias.destroy', $categoria->id) }}" method="POST">
+                  {{method_field('DELETE')}}
+                  <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+                </form>
+                <button id="exclude-button" type="submit" class="btn btn-danger button-table">Excluir</button>
+
+
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+@endsection
