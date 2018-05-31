@@ -30,7 +30,7 @@
             
             <!-- /.card-header -->
           <div class="card-body">
-            <form id="save-form" action="{{ route('admin.categorias.update', $categoria->id)}}" method="POST">
+            <form id="category-save-form" action="{{ route('admin.categorias.update', $categoria->id)}}" method="POST">
               {{method_field('PUT')}}
               <div class="box box-danger">
                 <div class="row">
@@ -49,22 +49,22 @@
 
             <div class="row">
               <div class="col-md-12">
-                <button id="save-button" type="submit" class="btn btn-primary r-button">Salvar</button>
+                <button id="category-save-button" type="submit" class="btn btn-primary r-button">Salvar</button>
             
                 <a href="{{ url('admin/categorias/') }}">
                   <button type="button" class="btn btn-secondary r-button"></i>Cancelar</button>
                 </a>
 
-                <form id="exclude-form" action="{{ route('admin.categorias.destroy', $categoria->id) }}" method="POST">
+                <form id="category-exclude-form" action="{{ route('admin.categorias.destroy', $categoria->id) }}" method="POST">
                   {{method_field('DELETE')}}
                   <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                 </form>
-                <button id="exclude-button" type="submit" class="btn btn-danger button-table">Excluir</button>
+                <button id="category-exclude-button" type="submit" class="btn btn-danger button-table">Excluir</button>
 
 
               </div>
             </div>
-            
+
           </div>
         </div>
       </div>

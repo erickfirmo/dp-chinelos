@@ -2,22 +2,14 @@
     <aside id="sidebar" class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-      <img src="{{ asset('vendor/adminlte/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-           style="opacity: .8"><br>
-      <span class="brand-text font-weight-light">DP Chinelos</span>
+      <img src="{{ asset('images/logo.jpeg') }}" alt="AdminLTE Logo" class="img-circle elevation-4"
+           style="opacity: 1; width: 120px; height: auto; margin: 0 auto; display:block;"><br>
+      <span class="brand-text font-weight-light">Painel Adminstrativo da Loja</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="{{ asset('vendor/adminlte/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block">Admin</a>
-        </div>
-      </div>
+      
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">

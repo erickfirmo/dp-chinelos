@@ -30,7 +30,7 @@
             
             <!-- /.card-header -->
           <div class="card-body">
-            <form id="save-form" action="{{ route('admin.produtos.update', $produto->id)}}" method="POST">
+            <form id="product-save-form" action="{{ route('admin.produtos.update', $produto->id)}}" method="POST">
               {{method_field('PUT')}}
               <div class="box box-danger">
                 <div class="row">
@@ -52,7 +52,7 @@
                     </div>
                     <div class="form-group">
                         <label>Unidades</label>
-                        <input value="{{ $produto->quantidade }}" name="quantidade" type="number" min="0" class="form-control" style="width: 100%;">
+                        <input value="{{ $produto->unidades }}" name="quantidade" type="number" min="0" class="form-control" style="width: 100%;">
                     </div>
                     <div class="form-group">
                         <label>Preço</label>
@@ -66,7 +66,7 @@
                   <div class="col-md-12">
                     <div class="form-group">
                         <label>Descrição</label>
-                        <textarea value="{{ $produto->descricao }}" name="descricao" class="form-control" style="width:100%;"></textarea>
+                        <textarea name="descricao" class="form-control" style="width:100%;">{{ $produto->descricao }}</textarea>
                     </div>
                   </div>
                 </div>
@@ -76,19 +76,19 @@
             <div class="row">
               <div class="col-md-12">
 
-                <button id="save-button" type="submit" class="btn btn-primary r-button">Salvar</button>
+                <button id="product-save-button" type="submit" class="btn btn-primary r-button">Salvar</button>
             
 
                 <a href="{{ url('admin/produtos/') }}">
                   <button type="button" class="btn btn-secondary r-button"></i>Cancelar</button>
                 </a>
 
-                <form id="exclude-form" action="{{ route('admin.produtos.destroy', $produto->id) }}" method="POST">
+                <form id="product-exclude-form" action="{{ route('admin.produtos.destroy', $produto->id) }}" method="POST">
                   {{method_field('DELETE')}}
                   <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                   
                 </form>
-                <button id="exclude-button" type="submit" class="btn btn-danger button-table">Excluir</button>
+                <button id="product-exclude-button" type="submit" class="btn btn-danger button-table">Excluir</button>
                 
 
               </div>

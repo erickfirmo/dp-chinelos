@@ -1,10 +1,10 @@
 #info-icon .info-box-icon {
-  background-color: #ff5722; }
+  background-color: #4cb94c; }
 
 #sidebar a.active, #header a.active, #footer a.active {
-  background-color: #ff5722; }
+  background-color: #4cb94c; }
 #sidebar ol.breadcrumb li a, #header ol.breadcrumb li a, #footer ol.breadcrumb li a {
-  color: #ff5722; }
+  color: #4cb94c; }
 
 table td, table th {
   text-align: center;
@@ -29,9 +29,9 @@ table td, table th {
   margin: 10px; }
 
 .pagination .active-paginate {
-  background-color: #ff5722;
+  background-color: #4cb94c;
   color: #fff; }
 .pagination a {
-  color: #ff5722; }
+  color: #4cb94c; }
 
 /*# sourceMappingURL=style.css.map */
