@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Produto;
+use App\Categoria;
 use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
@@ -17,13 +18,16 @@ class ProdutoController extends Controller
     public function index()
     {
         $produtos = Produto::orderBy('id', 'desc')->paginate(50);
+
         return view('admin.produtos.index',['produtos' => $produtos]);
 
     }
 
     public function create()
     {
-        return view('admin.produtos.create');
+        $categorias = Categoria::pluck('categoria', 'id');
+        return view('admin.produtos.create')
+            ->withCategorias($categorias);
 
     }
 
@@ -41,6 +45,7 @@ class ProdutoController extends Controller
         $produto->descricao = $request->descricao;
         $produto->unidades = $request->unidades;
         $produto->preco = number_format($request->preco, 2, '.', '');
+        $produto->categoria_id = $request->categoria_id;
         $produto->save();
 
         return redirect()->route('admin.produtos.edit', compact('produto'))
@@ -57,16 +62,19 @@ class ProdutoController extends Controller
 
     public function edit(Produto $produto)
     {
+
+        
+        $categorias = Categoria::pluck('categoria', 'id');
         return view('admin.produtos.edit')
-            ->withProduto($produto);
+            ->withProduto($produto)
+            ->withCategorias($categorias);
 
     }
 
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'quantidade' => 'required',
-            'preco' => 'required',
+            'nome' => 'required|unique:produtos',
         ]);
         
         $produto = Produto::findOrFail($id)->update($request->all());

@@ -43,11 +43,15 @@
 
                     <div class="form-group">
                       <label>Categoria</label>
-                      <select class="form-control select2" style="width: 100%;">
-                        <option disabled selected value> -- </option>
-                        <option>Times</option>
-                        <option>Casamento</option>
-                        <option>Formatura</option>
+                      <select name="categoria_id" class="form-control select2" style="width: 100%;">
+                        <option disabled> -- </option>
+                        @foreach($categorias as $key => $categoria)
+                          <option value='{{ $key }}' 
+                          @if($key == $produto->categorias->id)
+                            selected="selected"
+                          @endif
+                          >{{ $categoria }}</option>
+                        @endforeach
                       </select>
                     </div>
                     <div class="form-group">

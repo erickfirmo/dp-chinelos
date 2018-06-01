@@ -12,7 +12,8 @@ class Produto extends Model
         'nome',
         'descricao',
         'unidades',
-        'preco'
+        'preco',
+        'categoria_id'
     ];
     
     protected $guarded = [
@@ -20,4 +21,9 @@ class Produto extends Model
         'created_at',
         'update_at'
     ];
+
+    public function categorias()
+    {
+        return $this->belongsTo(Categoria::class, 'categoria_id');
+    }
 }

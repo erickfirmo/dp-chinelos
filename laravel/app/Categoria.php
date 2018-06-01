@@ -9,13 +9,17 @@ class Categoria extends Model
     protected $table = 'categorias';
 
     protected $fillable = [
+        'id',
         'categoria'
     ];
 
     protected $guarded = [
-        'id',
         'created_at',
         'update_at'
     ];  
+
+    public function produtos(){
+        return $this->hasMany(Produto::class);
+    }
     
 }
