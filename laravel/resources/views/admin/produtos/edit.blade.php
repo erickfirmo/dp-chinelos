@@ -54,6 +54,20 @@
                         @endforeach
                       </select>
                     </div>
+
+                    <div class="form-group">
+                      <label>Status</label>
+                      <select name="status_id" class="form-control select2" style="width: 100%;">
+                        <option disabled> -- </option>
+                        @foreach($status as $key => $status)
+                          <option value='{{ $key }}' 
+                          @if($key == $produto->status->id)
+                            selected="selected"
+                          @endif
+                          >{{ $status }}</option>
+                        @endforeach
+                      </select>
+                    </div>
                     <div class="form-group">
                         <label>Unidades</label>
                         <input value="{{ $produto->unidades }}" name="quantidade" type="number" min="0" class="form-control" style="width: 100%;">

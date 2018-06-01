@@ -10,7 +10,7 @@ class Categoria extends Model
 
     protected $fillable = [
         'id',
-        'categoria'
+        'nome'
     ];
 
     protected $guarded = [

@@ -39,7 +39,7 @@
                     <div class="form-group">
                         <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                         <label>Nome da Categoria</label>
-                        <input value="{{ $categoria->categoria }}" name="categoria" type="text" class="form-control" style="width: 100%;">
+                        <input value="{{ $categoria->nome }}" name="nome" type="text" class="form-control" style="width: 100%;">
                     </div>
                   </div>
 

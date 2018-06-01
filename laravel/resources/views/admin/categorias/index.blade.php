@@ -56,7 +56,7 @@
               @foreach($categorias as $categoria)
               <tr class="clickable-tr pointer" data-href='{{ url("admin/categorias/$categoria->id") }}'>
                 <td>{{ $categoria->id }}</td>
-                <td>{{ $categoria->categoria }}</td>
+                <td>{{ $categoria->nome }}</td>
                 <td>
                   <a href='{{ url("admin/categorias/$categoria->id/edit") }}'>
                     <button class="btn btn-primary button-table">Ver/Editar</button>

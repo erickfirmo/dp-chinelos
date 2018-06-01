@@ -56,6 +56,16 @@
                             @endforeach
                         </select>
                       </div>
+
+                      <div class="form-group">
+                        <label>Status</label>
+                        <select name="status_id" class="form-control select2" style="width: 100%;">
+                            <option disabled selected value> -- </option>
+                            @foreach($status as $key => $status)
+                              <option value='{{ $key }}'>{{ $status }}</option>
+                            @endforeach
+                        </select>
+                      </div>
                   
                       <div class="form-group">
                         <label>Unidades</label>

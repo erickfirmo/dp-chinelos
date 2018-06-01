@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Produto;
 use App\Categoria;
+use App\Status;
+
 use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
@@ -25,9 +27,12 @@ class ProdutoController extends Controller
 
     public function create()
     {
-        $categorias = Categoria::pluck('categoria', 'id');
+        $categorias = Categoria::pluck('nome', 'id');
+        $status = Status::pluck('nome', 'id');
+
         return view('admin.produtos.create')
-            ->withCategorias($categorias);
+            ->withCategorias($categorias)
+            ->withStatus($status);
 
     }
 
@@ -46,6 +51,7 @@ class ProdutoController extends Controller
         $produto->unidades = $request->unidades;
         $produto->preco = number_format($request->preco, 2, '.', '');
         $produto->categoria_id = $request->categoria_id;
+        $produto->status_id = $request->status_id;
         $produto->save();
 
         return redirect()->route('admin.produtos.edit', compact('produto'))
@@ -64,18 +70,17 @@ class ProdutoController extends Controller
     {
 
         
-        $categorias = Categoria::pluck('categoria', 'id');
+        $categorias = Categoria::pluck('nome', 'id');
+        $status = Status::pluck('nome', 'id');
         return view('admin.produtos.edit')
             ->withProduto($produto)
-            ->withCategorias($categorias);
+            ->withCategorias($categorias)
+            ->withStatus($status);
 
     }
 
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'nome' => 'required|unique:produtos',
-        ]);
         
         $produto = Produto::findOrFail($id)->update($request->all());
 

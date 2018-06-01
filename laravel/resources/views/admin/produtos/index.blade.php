@@ -54,6 +54,7 @@
               <th>Unidades</th>
               <th>Preço</th>
               <th>Categoria</th>
+              <th>Status</th>
               <th>Ações</th>
             </tr>
             </thead>
@@ -66,7 +67,8 @@
                 <td>{{ $produto->descricao }}</td>
                 <td>{{ $produto->unidades }}</td>
                 <td>R$ {{ str_replace('.', ',', number_format($produto->preco, 2, '.', '')) }}</td>
-                <td>{{ $produto->categorias->categoria }}</td>
+                <td>{{ $produto->categorias->nome }}</td>
+                <td>{{ $produto->status->nome }}</td>
                 <td>
                   <a href='{{ url("admin/produtos/$produto->id/edit") }}'>
                     <button class="btn btn-primary button-table">Ver/Editar</button>
@@ -84,6 +86,7 @@
             <th>Unidades</th>
             <th>Preço</th>
             <th>Categoria</th>
+            <th>Status</th>
             <th>Ações</th>
             </tr>
             </tfoot>

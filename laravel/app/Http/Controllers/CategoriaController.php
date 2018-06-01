@@ -31,11 +31,11 @@ class CategoriaController extends Controller
     public function store(Request $request) 
     {
         $this->validate($request, [
-            'categoria' => 'required|unique:categorias'
+            'nome' => 'required|unique:categorias'
         ]);
 
         $categoria = new Categoria;
-        $categoria->categoria = $request->categoria;
+        $categoria->nome = $request->nome;
         $categoria->save();
 
         return redirect()->route('admin.categorias.index')
@@ -60,7 +60,7 @@ class CategoriaController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'categoria' => 'required',
+            'nome' => 'required',
         ]);
         
         $categoria = Categoria::findOrFail($id)->update($request->all());

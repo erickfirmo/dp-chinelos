@@ -13,7 +13,8 @@ class Produto extends Model
         'descricao',
         'unidades',
         'preco',
-        'categoria_id'
+        'categoria_id',
+        'status_id'
     ];
     
     protected $guarded = [
@@ -25,5 +26,10 @@ class Produto extends Model
     public function categorias()
     {
         return $this->belongsTo(Categoria::class, 'categoria_id');
+    }
+
+    public function status()
+    {
+        return $this->belongsTo(Status::class, 'status_id');
     }
 }
