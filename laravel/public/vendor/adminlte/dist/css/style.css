@@ -60,4 +60,7 @@ table td, table th {
 textarea {
   min-height: 300px; }
 
+.model-content {
+  width: 600px; }
+
 /*# sourceMappingURL=style.css.map */
