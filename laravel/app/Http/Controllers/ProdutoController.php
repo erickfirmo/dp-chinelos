@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Produto;
 use App\Categoria;
 use App\Status;
+use App\Imagem;
+use App\ImagemDoProduto;
 
 use Illuminate\Http\Request;
 
@@ -72,11 +74,22 @@ class ProdutoController extends Controller
         
         $categorias = Categoria::pluck('nome', 'id');
         $status = Status::pluck('nome', 'id');
+
+        
+        $imagens_do_produto = ImagemDoProduto::where('produto_id', '=' ,$produto->id)->pluck('imagem_id');
+        $imagens = Imagem::all();
+
+
+
+
+
         return view('admin.produtos.edit')
             ->withProduto($produto)
             ->withCategorias($categorias)
-            ->withStatus($status);
-
+            ->withStatus($status)
+            ->withImagens($imagens)
+            ->withImagensDoProduto($imagens_do_produto);
+        
     }
 
     public function update(Request $request, $id)

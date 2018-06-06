@@ -30,7 +30,7 @@
 .card {
    background-color: #F7F7F7;
    /* just in case there no content*/
-   top: 150px;
+   top: 115px;
    padding: 20px 25px 30px;
    margin: 0 auto 25px;
    margin-top: 0px;
@@ -139,4 +139,12 @@
 .forgot-password:active,
 .forgot-password:focus{
    color: rgb(12, 97, 33);
+}
+
+#profile-img {
+  opacity: 1;
+  width: 120px;
+  height: auto;
+  margin: 0 auto; 
+  display: block;
 }

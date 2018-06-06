@@ -6,19 +6,6 @@
 
 <div class="container-fluid">
  
-<div id="info-icon" class="row">
-  <div class="clearfix hidden-md-up"></div>
-  <div class="col-12 col-sm-6 col-md-3">
-    <div class="info-box mb-3">
-      <span class="info-box-icon elevation-1"><i class="fa fa-cubes"></i></span>
-      <div class="info-box-content">
-        <span class="info-box-text">Unidades em estoque</span>
-        <span class="info-box-number">{{ $produto->quantidade }}</span>
-      </div>
-    </div>
-  </div>
-</div>
-
 
 <div class="row">
     <div class="col-12">

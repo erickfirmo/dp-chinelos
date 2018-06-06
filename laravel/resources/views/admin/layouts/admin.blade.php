@@ -23,8 +23,10 @@
   <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/timepicker/bootstrap-timepicker.min.css') }}">
   <!-- Select2 -->
   <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/select2/select2.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/image-picker/image-picker.css') }}">
   <link rel="stylesheet" href="{{ asset('vendor/adminlte/dist/css/style.css') }}">
 </head>
+
 
 <body class="hold-transition sidebar-mini">
   
@@ -99,6 +101,11 @@
 
 <script src="{{ asset('vendor/adminlte/plugins/sweetalert/dist/custom-sweetalert.js') }}"></script>
 
+<script src="{{ asset('vendor/adminlte/plugins/image-picker/image-picker.min.js') }}"></script>
+
+
 </body>
 </html>
+
+
     

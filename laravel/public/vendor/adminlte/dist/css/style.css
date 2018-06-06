@@ -22,16 +22,42 @@ table td, table th {
   float: right;
   margin-left: 5px; }
 
-.box-image {
+.image-box {
   box-shadow: 2px 1px 1px #cdcfd1;
   padding: 10px;
   border-radius: 0.25rem;
   margin: 10px; }
+
+.box-main-image {
+  padding: 20px 30px;
+  box-shadow: 1px 1px 6px #969ba3;
+  border-radius: 0.25rem;
+  width: 94%;
+  display: block;
+  margin: 32px auto 15px auto; }
+
+.box-thumbnail {
+  box-shadow: 1px 1px 6px #969ba3;
+  padding: 10px;
+  border-radius: 0.25rem;
+  margin: 10px;
+  width: 80%;
+  display: block; }
 
 .pagination .active-paginate {
   background-color: #4cb94c;
   color: #fff; }
 .pagination a {
   color: #4cb94c; }
+
+#sidebar a.brand-link img {
+  opacity: 1;
+  width: 120px;
+  height: auto;
+  margin: 0 auto;
+  display: block; }
+
+textarea {
+  min-height: 300px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -5,20 +5,6 @@
 
 <div class="container-fluid">
 
-<div id="info-icon" class="row">
-  <div class="clearfix hidden-md-up"></div>
-  <div class="col-12 col-sm-6 col-md-3">
-    <div class="info-box mb-3">
-      <span class="info-box-icon elevation-1"><i class="fa fa-cubes"></i></span>
-      <div class="info-box-content">
-        <span class="info-box-text">Nº de Produtos</span>
-        <span class="info-box-number">000</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-
 <div class="row">
     <div class="col-12">
     @include('admin.partials._alert')
@@ -43,10 +29,11 @@
 
           <br>
             
-          <table id="example1" class="table table-default table-striped">
+          <div class="table-responsive">
+            <table id="example1" class="table table-default table-striped">
 
             <thead>
-            <tr>
+              <tr>
               <th>Id</th>
               <th>Produto</th>
               <th>Imagem</th>
@@ -56,7 +43,7 @@
               <th>Categoria</th>
               <th>Status</th>
               <th>Ações</th>
-            </tr>
+              </tr>
             </thead>
             <tbody>
               @foreach($produtos as $produto)
@@ -78,19 +65,22 @@
               @endforeach
             </tbody>
             <tfoot>
-            <tr>
-            <th>Id</th>
-            <th>Produto</th>
-            <th>Imagem</th>
-            <th>Descrição</th>
-            <th>Unidades</th>
-            <th>Preço</th>
-            <th>Categoria</th>
-            <th>Status</th>
-            <th>Ações</th>
+              <tr>
+              <th>Id</th>
+              <th>Produto</th>
+              <th>Imagem</th>
+              <th>Descrição</th>
+              <th>Unidades</th>
+              <th>Preço</th>
+              <th>Categoria</th>
+              <th>Status</th>
+              <th>Ações</th>
             </tr>
-            </tfoot>
-          </table>
+          </tfoot>
+        </table>
+
+
+          </div>
 
           <div class="row">
               {{ $produtos->links() }}

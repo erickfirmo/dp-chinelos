@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Image;
+use App\Imagem;
 use Illuminate\Http\Request;
 
-class ImageController extends Controller
+class ImagemController extends Controller
 {
     
     public function __construct()
@@ -16,8 +16,8 @@ class ImageController extends Controller
 
     public function index()
     {
-        $images = Image::orderBy('id', 'desc')->paginate(20);
-        return view('admin.imagens.index',['images' => $images]);
+        $imagens = Imagem::orderBy('id', 'desc')->paginate(20);
+        return view('admin.imagens.index',['imagens' => $imagens]);
 
     }
 
@@ -28,7 +28,7 @@ class ImageController extends Controller
     }
 
 
-    public function store(Request $request) 
+    public function store(Request $request)
     {
         // return $request->all();
 
@@ -51,14 +51,14 @@ class ImageController extends Controller
                 // Faz o upload
                 $upload = $file->storeAs('images', $fileName);
     
-                $image = new Image;
-                $image->nome = $imageName;
-                $image->url = $fileName;
-                $image->save();
+                $imagem = new Imagem;
+                $imagem->nome = $imageName;
+                $imagem->url = $fileName;
+                $imagem->save();
             }
 
             return redirect()->route('admin.imagens.index')
-                ->with('success', "Upload de imagem realizado com sucesso !");
+                ->with('success', "Upload realizado com sucesso !");
         }
     }
 

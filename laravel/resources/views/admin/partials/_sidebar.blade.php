@@ -6,6 +6,7 @@
            style="opacity: 1; width: 120px; height: auto; margin: 0 auto; display:block;"><br>
       <span class="brand-text font-weight-light">Painel Adminstrativo da Loja</span>
     </a>
+    
 
     <!-- Sidebar -->
     <div class="sidebar">
