@@ -19,9 +19,10 @@
 
         <div class="card-body">
 
-          <form id="product-save-form" action="{{ route('admin.produtos.update', $produto->id)}}" method="POST">
+          
+          <div class="box box-danger">
+            <form id="product-save-form" action="{{ route('admin.produtos.update', $produto->id)}}" method="POST">
             {{method_field('PUT')}}
-            <div class="box box-danger">
 
               <div class="row">
                 <div class="col-md-8">
@@ -160,6 +161,7 @@
                       </div> 
                     </div>
                   </div>
+                  <!-- fim modal -->
                   
                   
                   
@@ -168,7 +170,8 @@
 
 
               </div>
-            </div>
+            </form>
+          </div>
 
 
 
@@ -177,16 +180,28 @@
                 <div class="row">
                   <div class="col-md-12">
                   
-                  <button type="submit" class="btn btn-primary r-button">Salvar</button>
-                  
-                      <a href="{{ url('admin/produtos/') }}">
-                        <button type="button" class="btn btn-secondary r-button">Cancelar</button>
-                      </a>
+                    <button id="product-save-button" type="submit" class="btn btn-primary r-button">Salvar</button>
+
+                    <a href="{{ url('admin/produtos/') }}">
+                    <button type="button" class="btn btn-secondary r-button">Cancelar</button>
+                    </a>
+
+                    <form id="product-exclude-form" action="{{ route('admin.produtos.destroy', $produto->id) }}" method="POST">
+                    {{method_field('DELETE')}}
+                    <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+
+                    </form>
+                    <button id="product-exclude-button" type="submit" class="btn btn-danger button-table">Excluir</button>
+
+
+
+
+
                   </div>
                 </div>
 
 
-          </form>
+          
         <!--- fim card -->
         </div>
 

@@ -1,5 +1,5 @@
 
-    <aside id="sidebar" class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside id="sidebar" class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
       <img src="{{ asset('images/logo.jpeg') }}" alt="AdminLTE Logo" class="img-circle elevation-4"

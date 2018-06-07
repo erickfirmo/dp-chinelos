@@ -30,9 +30,10 @@
 
 <body class="hold-transition sidebar-mini">
   
-@include('admin.partials._sidebar')
 
 <div class="wrapper">
+
+  @include('admin.partials._sidebar')
   <div class="content-wrapper" style="min-height: 733px;">
 
         @include('admin.partials._header')
