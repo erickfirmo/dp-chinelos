@@ -34,8 +34,9 @@
 <div class="wrapper">
 
   @include('admin.partials._sidebar')
+  
+  @include('admin.partials._navbar')
   <div class="content-wrapper" style="min-height: 733px;">
-
         @include('admin.partials._header')
         @yield('content')
         

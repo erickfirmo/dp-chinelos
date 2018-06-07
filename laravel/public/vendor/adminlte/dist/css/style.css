@@ -58,9 +58,7 @@ table td, table th {
   display: block; }
 
 textarea {
-  min-height: 300px; }
+  min-height: 200px; }
 
-.model-content {
-  width: 600px; }
 
 /*# sourceMappingURL=style.css.map */

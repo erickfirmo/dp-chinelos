@@ -88,22 +88,12 @@
                       @endforeach
                     @endforeach
                 
-                    <!--<div class="row">
-                      <div class="col-md-4">
-                        <img src='{{ asset("storage/images/001557201806015b10903d483cb.jpeg") }}' alt='#' class="img-fluid box-thumbnail">
-                      </div>
-
-                      <div class="col-md-4">
-                        <img src='{{ asset("storage/images/001557201806015b10903d483cb.jpeg") }}' alt='#' class="img-fluid box-thumbnail">
-                      </div>
-
-                      <div class="col-md-4">
-                        <img src='{{ asset("storage/images/001557201806015b10903d483cb.jpeg") }}' alt='#' class="img-fluid box-thumbnail">
-                      </div>
-                    </div>
-                  </div>-->
+                  </div>
                   
-                  <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Adicionar imagem</button>
+                  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Adicionar imagem</button>
+                  
+
+
                   <!-- Modal -->
                   <div class="modal fade" id="myModal" role="dialog">
                     <div class="modal-dialog model-box">
@@ -111,19 +101,19 @@
                       <div class="modal-content">
 
                         <div class="modal-header">
-                          <h4 class="modal-title">Imagens do Produto</h4>
+                          <h4 class="modal-title">Adicionar Imagem do Produto
+                          </h4>
                           <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
 
-                        <div class="modal-body">
-                          <div class="col-md-6">
-                            <div class="row">
-                              <form action="{{ route('admin.imagens.store') }}" method="POST" enctype="multipart/form-data">
-                                <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-                                
-                                <button type="submit" class="btn btn-success">Fazer Upload</button>
+                        <form action="{{ route('admin.imagens.store') }}" method="POST" enctype="multipart/form-data">
+
+                          <div class="modal-body">
+                            <div class="col-md-12">
+                              <div class="row">
                                 <input type="file" name="file[]" multiple>&nbsp;
-                              </form>
+                              </div>
+                              <br>
                             </div>
                           </div>
 
@@ -145,16 +135,18 @@
 
                             </div>
                           </div>
-
+                          
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
+                            <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+                            
+                            <button type="submit" class="btn btn-success">Salvar Imagens</button>
+                                
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                           </div>
+                        </form>
 
 
-
-
-                        </div>
+                        
 
                         
                         

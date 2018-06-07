@@ -17,7 +17,7 @@
           <div class="row">
 
             <div class="col-md-6">
-              <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Adicionar imagem</button>
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Adicionar imagem</button>
 
             </div>
             <div class="col-md-6">
@@ -36,7 +36,7 @@
               <div class="modal-content">
 
                 <div class="modal-header">
-                  <h4 class="modal-title">Imagens do Produto</h4>
+                  <h4 class="modal-title">Adicionar Imagens</h4>
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
@@ -53,7 +53,9 @@
                     </div>
 
                   
-                    <div class="modal-footer">
+                    
+                  </div>
+                  <div class="modal-footer">
                           <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                           
 
@@ -64,7 +66,6 @@
                         
                       <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                     </div>
-                  </div>
                 
                 </form>
 
