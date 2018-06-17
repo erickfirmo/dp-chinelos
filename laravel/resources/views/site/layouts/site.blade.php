@@ -27,15 +27,16 @@
 <body>
     <div id="app">
         @yield('content')
+		  <button class="btn btn-primary">bootstrap no esqu4ma</button>
     </div>
 
     <!-- js -->
-<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="{{ asset('vendor/site/assets/js/jquery-2.1.4.min.js') }}"></script>
 <!-- //js -->
-<script src="js/modernizr.custom.js"></script>
+<script src="{{ asset('vendor/site/assets/js/modernizr.custom.js') }}"></script>
 	<!-- Custom-JavaScript-File-Links --> 
 	<!-- cart-js -->
-	<script src="js/minicart.min.js"></script>
+	<script src="{{ asset('vendor/site/assets/js/minicart.min.js') }}"></script>
 <script>
 	// Mini Cart
 	paypal.minicart.render({
@@ -49,7 +50,7 @@
 
 	<!-- //cart-js --> 
 <!-- script for responsive tabs -->						
-<script src="js/easy-responsive-tabs.js"></script>
+<script src="{{ asset('vendor/site/assets/js/easy-responsive-tabs.js') }}"></script>
 <script>
 	$(document).ready(function () {
 	$('#horizontalTab').easyResponsiveTabs({
@@ -81,8 +82,8 @@
 	</script>
 <!-- //stats -->
 <!-- start-smoth-scrolling -->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="{{ asset('vendor/site/assets/js/move-top.js') }}"></script>
+<script type="text/javascript" src="{{ asset('vendor/site/assets/js/jquery.easing.min.js') }}"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		
@@ -111,7 +112,7 @@
 
 
 <!-- for bootstrap working -->
-<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="{{ asset('vendor/site/assets/js/bootstrap.js') }}"></script>
     <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
 </body>
