@@ -2,7 +2,7 @@
 
 
 Route::get('/', function () {
-    return view('site.layouts.site');
+    return view('site.home.index');
 
 });
 

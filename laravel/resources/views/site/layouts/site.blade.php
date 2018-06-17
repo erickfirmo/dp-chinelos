@@ -10,8 +10,7 @@
     <title>{{ 'DP Chinelos | Loja Oficial' }}</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Elite Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <meta name="keywords" content="chinelos, chnelos estampados" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
             function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!--//tags -->
@@ -21,16 +20,23 @@
     <link href="{{ asset('vendor/site/assets/css/easy-responsive-tabs.css') }}" rel='stylesheet' type='text/css'/>
     <!-- //for bootstrap working -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
-    <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
+	 <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
+	
+
     
 </head>
 <body>
+	@include('site.partials._topbar')
+	@include('site.partials._header')
+	@include('site.partials._navbar')
     <div id="app">
         @yield('content')
-		  <button class="btn btn-primary">bootstrap no esqu4ma</button>
     </div>
 
-    <!-- js -->
+
+
+	 
+<!-- js -->
 <script type="text/javascript" src="{{ asset('vendor/site/assets/js/jquery-2.1.4.min.js') }}"></script>
 <!-- //js -->
 <script src="{{ asset('vendor/site/assets/js/modernizr.custom.js') }}"></script>
@@ -75,8 +81,8 @@
 </script>
 <!-- //script for responsive tabs -->		
 <!-- stats -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.countup.js"></script>
+	<script src="{{ asset('vendor/site/assets/js/jquery.waypoints.min.js') }}"></script>
+	<script src="{{ asset('vendor/site/assets/js/jquery.countup.js') }}"></script>
 	<script>
 		$('.counter').countUp();
 	</script>
@@ -113,7 +119,6 @@
 
 <!-- for bootstrap working -->
 <script type="text/javascript" src="{{ asset('vendor/site/assets/js/bootstrap.js') }}"></script>
-    <!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
+    
 </body>
 </html>

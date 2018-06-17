@@ -1,11 +1,10 @@
 <!-- footer -->
 <div class="footer">
 	<div class="footer_agile_inner_info_w3l">
-		<div class="col-md-3 footer-left">
-			<h2><a href="index.html"><span>E</span>lite Shoppy </a></h2>
-			<p>Lorem ipsum quia dolor
-			sit amet, consectetur, adipisci velit, sed quia non 
-			numquam eius modi tempora.</p>
+
+		<div class="col-md-4 footer-left">
+			<h2><a href="index.html">DP Chinelos</a></h2>
+			<p>Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per.</p>
 			<ul class="social-nav model-3d-0 footer-social w3_agile_social two">
 				<li><a href="#" class="facebook">
 					  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
@@ -21,40 +20,34 @@
 					  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
 			</ul>
 		</div>
-		<div class="col-md-9 footer-right">
+
+		<div class="col-md-8 footer-right">
 			<div class="sign-grds">
-				<div class="col-md-4 sign-gd">
-					<h4>Our <span>Information</span> </h4>
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="mens.html">Men's Wear</a></li>
-						<li><a href="womens.html">Women's wear</a></li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="typography.html">Short Codes</a></li>
-						<li><a href="contact.html">Contact</a></li>
-					</ul>
-				</div>
 				
-				<div class="col-md-5 sign-gd-two">
-					<h4>Store <span>Information</span></h4>
+				
+				<div class="col-md-6 sign-gd-two">
+					<h4>Informações <span> de Contato</span></h4>
 					<div class="w3-address">
+
 						<div class="w3-address-grid">
 							<div class="w3-address-left">
 								<i class="fa fa-phone" aria-hidden="true"></i>
 							</div>
 							<div class="w3-address-right">
-								<h6>Phone Number</h6>
-								<p>+1 234 567 8901</p>
+								<h6>Telefone</h6>
+								<p>11 2020-2020</p>
 							</div>
 							<div class="clearfix"> </div>
 						</div>
+
+						
 						<div class="w3-address-grid">
 							<div class="w3-address-left">
 								<i class="fa fa-envelope" aria-hidden="true"></i>
 							</div>
 							<div class="w3-address-right">
-								<h6>Email Address</h6>
-								<p>Email :<a href="mailto:example@email.com"> mail@example.com</a></p>
+								<h6>Email</h6>
+								<p>Email :<a href="mailto:example@email.com"> contato@dpchinelos.com.br</a></p>
 							</div>
 							<div class="clearfix"> </div>
 						</div>
@@ -63,8 +56,8 @@
 								<i class="fa fa-map-marker" aria-hidden="true"></i>
 							</div>
 							<div class="w3-address-right">
-								<h6>Location</h6>
-								<p>Broome St, NY 10002,California, USA. 
+								<h6>Endereço</h6>
+								<p>Rua Harry Dannemberg, 000 - Vila Carmosina 
 								
 								</p>
 							</div>
@@ -72,7 +65,12 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-3 sign-gd flickr-post">
+
+				<div class="col-md-6 sign-gd">
+					<h4>Facebook<span></span> </h4>
+					<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FHavaianasBrasil%2F&tabs&width=340&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+				</div>
+				<!--<div class="col-md-3 sign-gd flickr-post">
 					<h4>Flickr <span>Posts</span></h4>
 					<ul>
 						<li><a href="single.html"><img src="images/t1.jpg" alt=" " class="img-responsive" /></a></li>
@@ -85,27 +83,19 @@
 						<li><a href="single.html"><img src="images/t2.jpg" alt=" " class="img-responsive" /></a></li>
 						<li><a href="single.html"><img src="images/t4.jpg" alt=" " class="img-responsive" /></a></li>
 					</ul>
-				</div>
+				</div>-->
 				<div class="clearfix"></div>
 			</div>
 		</div>
 		<div class="clearfix"></div>
-			<div class="agile_newsletter_footer">
-					<div class="col-sm-6 newsleft">
-				<h3>SIGN UP FOR NEWSLETTER !</h3>
-			</div>
-			<div class="col-sm-6 newsright">
 
-				<form action="#" method="post">
-					<input type="email" placeholder="Enter your email..." name="email" required="">
-					<input type="submit" value="Submit">
-				</form>
-				
+
+			<div class="">
+			<p class="copy-right">Todos os direitos reservados – Desenvolvido por <a href="#">Érick Firmo</a> – 2018</p>
 			</div>
 
-		<div class="clearfix"></div>
-	</div>
-		<p class="copy-right">&copy 2017 Elite shoppy. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+
+		
 	</div>
 </div>
 <!-- //footer -->

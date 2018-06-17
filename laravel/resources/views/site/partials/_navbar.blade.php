@@ -91,7 +91,7 @@
 									<li><a href="typography.html">Typography</a></li>
 								</ul>
 					</li>
-					<li class=" menu__item"><a class="menu__link" href="contact.html">Contact</a></li>
+					<li class=" menu__item"><a class="menu__link" href="contact.html">Contato</a></li>
 				  </ul>
 				</div>
 			  </div>
