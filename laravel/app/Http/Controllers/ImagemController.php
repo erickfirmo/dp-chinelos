@@ -77,7 +77,6 @@ class ImagemController extends Controller
 
     }
 
-
     public function destroy()
     {   
 

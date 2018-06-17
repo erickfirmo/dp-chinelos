@@ -21,7 +21,7 @@
 
           
           <div class="box box-danger">
-            <form id="product-save-form" action="{{ route('admin.produtos.update', $produto->id)}}" method="POST">
+            <form id="product-save-form" action="{{ route('admin.produtos.update', $produto->id)}}" method="POST" enctype="multipart/form-data">
             {{method_field('PUT')}}
 
               <div class="row">
@@ -62,7 +62,7 @@
 
                   <div class="form-group">
                       <label>Unidades</label>
-                      <input value="{{ $produto->unidades }}" name="quantidade" type="number" min="0" class="form-control" style="width: 100%;">
+                      <input value="{{ $produto->unidades }}" name="unidades" type="number" min="0" class="form-control" style="width: 100%;">
                   </div>
 
                   <div class="form-group">
@@ -79,25 +79,35 @@
                 </div>
 
                 <div class="col-md-4">
+
                   <div class="box-image-product">
-                    @foreach($imagens_do_produto as $imagem_do_produto)
-                      @foreach($imagens as $key => $imagem)
-                        @if($imagem->id == $imagem_do_produto)
-                        <img src='{{ asset("storage/images/{$imagem->url}") }}' alt='#' class="img-fluid box-main-image">
-                        @endif
-                      @endforeach
-                    @endforeach
-                
+                    <img src='{{ asset("storage/images/{$produto->imagem_principal}") }}' alt='#' class="img-fluid box-main-image" id="img1">
                   </div>
-                  
-                  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Adicionar imagem</button>
+                  <label>Imagem 1</label>
+                  <input id="imagem_principal" type="file" name="file1">&nbsp;
+
+                
+                  <div class="box-image-product">
+                    <img src='{{ asset("storage/images/{$produto->imagem_2}") }}' alt='#' class="img-fluid box-main-image" id="img2">
+                  </div>
+                  <label>Imagem 2</label>
+                  <input id="imagem_2" type="file" name="file2">&nbsp;
+
+                  <div class="box-image-product">
+                    <img src='{{ asset("storage/images/{$produto->imagem_3}") }}' alt='#' class="img-fluid box-main-image" id="img3">
+                  </div>
+                  <label>Imagem 3</label>
+                  <input id="imagem_3" type="file" name="file3">&nbsp;
+
+
                   
 
 
                   <!-- Modal -->
-                  <div class="modal fade" id="myModal" role="dialog">
+
+                  <!--<div class="modal fade" id="myModal" role="dialog">
                     <div class="modal-dialog model-box">
-                      <!-- Modal content-->
+                      Modal content
                       <div class="modal-content">
 
                         <div class="modal-header">
@@ -106,12 +116,23 @@
                           <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
 
-                        <form action="{{ route('admin.imagens.store') }}" method="POST" enctype="multipart/form-data">
+                        <form id="save-image-product-form" action="#" method="POST" enctype="multipart/form-data">
 
                           <div class="modal-body">
                             <div class="col-md-12">
                               <div class="row">
-                                <input type="file" name="file[]" multiple>&nbsp;
+                              
+
+                        <div class="col-md-4">
+                          <img style="height: 100px; width: auto;" src="{{ asset('vendor/adminlte/dist/img/noimage.jpeg') }}" alt="#" id="img">
+                        </div>
+                        <div class="col-md-8">
+                        <input id="upload-image" type="file" name="file[]" multiple>&nbsp;
+
+                        
+                        
+                        </div>
+                              
                               </div>
                               <br>
                             </div>
@@ -125,13 +146,13 @@
                                 @endforeach
                                 </select>
                               
-                              <!--<div class="row ">
+                              <div class="row ">
                                 @foreach($imagens as $imagem)
                                 <div class="col-md-2 col-sm-2 col-4 box-thumbnail">
                                   <img src='{{ asset("storage/images/{$imagem->url}") }}' alt='{{ $imagem->nome }}' class="img-fluid thumbnail-galery">
                                 </div>
                                 @endforeach
-                              </div>-->
+                              </div>
 
                             </div>
                           </div>
@@ -139,7 +160,7 @@
                           <div class="modal-footer">
                             <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                             
-                            <button type="submit" class="btn btn-success">Salvar Imagens</button>
+                            <button type="submit" class="btn btn-success save-image-product">Salvar Imagens</button>
                                 
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                           </div>
@@ -152,8 +173,7 @@
                         
                       </div> 
                     </div>
-                  </div>
-                  <!-- fim modal -->
+                  </div> -->
                   
                   
                   

@@ -12,8 +12,8 @@ table td, table th {
   table td button, table th button {
     margin-left: 5px; }
   table td img, table th img {
-    width: 30px;
-    height: auto; }
+    height: 30px;
+    width: auto; }
 
 .pointer {
   cursor: pointer; }
@@ -29,12 +29,9 @@ table td, table th {
   margin: 10px; }
 
 .box-main-image {
-  padding: 20px 30px;
-  box-shadow: 1px 1px 6px #969ba3;
-  border-radius: 0.25rem;
-  width: 94%;
   display: block;
-  margin: 32px auto 15px auto; }
+  margin: 15px auto 15px auto;
+  height: 80px; }
 
 .box-thumbnail {
   box-shadow: 1px 1px 6px #969ba3;
@@ -60,5 +57,38 @@ table td, table th {
 textarea {
   min-height: 200px; }
 
+.model-content {
+  width: 660px;
+  max-height: 500px; }
+
+.img-fluid {
+  margin: 0 auto;
+  display: block; }
+
+.box-image-product {
+  margin: 20px auto;
+  padding: 10px;
+  box-shadow: 1px 1px 6px #969ba3;
+  border-radius: 0.25rem;
+  height: 100px;
+  width: 100px; }
+
+.col-md-2.col-sm-2.col-4.box-thumbnail img {
+  max-height: 140px !important;
+  max-width: 140px !important; }
+
+ul.thumbnails.image_picker_selector li .thumbnail img {
+  opacity: 1;
+  max-height: 140px !important;
+  max-width: 140px !important;
+  margin: 0 auto;
+  display: block; }
+
+/*
+div.row.box-galery{
+  max-height: 340px;
+}*/
+.modal-content {
+  width: 580px; }
 
 /*# sourceMappingURL=style.css.map */

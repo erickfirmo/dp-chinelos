@@ -19,7 +19,7 @@
           <!-- /.card-header -->
           <div class="card-body">
 
-            <form action="{{ route('admin.produtos.store') }}" method="POST">
+            <form action="{{ route('admin.produtos.store') }}" method="POST" enctype="multipart/form-data">
               <div class="box box-danger">
                 <div class="row">
 
@@ -27,7 +27,7 @@
                     <div class="form-group">
                       <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                       <label>Nome do Produto</label>
-                      <input name="nome" type="text" class="form-control" style="width: 100%;">
+                      <input name="nome" type="text" class="form-control" style="width: 100%;" autofocus>
                     </div>
 
                     <div class="form-group">
@@ -68,48 +68,28 @@
 
                   <div class="col-md-4">
                     <!-- main image -->
+
                     <div class="box-image-product">
-                      <img src='{{ asset("storage/images/001557201806015b10903d483cb.jpeg") }}' alt='#' class="img-fluid box-main-image">
-    
-                      <div class="row">
-                        <div class="col-md-4">
-                          <img src='{{ asset("storage/images/001557201806015b10903d483cb.jpeg") }}' alt='#' class="img-fluid box-thumbnail">
-                        </div>
+                    <img src="{{ asset('vendor/adminlte/dist/img/noimage.jpeg') }}" alt='#' class="img-fluid box-main-image" id="img1">
+                  </div>
+                  <label>Imagem 1</label>
+                  <input id="imagem_principal" type="file" name="file1">&nbsp;
 
-                        <div class="col-md-4">
-                          <img src='{{ asset("storage/images/001557201806015b10903d483cb.jpeg") }}' alt='#' class="img-fluid box-thumbnail">
-                        </div>
+                
+                  <div class="box-image-product">
+                    <img src="{{ asset('vendor/adminlte/dist/img/noimage.jpeg') }}" alt='#' class="img-fluid box-main-image" id="img2">
+                  </div>
+                  <label>Imagem 2</label>
+                  <input id="imagem_2" type="file" name="file2">&nbsp;
 
-                        <div class="col-md-4">
-                          <img src='{{ asset("storage/images/001557201806015b10903d483cb.jpeg") }}' alt='#' class="img-fluid box-thumbnail">
-                        </div>
-                      </div>
-                    </div>
+                  <div class="box-image-product">
+                    <img src="{{ asset('vendor/adminlte/dist/img/noimage.jpeg') }}" alt='#' class="img-fluid box-main-image" id="img3">
+                  </div>
+                  <label>Imagem 3</label>
+                  <input id="imagem_3" type="file" name="file3">&nbsp;
 
                     <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Adicionar imagem</button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="myModal" role="dialog">
-
-                      <div class="modal-dialog">
-                        <!-- Modal content-->
-                        <div class="modal-content">
-
-                          <div class="modal-header">
-                            <h4 class="modal-title">Imagens do Produto</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          </div>
-
-                          <div class="modal-body">
-                            <input type="file" name="file[]" id="#" multiple>
-                          </div>
-
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-success" data-dismiss="modal">Adicionar</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                          </div>
-                        </div> 
-                      </div>
-                    </div>
+                    
                   </div>
                 </div>
                 

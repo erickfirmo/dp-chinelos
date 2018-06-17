@@ -52,40 +52,10 @@ $(document).ready(function(){
 });
 
 
-function newImageProduct()
-{
-  var new_image_product = document.createElement('img');
-  new_image_product.src = '#';
-  new_image_product.alt = 'nova imagem do produto';
-
-
-
-}
-
-
 $(document).ready(function(){
-  $('#upload-image-product').on('click', function() {
-    swal({
-      title: "Escolher imagem",
-      text: "Todas os produtos com esta categoria serão alterados.",
-      icon: "warning",
-      buttons: true,
-    })
-    .then((willDelete) => {
-      if (willDelete) {
-        $('#').submit();
-        
-      }
-    });
-
-
-
-
-  }); 
+  $('#save-image-product-form').submit();
+      
 });
-
-
-
 
 /*$(window).ready(function(){
 
@@ -103,3 +73,14 @@ $(document).ready(function(){
       });
   });
 });*/
+
+$(document).ready(function(){
+
+  $('#save-image-product').on('click', function() {
+
+    $('#image-product-form').submit();
+
+  });
+
+ });
+ 

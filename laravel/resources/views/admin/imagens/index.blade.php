@@ -10,6 +10,8 @@
     <div class="col-12">
     @include('admin.partials._alert')
       <div id="card" class="card">
+        
+
         <div class="card-header">
           <h3 class="card-title">Imagens</h3>
         </div>
@@ -46,26 +48,23 @@
                     <div class="col-md-12">
                       <div class="row">
                       
-                      <input type="file" name="file[]" multiple>&nbsp;
-                        
-                      </div>
-                      <br>
-                    </div>
-
-                  
-                    
-                  </div>
-                  <div class="modal-footer">
-                          <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-                          
-
-
-                          <button type="submit" class="btn btn-success">Salvar Imagens</button>
-
+                          <input id="upload-image" type="file" name="file[]" multiple>&nbsp;
                       
-                        
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                      </div>
                     </div>
+                  </div>
+
+                  <div class="modal-footer">
+                    <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+
+
+
+                    <button type="submit" class="btn btn-success">Salvar Imagens</button>
+
+
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                  </div>
                 
                 </form>
 

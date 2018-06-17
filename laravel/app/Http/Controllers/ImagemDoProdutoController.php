@@ -2,14 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Imagem;
+
 use Illuminate\Http\Request;
+
 
 class ImagemDoProdutoController extends Controller
 {
-    public function store(){
-        if ($request->hasFile('file')) { 
 
-            $i = 0;
+    public function index()
+    {
+
+    }
+
+    public function store(Request $request)
+    {
+        // return $request->all();
+
+        $this->validate($request, [
+            'file' => 'required',
+        ]);
+
+        // Verifica se informou o arquivo e se é válido
+        if ($request->hasFile('file')) { 
 
             foreach ($request->file as $file)
             {
@@ -22,16 +37,38 @@ class ImagemDoProdutoController extends Controller
                 
                 // Faz o upload
                 $upload = $file->storeAs('images', $fileName);
-
-                $imageSource[$i] = $fileName;
-
-                $i++;
+    
+                $imagem = new Imagem;
+                $imagem->nome = $imageName;
+                $imagem->url = $fileName;
+                $imagem->save();
             }
 
-            print_r($imageSource);
-
-            // !! json response here !! //
-            
+            return redirect()->route('admin.imagens.index')
+                ->with('success', "Upload realizado com sucesso !");
         }
     }
+
+    
+
+    public function show()
+    {
+
+    }
+
+    public function edit()
+    {
+
+    }
+
+    public function update()
+    {
+
+    }
+
+    public function destroy()
+    {   
+
+    }
+
 }

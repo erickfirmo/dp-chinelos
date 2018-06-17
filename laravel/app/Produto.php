@@ -13,6 +13,9 @@ class Produto extends Model
         'descricao',
         'unidades',
         'preco',
+        'imagem_principal',
+        'imagem_2',
+        'imagem_3',
         'categoria_id',
         'status_id'
     ];
