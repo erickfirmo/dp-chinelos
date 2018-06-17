@@ -1,26 +1,10 @@
-<!-- //banner -->
-<div class="banner_bottom_agile_info">
-    <div class="container">
-        <div class="banner_bottom_agile_info_inner_w3ls">
-	           <div class="col-md-6 wthree_banner_bottom_grid_three_left1 grid">
-					<figure class="effect-roxy">
-						<img src="images/bottom1.jpg" alt=" " class="img-responsive" />
-						<figcaption>
-							<h3><span>F</span>all Ahead</h3>
-							<p>New Arrivals</p>
-						</figcaption>			
-					</figure>
-				</div>
-				 <div class="col-md-6 wthree_banner_bottom_grid_three_left1 grid">
-					<figure class="effect-roxy">
-						<img src="images/bottom2.jpg" alt=" " class="img-responsive" />
-						<figcaption>
-							<h3><span>F</span>all Ahead</h3>
-							<p>New Arrivals</p>
-						</figcaption>			
-					</figure>
-				</div>
-				<div class="clearfix"></div>
-	    </div> 
-	 </div> 
-</div>
+<div class="agile_last_double_sectionw3ls">
+            <div class="col-md-6 multi-gd-img multi-gd-text ">
+					<a href="womens.html"><img src="{{ asset('vendor/site/assets/images/bot_1.jpg') }}" alt=" "><h4>Flat <span>50%</span> offer</h4></a>
+					
+			</div>
+			 <div class="col-md-6 multi-gd-img multi-gd-text ">
+					<a href="womens.html"><img src="{{ asset('vendor/site/assets/images/bot_2.jpg') }}" alt=" "><h4>Flat <span>50%</span> offer</h4></a>
+			</div>
+			<div class="clearfix"></div>
+	   </div>
