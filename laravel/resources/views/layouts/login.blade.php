@@ -7,7 +7,7 @@
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>DP Chinelos | Admin</title>
+  <title>DP Chinelos | Login</title>
 
   <link rel="stylesheet" href="{{ asset('vendor/adminlte/libs/bootstrap/dist/css/bootstrap.css') }}">
 

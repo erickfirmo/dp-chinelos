@@ -1,20 +1,22 @@
 <?php
 
-
 Route::get('/', function () {
     return view('site.home.index');
-
 });
 
-Route::get('/login', 'Auth/LoginController@showLoginForm')->name('login');
+
 
 Auth::routes();
 
-Route::prefix('admin')->name('admin.')->group(function () {
+
+
+
+Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
+    Auth::routes();
+    Route::middleware('auth:admin')->group(function () {
+        Route::get('/', 'HomeController@index')->name('home');
         Route::resource('produtos', 'ProdutoController');
         Route::resource('imagens', 'ImagemController');
-        Route::resource('categorias', 'CategoriaController');      
+        Route::resource('categorias', 'CategoriaController');  
+    });    
 });
-
-
-
