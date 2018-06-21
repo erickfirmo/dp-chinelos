@@ -4,7 +4,7 @@
     <a href="#" class="brand-link">
       <img src="{{ asset('images/logo.jpeg') }}" alt="AdminLTE Logo" class="img-circle elevation-4"
            style="opacity: 1; width: 120px; height: auto; margin: 0 auto; display:block;"><br>
-      <span class="brand-text font-weight-light">Painel Adminstrativo da Loja</span>
+      <span class="brand-text centralize font-weight-light">&nbsp;&nbsp;Seja Bem Vindo, Hallo </span>
     </a>
     
 
@@ -17,29 +17,38 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link active">
-              <i class="fa fa-shopping-cart"></i>&nbsp;
               <p>Loja</p>
             </a>
             <ul class="nav nav-treeview">
+
+              <li class="nav-item">
+                <a href="{{ url('admin/home') }}" class="nav-link">
+                <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Home</p>
+                </a>
+              </li>
               <li class="nav-item">
                 <a href="{{ url('admin/produtos') }}" class="nav-link">
+                <i class="fa fa-circle-o nav-icon"></i>
                   <p>Produtos</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ url('admin/categorias') }}" class="nav-link">
+                <i class="fa fa-circle-o nav-icon"></i>
                   <p>Categorias</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
+                <i class="fa fa-circle-o nav-icon"></i>
                   <p>Pedidos</p>
                 </a>
               </li>
             </ul>
           </li>
 
-          <li class="nav-item has-treeview menu-open">
+          <!--<li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link active">
             <i class="fa fa-image"></i>
               <p>Galeria</p>
@@ -53,17 +62,16 @@
                 </a>
               </li>
             </ul>
-          </li>
+          </li>-->
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link active">
-              <i class="fa fa-envelope nav-icon"></i>
               <p>Contato</p>
             </a>
             <ul class="nav nav-treeview">
               
               <li class="nav-item">
                 <a href="{{ Request::route('admin.mensagens') }}" class="nav-link">
-                  
+                <i class="fa fa-circle-o nav-icon"></i>
                   <p>Mensagens</p>
                 </a>
               </li>

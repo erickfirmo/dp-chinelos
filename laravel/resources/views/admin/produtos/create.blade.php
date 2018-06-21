@@ -68,27 +68,29 @@
 
                   <div class="col-md-4">
                     <!-- main image -->
-
-                    <div class="box-image-product">
+                  
+                  <label>Imagem Principal</label>
+                  <div class="box-image-product">
                     <img src="{{ asset('vendor/adminlte/dist/img/noimage.jpeg') }}" alt='#' class="img-fluid box-main-image" id="img1">
                   </div>
-                  <label>Imagem 1</label>
                   <input id="imagem_principal" type="file" name="file1">&nbsp;
 
-                
+                  <br><hr>
+
+                  <label>Imagem 2</label>
                   <div class="box-image-product">
                     <img src="{{ asset('vendor/adminlte/dist/img/noimage.jpeg') }}" alt='#' class="img-fluid box-main-image" id="img2">
                   </div>
-                  <label>Imagem 2</label>
                   <input id="imagem_2" type="file" name="file2">&nbsp;
 
+                  <br><hr>
+
+                  <label>Imagem 3</label>
                   <div class="box-image-product">
                     <img src="{{ asset('vendor/adminlte/dist/img/noimage.jpeg') }}" alt='#' class="img-fluid box-main-image" id="img3">
                   </div>
-                  <label>Imagem 3</label>
                   <input id="imagem_3" type="file" name="file3">&nbsp;
 
-                    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Adicionar imagem</button>
                     
                   </div>
                 </div>

@@ -6,11 +6,10 @@
 			<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">contato@dpchinelos.com.br</a></li>
 			
 			@if (Auth::guest())
-				<li> <a href="{{ route('login') }}"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Entrar </a></li>
-				<li> <a href="{{ route('register') }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Cadastre-se </a></li>
-
-				<!-- <li> <a href="{{ route('login') }}" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Entrar </a></li>
-				<li> <a href="{{ route('register') }}" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Cadastre-se </a></li> -->
+				<!--<li> <a href="{{ route('login') }}"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Entrar </a></li>
+				<li> <a href="{{ route('register') }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Cadastre-se </a></li> -->
+ 				<li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Entrar </a></li>
+				<li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Cadastre-se </a></li> 
 			@else
 				<li>
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

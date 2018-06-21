@@ -9,17 +9,18 @@
 						<div class="modal-body modal-body-sub_agile">
 						<div class="col-md-8 modal_body_left modal_body_left1">
 						<h3 class="agileinfo_sign">Entre <span>Agora</span></h3>
-									<form action="#" method="post">
-							<div class="styled-input agile-styled-input-top">
-								<input type="text" name="Name" required="">
-								<label>Nome</label>
-								<span></span>
-							</div>
+						<form method="post" action="{{ route('login') }}">
+						{{ csrf_field() }}
 							<div class="styled-input">
-								<input type="email" name="Email" required=""> 
+								<input id="email" type="email" name="email" value="{{ old('email') }}" required=""> 
 								<label>Email</label>
 								<span></span>
-							</div> 
+							</div>
+							<div class="styled-input agile-styled-input-top">
+								<input id="password" type="password" name="password" required="">
+								<label>Senha</label>
+								<span></span>
+							</div>
 							<input type="submit" value="Entrar">
 						</form>
 						  <ul class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third">

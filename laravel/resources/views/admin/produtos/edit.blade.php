@@ -79,24 +79,25 @@
                 </div>
 
                 <div class="col-md-4">
-
+                  
+                  <label>Imagem Principal</label>
                   <div class="box-image-product">
                     <img src='{{ asset("storage/images/{$produto->imagem_principal}") }}' alt='#' class="img-fluid box-main-image" id="img1">
                   </div>
-                  <label>Imagem 1</label>
                   <input id="imagem_principal" type="file" name="file1">&nbsp;
+                  <br><hr>
 
                 
+                  <label>Imagem 2</label>
                   <div class="box-image-product">
                     <img src='{{ asset("storage/images/{$produto->imagem_2}") }}' alt='#' class="img-fluid box-main-image" id="img2">
                   </div>
-                  <label>Imagem 2</label>
                   <input id="imagem_2" type="file" name="file2">&nbsp;
-
+                  <br><hr>
+                  <label>Imagem 3</label>
                   <div class="box-image-product">
                     <img src='{{ asset("storage/images/{$produto->imagem_3}") }}' alt='#' class="img-fluid box-main-image" id="img3">
                   </div>
-                  <label>Imagem 3</label>
                   <input id="imagem_3" type="file" name="file3">&nbsp;
 
 
