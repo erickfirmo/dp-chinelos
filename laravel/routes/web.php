@@ -1,15 +1,13 @@
 <?php
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('site.home.index');
-});
+});*/
 
+Route::get('/', 'SiteController@index');
 
 
 Auth::routes();
-
-
-
 
 Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     Auth::routes();

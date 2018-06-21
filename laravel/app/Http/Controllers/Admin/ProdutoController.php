@@ -51,9 +51,9 @@ class ProdutoController extends Controller
             'file1' => 'required',
         ]);
 
-        $fileName1 = 'noimage.jpeg';
-        $fileName2 = 'noimage.jpeg';
-        $fileName3 = 'noimage.jpeg';
+        $fileName1 = '';
+        $fileName2 = '';
+        $fileName3 = '';
 
         
 

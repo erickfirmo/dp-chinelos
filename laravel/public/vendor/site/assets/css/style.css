@@ -1464,10 +1464,12 @@ button.w3view-cart {
 .men-pro-item {
     position: relative;
     box-shadow: 0px 0px 15px 0px #D6D6D6;
-    padding-bottom: 20px;
+	padding-bottom: 20px;
+	height: 400px;
 }
 .men-thumb-item {
-    position: relative;
+	position: relative;
+	height: 250px;
 }
 .item-info-product {
     text-align: center;
@@ -1483,7 +1485,9 @@ button.w3view-cart {
     opacity: 0;
     z-index: 9;
     visibility: hidden;
-    transition: all 0.5s ease-out 0s;
+	transition: all 0.5s ease-out 0s;
+	height: 250px;
+
 }
 .men-thumb-item .pro-image-front {
     opacity: 1;
@@ -1515,7 +1519,7 @@ button.w3view-cart {
     top: 0;
     transition: all 0.5s ease-out 0s;
     visibility: hidden;
-    z-index: 10;
+	z-index: 10;
 }
 .product-new-top {
     background:#e91e1e none repeat scroll 0 0;

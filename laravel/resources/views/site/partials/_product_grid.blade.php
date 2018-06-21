@@ -5,10 +5,9 @@
 		    <h3 class="wthree_text_info">N<span>ovidades</span></h3>		
 				<div id="horizontalTab">
 						<ul class="resp-tabs-list">
-							<li> Categoria A</li>
-							<li> Categoria B</li>
-							<li> Categoria C</li>
-							<li> Categoria D</li>
+							@foreach($categorias as $categoria)
+								<li> {{ $categoria->nome }}</li>
+							@endforeach
 						</ul>
 					<div class="resp-tabs-container">
 					<!--/tab_one-->

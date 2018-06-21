@@ -90,13 +90,24 @@
                 
                   <label>Imagem 2</label>
                   <div class="box-image-product">
+                    @if($produto->imagem_2 == null)
+                    <img src="{{ asset('vendor/adminlte/dist/img/noimage.jpeg') }}" alt='#' class="img-fluid box-main-image" id="img2">
+
+                    @else
+
                     <img src='{{ asset("storage/images/{$produto->imagem_2}") }}' alt='#' class="img-fluid box-main-image" id="img2">
+
+                    @endif
                   </div>
                   <input id="imagem_2" type="file" name="file2">&nbsp;
                   <br><hr>
                   <label>Imagem 3</label>
                   <div class="box-image-product">
+                  @if($produto->imagem_3 == null)
+                    <img src="{{ asset('vendor/adminlte/dist/img/noimage.jpeg') }}" alt='#' class="img-fluid box-main-image" id="img3">
+                  @else
                     <img src='{{ asset("storage/images/{$produto->imagem_3}") }}' alt='#' class="img-fluid box-main-image" id="img3">
+                  @endif
                   </div>
                   <input id="imagem_3" type="file" name="file3">&nbsp;
 
