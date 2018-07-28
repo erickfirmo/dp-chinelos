@@ -1149,10 +1149,11 @@ img {
   border-radius: 50%;
 }
 hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 0px;
+  margin-bottom: 30px;
   border: 0;
-  border-top: 1px solid #eee;
+  border-top: 4px solid #07bc4c;
+  width: 185px;
 }
 .sr-only {
   position: absolute;

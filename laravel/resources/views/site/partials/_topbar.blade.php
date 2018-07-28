@@ -1,6 +1,6 @@
 <!-- topbar -->
 <div class="header" id="home">
-	<div class="container">
+	<div class="container-fluid">
 		<ul>
 			<li><i class="fa fa-phone" aria-hidden="true"></i> Ligue : 11 2020-2020</li>
 			<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">contato@dpchinelos.com.br</a></li>

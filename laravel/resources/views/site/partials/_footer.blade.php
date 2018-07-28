@@ -91,7 +91,7 @@
 
 
 			<div class="">
-			<p class="copy-right">Todos os direitos reservados – Desenvolvido por <a href="#">Érick Firmo</a> – 2018</p>
+			<p class="copy-right">&copy; Todos os direitos reservados – Desenvolvido por <a href="#">Érick Firmo</a> – 2018</p>
 			</div>
 
 

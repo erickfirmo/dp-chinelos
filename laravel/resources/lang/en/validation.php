@@ -102,12 +102,16 @@ return [
     'custom' => [
 
         'nome' => [
-            'required' => 'O nome do produto é obrigatorio !',
-            'unique' => 'Este produto já existe !',
+            'required' => 'O campo nome do produto é obrigatório !',
+            'unique' => 'Este produto já existe. Tente adicionar unidades ao produto.',
         ],
 
         'preco' => [
             'required' => 'O preço do produto é obrigatorio !',
+        ],
+
+        'unidades' => [
+            'required' => 'Informe as unidades do produto !',
         ],
 
     ],

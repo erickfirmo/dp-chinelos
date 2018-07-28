@@ -8,25 +8,46 @@
 					</div>
 						<div class="modal-body modal-body-sub_agile">
 						<div class="col-md-8 modal_body_left modal_body_left1">
-						<h3 class="agileinfo_sign">Casdastre-se <span>Agora</span></h3>
-						 <form action="#" method="post">
-							<div class="styled-input agile-styled-input-top">
-								<input type="text" name="Name" required="">
+						<h3 class="agileinfo_sign">Cadastre-se <span>Agora</span></h3>
+						 <form action="{{ route('register') }}" method="post">
+						 	{{ csrf_field() }}
+							<div class="styled-input">
+								<input id="name" type="text"  name="name" value="{{ old('name') }}" required autofocus>
 								<label>Nome</label>
 								<span></span>
 							</div>
 							<div class="styled-input">
-								<input type="email" name="Email" required=""> 
+								<input id="lastname" type="text"  name="lastname" value="{{ old('lastname') }}" required>
+								<label>Sobrenome</label>
+								<span></span>
+							</div>
+							<div class="styled-input-date">
+								<label>Nascimento</label><br>
+								<input id="nascimento" type="date"  name="nascimento" value="{{ old('nascimento') }}" required>
+								<span></span>
+							</div>
+							<div class="styled-input">
+								<input id="telefone" type="text"  name="telefone" value="{{ old('telefone') }}" required>
+								<label>Telefone</label>
+								<span></span>
+							</div>
+							<div class="styled-input">
+								<input id="celular" type="text"  name="celular" value="{{ old('celular') }}" required>
+								<label>Celular</label>
+								<span></span>
+							</div>
+							<div class="styled-input">
+							<input id="email" type="email" name="email" value="{{ old('email') }}" required>
 								<label>Email</label>
 								<span></span>
 							</div> 
 							<div class="styled-input">
-								<input type="password" name="password" required=""> 
+								<input id="password" type="password" name="password" required>
 								<label>Senha</label>
 								<span></span>
 							</div> 
 							<div class="styled-input">
-								<input type="password" name="Confirm Password" required=""> 
+								<input id="password-confirm" type="password" name="password_confirmation" required>
 								<label>Confirmar Senha</label>
 								<span></span>
 							</div> 

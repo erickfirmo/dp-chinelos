@@ -12,45 +12,45 @@
 			<div class="item active"> 
 				<div class="container">
 					<div class="carousel-caption">
-						<h3>The Biggest <span>Sale</span></h3>
-						<p>Special for today</p>
-						<a class="hvr-outline-out button2" href="mens.html">Shop Now </a>
+						<h3>DP <span>Chinelos</span></h3>
+						<p>Chinelos Personalizados</p>
+						<a class="hvr-outline-out button2" href="{{ url('/contato') }}">Fazer Orçamento </a>
 					</div>
 				</div>
 			</div>
 			<div class="item item2"> 
 				<div class="container">
 					<div class="carousel-caption">
-						<h3>Summer <span>Collection</span></h3>
-						<p>New Arrivals On Sale</p>
-						<a class="hvr-outline-out button2" href="mens.html">Shop Now </a>
+						<h3>DP <span>Chinelos</span></h3>
+						<p>Chinelos Personalizados</p>
+						<a class="hvr-outline-out button2" href="{{ url('/contato') }}">Fazer Orçamento </a>
 					</div>
 				</div>
 			</div>
 			<div class="item item3"> 
 				<div class="container">
 					<div class="carousel-caption">
-						<h3>The Biggest <span>Sale</span></h3>
-						<p>Special for today</p>
-						<a class="hvr-outline-out button2" href="mens.html">Shop Now </a>
+						<h3>DP <span>Chinelos</span></h3>
+						<p>Chinelos Personalizados</p>
+						<a class="hvr-outline-out button2" href="{{ url('/contato') }} ">Fazer Orçamento </a>
 					</div>
 				</div>
 			</div>
 			<div class="item item4"> 
 				<div class="container">
 					<div class="carousel-caption">
-						<h3>Summer <span>Collection</span></h3>
-						<p>New Arrivals On Sale</p>
-						<a class="hvr-outline-out button2" href="mens.html">Shop Now </a>
+						<h3>DP <span>Chinelos</span></h3>
+						<p>Chinelos Personalizados</p>
+						<a class="hvr-outline-out button2" href="{{ url('/contato') }}">Fazer Orçamento </a>
 					</div>
 				</div>
 			</div>
 			<div class="item item5"> 
 				<div class="container">
 					<div class="carousel-caption">
-						<h3>The Biggest <span>Sale</span></h3>
-						<p>Special for today</p>
-						<a class="hvr-outline-out button2" href="mens.html">Shop Now </a>
+						<h3>DP <span>Chinelos</span></h3>
+						<p>Chinelos Personalizados</p>
+						<a class="hvr-outline-out button2" href="{{ url('/contato') }}">Fazer Orçamento </a>
 					</div>
 				</div>
 			</div> 

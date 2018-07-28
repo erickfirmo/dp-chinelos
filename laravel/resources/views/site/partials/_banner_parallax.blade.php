@@ -1,9 +1,9 @@
 <!-- /we-offer -->
 <div class="sale-w3ls">
 	<div class="container">
-		<h6>We Offer Flat <span>40%</span> Discount</h6>
+		<h6>CHINELOS PERSONALIZADOS</h6>
 
-		<a class="hvr-outline-out button2" href="single.html">Shop Now </a>
+		<a class="hvr-outline-out button2" href="#">Compre Agora</a>
 	</div>
 </div>
 <!-- //we-offer -->

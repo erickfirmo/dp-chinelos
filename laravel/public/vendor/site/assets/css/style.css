@@ -54,10 +54,9 @@ label{
     width: 24.5%;
     text-align: center;
     color: #fff;
-    font-size: 13px;
+    font-size: 12px;
     padding: 7px 0;
     letter-spacing: 1px;
-    border-right: 1px solid #464444;
 }
 .header ul li a {
      color: #fff;
@@ -76,7 +75,7 @@ label{
 }
 .header-bot_inner_wthreeinfo_header_mid {
     margin: 0 auto;
-    width: 90%;
+    width: 100%;
 }
 /*-- //header --*/
 .social-nav {
@@ -221,7 +220,12 @@ li.share {
 }
 /*--social-icons--*/
 .logo_agile {
-    text-align: center;
+	text-align: center;
+	height: 118px;
+	
+	z-index: 146;
+    padding-left: 70px;
+	background-color: #FFF;
 }
 .logo_agile span {
     background: #000;
@@ -252,7 +256,9 @@ i.fa.fa-shopping-bag.top_logo_agile_bag {
     width: 73%;
 }
 .header-bot {
-    padding: 25px 0;
+	padding: 0px 0;
+	background-color: #07bc4c;
+	height: 118px;
 }
 .header-middle form input[type="search"] {
     outline: none;
@@ -371,7 +377,8 @@ i.fa.fa-shopping-bag.top_logo_agile_bag {
     margin: 0 15px 0 0;
 }
 .navbar-nav > li > a {
-    padding: 26px 16px;
+	padding: 36px 16px 10px 16px;
+	text-transform: uppercase;
 }
 .navbar-collapse {
     padding-right: 0;
@@ -392,6 +399,7 @@ i.fa.fa-shopping-bag.top_logo_agile_bag {
 	flex-wrap: wrap;
 	margin: 0;
 	padding: 0;
+	margin-top: 18px;
 	list-style: none;
 }
 
@@ -485,9 +493,9 @@ i.fa.fa-shopping-bag.top_logo_agile_bag {
 	background: #07bc4c;
 }
 a.menu__link {
-    color: #fff !important;
-    font-size: 15px;
-    font-weight: normal;
+    color: #FFF !important;
+    font-size: 14px;
+    font-weight: 600;
 letter-spacing: 2px;
 }
 .agile_short_dropdown {
@@ -555,39 +563,39 @@ a.simpleCart_empty {
 }
 /*-- banner --*/  
 .carousel .item{    
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat;
-	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat;
-	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat; 
-	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat;
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
+	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
+	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat; 
+	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
 	background-size:cover;	 
 }
 .carousel .item.item2{   
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat;
-	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat;
-	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat; 
-	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat;
-	background-size:cover;	
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
+    background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
+    background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat; 
+    background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
+    background-size:cover;	
 }   
 .carousel .item.item3{   
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner3.jpg) no-repeat;
-	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner3.jpg) no-repeat;
-	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner3.jpg) no-repeat; 
-	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner3.jpg) no-repeat;
-	background-size:cover;	 
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
+    background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
+    background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat; 
+    background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
+    background-size:cover;	 
 }   
 .carousel .item.item4{        
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner4.jpg) no-repeat;
-	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner4.jpg) no-repeat;
-	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner4.jpg) no-repeat;
-	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner4.jpg) no-repeat;
-	background-size:cover; 
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
+    background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
+    background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat; 
+    background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
+    background-size:cover; 
 }  
 .carousel .item.item5{    
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner5.jpg) no-repeat;
-	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner5.jpg) no-repeat;
-	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner5.jpg) no-repeat;
-	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner5.jpg) no-repeat;
-	background-size:cover; 
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
+    background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
+    background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat; 
+    background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
+    background-size:cover; 
 }  
 
 .carousel-caption h2, .carousel-caption h3 {
@@ -796,6 +804,16 @@ figure.effect-roxy:hover p,.agileinfo_banner_bottom_grid_three_left:hover figcap
 }
 ul.social-nav.model-3d-0.footer-social.w3_agile_social.two {
     float: none;
+}
+
+
+.triangle-topleft {
+	width: 0;
+	height: 0;
+	border-top: 118px solid rgb(255, 255, 255);
+	border-right: 90px solid transparent;
+	display: inline-block;
+    right: 4px;
 }
 .footer-left p{
     color: #737070;
@@ -1195,7 +1213,7 @@ h3.wthree_text_info {
     text-align: center;
     letter-spacing: 2px;
     color: #000;
-    margin-bottom: 1em;
+    margin-bottom: 15px;
     text-transform: uppercase;
 }
 h3.wthree_text_info span{
@@ -1465,7 +1483,7 @@ button.w3view-cart {
     position: relative;
     box-shadow: 0px 0px 15px 0px #D6D6D6;
 	padding-bottom: 20px;
-	height: 400px;
+	height: 420px;
 }
 .men-thumb-item {
 	position: relative;
@@ -2306,6 +2324,20 @@ h3.agileits-icons-title {
 	h3.icon-subheading {
 		font-size: 19px;
 	}
+
+    .logo_agile {
+    width: 30%;
+        z-index: 146;
+}
+
+.triangle-topleft {
+    z-index: 141;
+    /* right: 2px; */
+    position: relative;
+    width: 20%;
+    left: 29%;
+    top: -118px;
+}
 }
 @media (max-width: 414px){
 	h3.agileits-icons-title {
@@ -2317,6 +2349,7 @@ h3.agileits-icons-title {
 	.bs-glyphicons li {
 		width: 31.33%;
 	}
+
 }
 @media (max-width: 384px){
 	.icon-box {
@@ -2559,6 +2592,8 @@ h2.typoh2{
 	.grid_3.grid_4.w3layouts {
 		margin-top: 0;
 	}
+
+
 }
 @media (max-width: 320px){
 	.grid_4 {
@@ -3202,7 +3237,7 @@ color: #000;
     margin: 0 0 12px;
     letter-spacing: 1px;
 }
-.color-quality-right select {
+.color-quality-right select, .color-quality-right input {
     padding: 5px 21px;
 }
 .colr {
@@ -3522,9 +3557,12 @@ p.w3ls_para {
 	}
 }
 @media (max-width: 1080px){
+	a.menu__link {
+		font-size: 12px;
+	}
 	.header-bot_inner_wthreeinfo_header_mid {
 		margin: 0 auto;
-		width: 95%;
+		width: 100%;
 	}
 	.box_1 h3 {
 		font-size: 15px;
@@ -3672,7 +3710,7 @@ p.w3ls_para {
 		font-size: 1.4em;
 	}
 	.navbar-nav > li {
-		margin: 0 27px 0 0;
+		margin: 0 14px 0 0;
 	}
 	.top_nav_right {
 		float: right;
@@ -3715,7 +3753,7 @@ p.w3ls_para {
 }
 @media (max-width: 1024px){
 	.header ul li,.section_room select,.header-middle input[type="search"] {
-		font-size: 14px;
+		font-size: 12px;
 	}
 	.header-right ul {
 		margin-top: 15px;
@@ -3731,7 +3769,8 @@ p.w3ls_para {
 		min-height: 219px;
 	}
 	.navbar-nav > li > a {
-		padding: 27px 13px;
+		padding: 36px 20px 10px 10px;
+		text-transform: uppercase;
 	}
 	.section_room select {
 		background-size: 6% !important;
@@ -4030,10 +4069,11 @@ p.w3ls_para {
 		float: left;
 	}
 	.navbar-nav > li {
-		margin: 0 3px 0 0;
+		margin: 0 0px 0 0;
 	}
 	.navbar-nav > li > a {
-		padding: 21px 9px;
+		padding: 36px 20px 10px 10px;
+		text-transform: uppercase;
 	}
 	.wthree_banner_bottom_grid_three_left1.grid figure.effect-roxy h3 {
 		padding: 0.5em 0 .5em;
@@ -4071,9 +4111,12 @@ p.w3ls_para {
 	
 	.logo_agile {
 		text-align: left;
-		margin-top: 1em;
 		padding: 0;
 		float: left;
+		
+		z-index: 146;
+		padding-left: 50px;
+		padding-right: 5px;
 	}
 	.social-nav {
 		padding: 0;
@@ -4090,7 +4133,7 @@ p.w3ls_para {
 		margin-bottom: 2em;
 	}
 	.header ul li, .section_room select, .header-middle input[type="search"] {
-		font-size: 13px;
+		font-size: 12px;
 	}
 	.header-middle form input[type="submit"] {
 	    background: url(../images/search.png) no-repeat 19px 0px #07bc4c;
@@ -4100,7 +4143,9 @@ p.w3ls_para {
 		width: 88%;
 	}
 	.header-bot {
-		padding: 15px 0 30px 0;
+		padding: 0px 0 0px 0;
+		background-color: #07bc4c;
+		height: 118px;
 	}
 	.carousel-caption {
 		min-height: 400px!important;
@@ -4151,6 +4196,11 @@ p.w3ls_para {
 		min-width: 440px;
 		padding: 20px 20px;
 	}
+	.navbar-nav > li > a {
+		padding: 36px 8px 10px 10px;
+		font-size: 11px;
+	}
+
 }
 @media (max-width: 800px){
 	.pignose-layerslider .slide-visual .script-wrap {
@@ -4190,6 +4240,7 @@ p.w3ls_para {
 	.resp-tab-item {
 		margin: 0 13px;
 		padding: 0 11px 14px 11px;
+        font-size: 12px;
 	}
 	.sign-gd h4, .sign-gd-two h4 {
 		font-size: 19px;
@@ -4200,6 +4251,9 @@ p.w3ls_para {
 	.header-middle form input[type="submit"] {
 		background: url(../images/search.png) no-repeat 8px 0px #07bc4c;
 		width: 9%;
+	}
+	.menu__list {
+		margin-top: 18px;
 	}
 }
 @media (max-width: 768px){
@@ -4249,6 +4303,7 @@ p.w3ls_para {
 	}
 	.navbar-nav > li > a {
 		padding: 21px 9px;
+		text-transform: uppercase;
 	}
 	.dropdown-menu.columns-3 {
 		min-width: 411px;
@@ -4256,11 +4311,12 @@ p.w3ls_para {
 	}	
 }
 @media (max-width: 767px){
+
 	.navbar-toggle {
 		position: relative;
-		float: left;
+		float: right;
 		padding: 12px 10px;
-		margin-top: 9px;
+		margin-top: 38px;
 		margin-right: 0px;
 		margin-bottom: 8px;
 		background-color: transparent;
@@ -4278,8 +4334,15 @@ p.w3ls_para {
 		margin-top: 0em;
 	}
 	.header-bot {
-		padding: 17px 0;
+		padding: 0px 0;
+		background-color: #07bc4c;
+		height: 118px;
 	}
+
+	.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle {
+		background-color: #07bc4c;
+	}
+
 	.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
 		background-color: #07bc4c;
 	}
@@ -4296,7 +4359,7 @@ p.w3ls_para {
 	}	
 	.header-bot_inner_wthreeinfo_header_mid {
 		margin: 0 auto;
-		width: 96%;
+		width: 100%;
 	}
 	ul.dropdown-menu.multi-column.columns-3 {
 		    border-top: 1px solid rgba(255, 255, 255, 0.09);
@@ -4305,6 +4368,7 @@ p.w3ls_para {
 	}
 	.navbar-default {
 		width: 77%;
+		float: right;
 	}
 	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
 		border: none;
@@ -4380,6 +4444,8 @@ p.w3ls_para {
 		color: #000;
 		border-bottom: 1px solid #999;
 	}
+	
+
 }
 @media (max-width: 667px){
 	.section_room select {
@@ -4607,13 +4673,23 @@ p.w3ls_para {
 	}
 	h3.wthree_text_info {
 		font-size: 2em;
-		margin-bottom: 0.8em;
+		margin-bottom: 12px;
 	}
 	#PPMiniCart form {
 		width: 484px !important;
 		padding: 10px 20px 40px !important;
 		max-height: 450px !important;
 	}
+
+    .nav-container {
+    float: right;
+    width: 100%;
+    background-color: #07bc4c;
+    position: absolute;
+    top: 94px;
+    z-index: 100;
+}
+
 }
 @media (max-width: 640px){
 	.pignose-layerslider .slide-visual .script-wrap .slide-controller a {
@@ -4845,8 +4921,18 @@ p.w3ls_para {
 	}
 }
 @media (max-width: 480px){
+
+	.nav-container {
+		position: absolute;
+		z-index: 1;
+		right: 0;
+		top: 84px;
+	}
+	
 	.timetable_sub th, .timetable_sub td {
 	}
+
+
 	td.invert-image a img {
 		width: 50%;
 	}
@@ -5038,7 +5124,7 @@ p.w3ls_para {
 		width: 100%;
 	}
 	.logo_agile {
-		margin-top: 1em;
+		
 		padding: 0;
 		text-align: center;
 		float: none;
@@ -5106,7 +5192,7 @@ p.w3ls_para {
 	}
 	h3.wthree_text_info {
 		font-size: 1.8em;
-		margin-bottom: 0.6em;
+		margin-bottom: 10px;
 	}
 	.sale-w3ls a {
 		padding: 8px 20px;
@@ -5174,7 +5260,7 @@ p.w3ls_para {
 	}
 	h3.wthree_text_info {
 		font-size: 1.5em;
-		margin-bottom: 0.7em;
+		margin-bottom: 10px;
 	}
 	.newsright input[type="email"] {
 	   width:70%;
@@ -5480,6 +5566,13 @@ p.w3ls_para {
 	}
 }
 @media (max-width: 320px){
+
+	.nav-container {
+		position: absolute;
+		z-index: 1;
+		right: 0;
+		top: 130px;
+	}
 	.header ul li {
 		display: inline-block;
 		width: 100%;
@@ -5505,7 +5598,7 @@ p.w3ls_para {
 	}
 	h3.wthree_text_info {
 		font-size: 1.4em;
-		margin-bottom: 0.7em;
+		margin-bottom: 10px;
 		letter-spacing: 1px;
 	}
 	.men-wear-right h4 {
@@ -5554,3 +5647,325 @@ p.w3ls_para {
     }
 }
 /*-- //responsive media queries --*/
+ div#PPMiniCart {
+	 z-index: 100;
+ }
+
+
+
+.nav-container {
+	float: right;
+}
+
+/* scale hover products */
+
+.men-pro-item.simpleCart_shelfItem:hover {
+    transform: scale(1.1);
+    transition: .2s;
+}
+
+/* preço single product */
+
+span.item_price {
+   /* font-size: 24px;*/
+}
+
+/* New breakpoint navbar */
+
+/*@media (max-width: 992px) {
+    .triangle-topleft {
+		display: none;
+	}
+}*/
+
+
+
+.large-button {
+    position: relative;
+    background: #07bc4c;
+	font-size: 20px;
+	padding: 15px 20px;
+	color: #FFF;
+	float: right;
+	border-radius: 0;
+
+}
+.large-button:hover, .large-button:active  {
+	color: #FFF;
+
+}
+
+#carrinho {
+	position: absolute;
+	top: 35px;
+	right: 6%;
+	z-index: 200;
+	width: 54px;
+	height: 54px;
+	border-radius: 50%;
+	float: right;
+	
+
+}
+ #carrinho a span {
+	position: relative;
+	background-color: #ff0000;
+	color: #FFF;
+	font-weight: 700;
+	left: 38px;
+	padding: 2px 8px;
+	border-radius: 50%;
+	box-shadow: 1px 1px 1px rgb(0, 0, 0, .4);
+	z-index: 201;
+	bottom: 6px;
+
+ }
+
+ #carrinho i {
+	position: relative;
+	bottom: 10px;
+	left: 10px;
+	color: #FFF;
+	font-size: 40px;
+	
+	text-shadow: 1px 1px 2px rgb(0, 0, 0, .6);
+ }
+
+
+ .styled-input-date label {
+	font-size: 14px;
+    letter-spacing: 1px;
+    color: #555;
+    padding: 0.5em 1em 0.5em 0;
+	border: 0;
+	font-weight: 400;
+}
+
+.styled-input-date input {
+	font-size: 14px;
+    color: #555;
+	font-weight: 400;
+}
+
+
+.flex-control-thumbs img {
+	
+	max-height: 120px;
+	width: auto;
+	margin: 0 auto;
+	vertical-align: middle;
+	max-width: 100px;
+	
+}
+
+
+
+.flex-control-thumbs li {
+	max-height: 120px;
+}
+
+
+span.lote-info {
+	font-size: 13px;
+    font-weight: 400;
+}
+
+
+span.lote-info-single {
+	font-size: 15px;
+    font-weight: 400;
+}
+
+
+
+ol.flex-control-nav.flex-control-thumbs li {
+	margin: 4px 1%;
+    padding: 4px;
+    border: 1px solid #d1cfcf;
+    height: auto;
+	display: block;
+	min-height: 100px;
+	width: 30%;
+	margin-right: 6px;
+}
+
+ol.flex-control-nav.flex-control-thumbs li img {
+    max-width: 60px;
+    height: auto;
+    max-height: 78px;
+	border: 0;
+	vertical-align: middle;
+}
+
+
+
+
+ @media(min-width: 1246px) {
+	#carrinho {
+		right: 15%;
+
+	}
+ }
+ 
+
+ @media(max-width: 767px) {
+
+
+
+    .nav-container {
+        float: right;
+        width: 100%;
+        background-color: #07bc4c;
+        position: absolute;
+        top: 80px;
+        z-index: 99;
+    }
+
+    .logo_agile {
+        z-index: 146;
+    }
+
+    .triangle-topleft {
+        z-index: 141;
+        right: 2px;
+    }
+
+
+
+.navbar-nav > li {
+    margin: 0 140px 0 0;
+    /* display: block; */
+    width: 100%;
+    text-align: center;
+}
+
+button.navbar-toggle.collapsed {
+    top: -26px;
+}
+
+
+
+button.navbar-toggle {
+    top: -26px;
+}
+
+
+#carrinho {
+	top: 15%;
+	right: 105px;
+}
+
+
+
+}
+
+@media(max-width: 667px) {
+
+    .nav-container {
+        float: right;
+        width: 100%;
+        background-color: #07bc4c;
+        position: absolute;
+        top: 80px;
+        z-index: 99;
+    }
+
+    .logo_agile {
+        z-index: 146;
+    }
+
+    .triangle-topleft {
+        z-index: 141;
+        right: 2px;
+    }
+
+
+    .navbar-header {
+    z-index: 152;
+    background: #07bc4c;
+    position: relative;
+    top: 10px;
+}
+
+
+.navbar-nav > li {
+    margin: 0 140px 0 0;
+    /* display: block; */
+    width: 100%;
+    text-align: center;
+}
+
+button.navbar-toggle.collapsed {
+    top: -26px;
+}
+
+button.navbar-toggle {
+    top: -10px;
+}
+
+#carrinho {
+	top: 15%;
+	right: 105px;
+}
+
+
+}
+
+@media(max-width: 461px){
+    button.navbar-toggle.collapsed {
+    top: -10px;
+}
+
+.logo_agile {
+	padding-left: 10px;
+}
+
+
+#carrinho {
+	top: 30%;
+	
+	right: 25%;
+	
+}
+}
+
+
+@media(max-width: 320px){
+    .nav-container {
+    float: right;
+    width: 100%;
+    background-color: #07bc4c;
+    position: absolute;
+    /* top: 80px; */
+    z-index: 99;
+    top: 124px;
+}
+
+button.navbar-toggle {
+    top: -10px;
+}
+
+.menu__list {
+    margin-top: 60px;
+
+
+}
+
+.product-new-top {
+    z-index: 0;
+}
+
+
+ h3.wthree_text_info {
+    margin-bottom: 15px;
+}
+
+#carrinho {
+	top: 30%;
+	right: 85px;
+}
+
+
+
+}
+

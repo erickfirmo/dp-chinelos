@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Site;
 
 
 
@@ -19,9 +19,10 @@ class SiteController extends Controller
     public function index()
     {
         $produtos = Produto::all();
-        $categorias = Categoria::all();
+        $categorias = Categoria::pluck('nome');
 
         return view('site.home.index',['produtos' => $produtos, 'categorias' => $categorias]);
+
 
     }
 

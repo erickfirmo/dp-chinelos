@@ -5,8 +5,8 @@
 						<figure class="effect-roxy">
 							<img src="{{ asset('vendor/site/assets/images/bottom1.jpg') }}" alt=" " class="img-responsive" />
 							<figcaption>
-								<h3><span>F</span>all Ahead</h3>
-								<p>New Arrivals</p>
+								<h3><span>T</span>imes</h3>
+								<p><a style="z-index: 99">Lançamentos<a/></p>
 							</figcaption>			
 						</figure>
 					</div>
@@ -14,8 +14,8 @@
 						<figure class="effect-roxy">
 							<img src="{{ asset('vendor/site/assets/images/bottom2.jpg') }}" alt=" " class="img-responsive" />
 							<figcaption>
-								<h3><span>F</span>all Ahead</h3>
-								<p>New Arrivals</p>
+								<h3><span>I</span>nfantis</h3>
+								<p><a style="z-index: 100;">Lançamentos</a></p>
 							</figcaption>			
 						</figure>
 					</div>
@@ -23,4 +23,7 @@
 		    </div> 
 		 </div> 
     </div>
+	
+
+
 	

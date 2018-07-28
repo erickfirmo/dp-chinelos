@@ -27,38 +27,80 @@
                     <div class="form-group">
                       <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                       <label>Nome do Produto</label>
-                      <input name="nome" type="text" class="form-control" style="width: 100%;" autofocus>
+                      <input name="nome" type="text" value="{{ old('nome') }}" class="form-control" maxlength="30" style="width: 100%;" autofocus>
                     </div>
 
-                    <div class="form-group">
-                      <label>Categoria</label>
-                      <select name="categoria_id" class="form-control select2" style="width: 100%;">
-                          <option disabled selected value> -- </option>
-                          @foreach($categorias as $key => $categoria)
-                            <option value='{{ $key }}'>{{ $categoria }}</option>
-                          @endforeach
-                      </select>
-                    </div>
+                    <div class="row">
+                    
+                      
+                  
+                      
 
-                    <div class="form-group">
-                      <label>Status</label>
-                      <select name="status_id" class="form-control select2" style="width: 100%;">
-                          <option disabled selected value> -- </option>
-                          @foreach($status as $key => $status)
-                            <option value='{{ $key }}'>{{ $status }}</option>
-                          @endforeach
-                      </select>
-                    </div>
-                
-                    <div class="form-group">
-                      <label>Unidades</label>
-                      <input name="unidades" type="number" min="0" class="form-control" style="width: 100%;">
-                    </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label>Preço</label>
+                          <input data-thousands="" data-decimal="." maxlength="9" name="preco" type="text" value="{{ old('preco') }}" class="form-control mask-real" style="width: 100%;">
+                        </div>
 
-                    <div class="form-group">
-                      <label>Preço</label>
-                      <input data-thousands="" data-decimal="." maxlength="9" name="preco" type="text" class="form-control mask-real" style="width: 100%;">
+                        <div class="form-group">
+                          <label>Unidades em Estoque</label>
+                          <input name="unidades" type="number" min="0" value="{{ old('unidades') }}" class="form-control" style="width: 100%;">
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label>Preço por Lote</label>
+                          <input data-thousands="" data-decimal="." maxlength="9" name="preco_lote" type="text" value="{{ old('preco_lote') }}" class="form-control mask-real" style="width: 100%;">
+                        </div>
+                        <div class="form-group">
+                          <label>Unidades por Lote</label>
+                          <input name="unidades_lote" type="number" min="0" value="{{ old('unidades_lote') }}" class="form-control" style="width: 100%;">
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label>Tamanhos</label>
+                          <br>
+                          <div class="row">
+                            @foreach($tamanhos as $key => $tamanho)
+
+                            <div class="col-md-6">
+                              <!-- boolean -->
+                              <input name="tamanho_id[]" type="checkbox" value="{{ $key }}">&nbsp;&nbsp;&nbsp;&nbsp;{{ $tamanho }}
+                            </div>
+                            <br>
+                            <br>
+                            @endforeach
+                          </div>
+                        </div>
+                      </div>
                     </div>
+                    
+                    <div class="form-group">
+                          <label>Categoria</label>
+                          <select name="categoria_id" class="form-control select2" style="width: 100%;">
+                              <option disabled selected value> -- </option>
+                              @foreach($categorias as $key => $categoria)
+                                <option value='{{ $key }}'>{{ $categoria }}</option>
+                              @endforeach
+                          </select>
+                        </div>
+
+                        <div class="form-group">
+                          <label>Status</label>
+                          <select name="status_id" class="form-control select2" style="width: 100%;">
+                              <option disabled selected value> -- </option>
+                              @foreach($status as $key => $status)
+                                <option value='{{ $key }}'>{{ $status }}</option>
+                              @endforeach
+                          </select>
+                        </div>
+                    
+                    
+
 
                     <div class="form-group">
                       <label>Descrição</label>

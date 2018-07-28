@@ -8,24 +8,25 @@
 @include('site.partials._carousel')
 
 
-
-
     					
 <!-- /new_arrivals --> 
 <div class="new_arrivals_agile_w3ls_info"> 
 		<div class="container">
-		    <h3 class="wthree_text_info">N<span>ovidades</span></h3>		
+		    <h3 class="wthree_text_info">NOSSOS<span> MODELOS</span></h3>
+		    <hr class="hr-default">		
 				<div id="horizontalTab">
 						<ul class="resp-tabs-list">
+						<li style="width: {{ (100 / (count($categorias) + 1) ) }}% !important; font-size: 12px; padding: 10px 0;"> TODOS</li>
+
 							@foreach($categorias as $categoria)
-								<li> {{ $categoria->nome }}</li>
+								<li style="width: {{ (100 / (count($categorias) + 1)) }}% !important; font-size: 12px; padding: 10px 0;"> {{ $categoria }}</li>
 								
 							@endforeach
 						</ul>
 					<div class="resp-tabs-container">
 					<!--/tab_one-->
-						<div class="tab1">
-							
+
+					<div class="tab1">
 						@foreach($produtos as $produto)
 							@if($produto->status->nome == 'Ativo')
 					
@@ -33,1001 +34,107 @@
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item">
 											<img src='{{ asset("storage/images/{$produto->imagem_principal}") }}' alt="" class="pro-image-front">
-											<img src='{{ asset("storage/images/{$produto->imagem_principal}") }}' alt="" class="pro-image-back">
+											<img src='{{ asset("storage/images/{$produto->imagem_principal}") }}' alt="" class="pro-image-back"> 
 												<div class="men-cart-pro">
 													<div class="inner-men-cart-pro">
-														<a href="single.html" class="link-product-add-cart">Ver Produto</a>
+														<a href='{{ url("produto/$produto->id") }}' class="link-product-add-cart">Ver Produto</a>
 													</div>
 												</div>
 												<span class="product-new-top">Novo</span>
 												
 										</div>
 										<div class="item-info-product ">
-											<h4><a href="single.html">{{ $produto->nome }}</a></h4>
+											<h4><a href='{{ url("produto/$produto->id") }}'>{{ $produto->nome }}</a></h4>
 											<div class="info-product-price">
 												<span class="item_price">R$ {{ str_replace('.', ',', number_format($produto->preco, 2, '.', '')) }}</span>
 												<del>R$ {{ str_replace('.', ',', number_format(($produto->preco + 9), 2, '.', '')) }}</del>
 											</div>
+											@if($produto->preco)
+											<div class="info-product-price">
+												<span class="lote-info">R$ 6,00 a partir de 1000 pares*</span>
+											</div>
+											@endif
 											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-																<form action="#" method="post">
-																	<fieldset>
-																		<input type="hidden" name="cmd" value="_cart" />
-																		<input type="hidden" name="add" value="1" />
-																		<input type="hidden" name="business" value=" " />
-																		<input type="hidden" name="item_name" value="{{ $produto->nome }}" />
-																		<input type="hidden" name="amount" value="{{ $produto->preco }}" />
-																		<input type="hidden" name="discount_amount" value="1.00" />
-																		<input type="hidden" name="currency_code" value="USD" />
-																		<input type="hidden" name="return" value=" " />
-																		<input type="hidden" name="cancel_return" value=" " />
-																		<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																	</fieldset>
-																</form>
-															</div>
-																				
+												<form action="#" method="post">
+													<fieldset>
+														<input type="hidden" name="cmd" value="_cart" />
+														<input type="hidden" name="add" value="1" />
+														<input type="hidden" name="business" value=" " />
+														<input type="hidden" name="item_name" value="{{ $produto->nome }}" />
+														<input type="hidden" name="amount" value="{{ $produto->preco }}" />
+														<input type="hidden" name="discount_amount" value="1.00" />
+														<input type="hidden" name="currency_code" value="USD" />
+														<input type="hidden" name="return" value=" " />
+														<input type="hidden" name="cancel_return" value=" " />
+														<input type="submit" name="submit" value="Comprar" class="button"/>
+													</fieldset>
+												</form>
+											</div>								
 										</div>
 									</div>
 								</div>
-
-								@endif
+							@endif
 						@endforeach
-
-
-
-							
-								
 							<div class="clearfix"></div>
 						</div>
-						<!--//tab_one-->
-						<!--/tab_two-->
-						<div class="tab2">
-							 <div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/w1.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/w1.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html">A-line Black Skirt</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 130.99</span>
-											<del>R$ 189.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="A-line Black Skirt" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/w2.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/w2.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html">Sleeveless Solid Blue Top</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 140.99</span>
-											<del>R$ 189.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Sleeveless Solid Blue Top" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/w3.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/w3.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html">Skinny Jeans</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 150.99</span>
-											<del>R$ 189.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Skinny Jeans " />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/w4.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/w4.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html">Black Basic Shorts</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 120.99</span>
-											<del>R$ 189.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Black Basic Shorts" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/w5.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/w5.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html">Pink Track Pants</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 220.99</span>
-											<del>R$ 389.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Pink Track Pants" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/w6.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/w6.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html">Analog Watch</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 320.99</span>
-											<del>R$ 489.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Analog Watch" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-						    <div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/w7.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/w7.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html">Ankle Length Socks</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 100.99</span>
-											<del>R$ 159.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Ankle Length Socks" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
+						<!--//tab-->
+
+				@foreach($categorias as $categoria)
+					
+					<div class="tab1">
+						@foreach($produtos as $produto)
+							@if(($produto->status->nome == 'Ativo') and ($produto->categorias->nome == $categoria))
+					
 								<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/w8.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/w8.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
+									<div class="men-pro-item simpleCart_shelfItem">
+										<div class="men-thumb-item">
+											<img src='{{ asset("storage/images/{$produto->imagem_principal}") }}' alt="" class="pro-image-front">
+											<img src='{{ asset("storage/images/{$produto->imagem_principal}") }}' alt="" class="pro-image-back"> 
+												<div class="men-cart-pro">
+													<div class="inner-men-cart-pro">
+														<a href='{{ url("produto/$produto->id") }}' class="link-product-add-cart">Ver Produto</a>
+													</div>
 												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html">Reebok Women's Tights</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 130.99</span>
-											<del>R$ 169.71</del>
+												<span class="product-new-top">Novo</span>
+												
 										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Reebok Women's Tights" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
+										<div class="item-info-product ">
+											<h4><a href='{{ url("produto/$produto->id") }}'>{{ $produto->nome }}</a></h4>
+											<div class="info-product-price">
+												<span class="item_price">R$ {{ str_replace('.', ',', number_format($produto->preco, 2, '.', '')) }}</span>
+												<del>R$ {{ str_replace('.', ',', number_format(($produto->preco + 9), 2, '.', '')) }}</del>
+											</div>
+											@if($produto->preco)
+											<div class="info-product-price">
+												<p><span class="lote-info">R$ 6,00 a partir de 1000 pares*</span></p>
+											</div>
+											@endif
+											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+												<form action="#" method="post">
+													<fieldset>
+														<input type="hidden" name="cmd" value="_cart" />
+														<input type="hidden" name="add" value="1" />
+														<input type="hidden" name="business" value=" " />
+														<input type="hidden" name="item_name" value="{{ $produto->nome }}" />
+														<input type="hidden" name="amount" value="{{ $produto->preco }}" />
+														<input type="hidden" name="discount_amount" value="1.00" />
+														<input type="hidden" name="currency_code" value="USD" />
+														<input type="hidden" name="return" value=" " />
+														<input type="hidden" name="cancel_return" value=" " />
+														<input type="submit" name="submit" value="Comprar" class="button"/>
+													</fieldset>
+												</form>
+											</div>								
+										</div>
 									</div>
 								</div>
-							</div>
+							@endif
+						@endforeach
 							<div class="clearfix"></div>
 						</div>
-					 <!--//tab_two-->
-						<div class="tab3">
-								
-						<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/b1.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/b1.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html">Laptop Messenger Bag</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 140.99</span>
-											<del>R$ 169.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value=" Laptop Messenger Bag" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/b2.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/b2.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html">Puma Backpack</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 127.99</span>
-											<del>R$ 169.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Puma Backpack" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-                            <div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/b3.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/b3.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html"> Laptop Backpack</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 120.99</span>
-											<del>R$ 189.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value=" Laptop Backpack" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/b4.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/b4.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html">Travel Duffel Bag </a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 190.99</span>
-											<del>R$ 259.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Travel Duffel Bag " />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-													<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/b5.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/b5.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html"> Hand-held Bag </a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 190.99</span>
-											<del>R$ 259.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value=" Hand-held Bag " />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-													<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/b6.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/b6.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html">Butterflies Bag </a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 190.99</span>
-											<del>R$ 259.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Butterflies Bag" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-													<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/b7.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/b7.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html">Costa Swiss Bag </a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 290.99</span>
-											<del>R$ 359.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Costa Swiss Bag" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-													<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/b8.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/b8.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html">Noble Designs Bag </a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 120.99</span>
-											<del>R$ 159.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Noble Designs Bag " />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="tab4">
-							
-							    <div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/s1.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/s1.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html">Running Shoes</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 80.99</span>
-											<del>R$ 89.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Running Shoes" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/s2.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/s2.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html">Shoetopia Lace Up</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 90.99</span>
-											<del>R$ 59.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Shoetopia Lace Up" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/s3.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/s3.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html">Steemo Casuals(Black)</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 90.99</span>
-											<del>R$ 59.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Steemo Casuals (Black)" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/s4.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/s4.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html">Benetton Flip Flops</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 40.99</span>
-											<del>R$ 99.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Benetton Flip Flops" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/s5.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/s5.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html">Moonwalk Bellies </a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 80.99</span>
-											<del>R$ 99.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Moonwalk Bellies" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/s6.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/s6.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html">Aero Canvas Loafers  </a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 120.99</span>
-											<del>R$ 199.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Aero Canvas Loafers" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/s7.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/s7.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html">Sparx Sporty Canvas Shoes</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 160.99</span>
-											<del>R$ 199.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Sparx Sporty Canvas Shoes" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-								<div class="col-md-3 product-men">
-								<div class="men-pro-item simpleCart_shelfItem">
-									<div class="men-thumb-item">
-										<img src="{{ asset('vendor/site/assets/images/s8.jpg') }}" alt="" class="pro-image-front">
-										<img src="{{ asset('vendor/site/assets/images/s8.jpg') }}" alt="" class="pro-image-back">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Olhada Rápida</a>
-												</div>
-											</div>
-											<span class="product-new-top">Novo</span>
-											
-									</div>
-									<div class="item-info-product ">
-										<h4><a href="single.html">Women BLACK Heels</a></h4>
-										<div class="info-product-price">
-											<span class="item_price">R$ 180.99</span>
-											<del>R$ 199.71</del>
-										</div>
-										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart" />
-																	<input type="hidden" name="add" value="1" />
-																	<input type="hidden" name="business" value=" " />
-																	<input type="hidden" name="item_name" value="Women BLACK Heels" />
-																	<input type="hidden" name="amount" value="30.99" />
-																	<input type="hidden" name="discount_amount" value="1.00" />
-																	<input type="hidden" name="currency_code" value="USD" />
-																	<input type="hidden" name="return" value=" " />
-																	<input type="hidden" name="cancel_return" value=" " />
-																	<input type="submit" name="submit" value="Adicionar ao carrinho" class="button" />
-																</fieldset>
-															</form>
-														</div>
-																			
-									</div>
-								</div>
-							</div>
-							<div class="clearfix"></div>
-						</div>
+						<!--//tab-->
+					@endforeach
+
 					</div>
 				</div>	
 			</div>
@@ -1038,73 +145,101 @@
 
 
 
+@include('site.partials._banner_parallax')
 
 
-
-
-@include('site.partials._banner_bottom')
-@include('site.partials._count')
-@include('site.partials._triple_banner')
-@include('site.partials._double_banner')
-
-
-
-  
-	<!-- /we-offer -->
-		<div class="sale-w3ls">
-			<div class="container">
-				<h6>We Offer Flat <span>40%</span> Discount</h6>
- 
-				<a class="hvr-outline-out button2" href="single.html">Shop Now </a>
-			</div>
-		</div>
-	<!-- //we-offer -->
-<!--/grids-->
-<div class="coupons">
-		<div class="coupons-grids text-center">
-			<div class="w3layouts_mail_grid">
-				<div class="col-md-3 w3layouts_mail_grid_left">
-					<div class="w3layouts_mail_grid_left1 hvr-radial-out">
-						<i class="fa fa-truck" aria-hidden="true"></i>
+<!-- Contato -->
+<div class="banner_bottom_agile_info">
+	<div class="container">
+	   <div class="agile-contact-grids">
+				<div class="agile-contact-left">
+					<div class="col-md-6 address-grid">
+						<h4> Informações<span></span></h4>
+							<div class="mail-agileits-w3layouts">
+								<i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+								<div class="contact-right">
+									<p>Telefone</p><span>(11) 2222-3333</span>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="mail-agileits-w3layouts">
+								<i class="fa fa-whatsapp" aria-hidden="true"></i>
+								<div class="contact-right">
+									<p>Whatsapp</p><span>(11) 92222-3333</span>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="mail-agileits-w3layouts">
+								<i class="fa fa-envelope-o" aria-hidden="true"></i>
+								<div class="contact-right">
+									<p>Email </p><a href="mailto:info@example.com">contato@dpchinelos.com.br</a>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="mail-agileits-w3layouts">
+								<i class="fa fa-map-marker" aria-hidden="true"></i>
+								<div class="contact-right">
+									<p>Endereço</p><span>Rua Harry Dannemberg, 000 - Vila Carmosina</span>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<ul class="social-nav model-3d-0 footer-social w3_agile_social two contact">
+							                              <li class="share">Compartilhe : </li>
+															<li><a href="#" class="facebook">
+																  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
+															<li><a href="#" class="twitter"> 
+																  <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
+															<li><a href="#" class="instagram">
+																  <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
+															<li><a href="#" class="pinterest">
+																  <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+																  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
+														</ul>
 					</div>
-					<div class="w3layouts_mail_grid_left2">
-						<h3>FREE SHIPPING</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur</p>
-					</div>
-				</div>
-				<div class="col-md-3 w3layouts_mail_grid_left">
-					<div class="w3layouts_mail_grid_left1 hvr-radial-out">
-						<i class="fa fa-headphones" aria-hidden="true"></i>
-					</div>
-					<div class="w3layouts_mail_grid_left2">
-						<h3>24/7 SUPPORT</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur</p>
-					</div>
-				</div>
-				<div class="col-md-3 w3layouts_mail_grid_left">
-					<div class="w3layouts_mail_grid_left1 hvr-radial-out">
-						<i class="fa fa-shopping-bag" aria-hidden="true"></i>
-					</div>
-					<div class="w3layouts_mail_grid_left2">
-						<h3>MONEY BACK GUARANTEE</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur</p>
-					</div>
-				</div>
-					<div class="col-md-3 w3layouts_mail_grid_left">
-					<div class="w3layouts_mail_grid_left1 hvr-radial-out">
-						<i class="fa fa-gift" aria-hidden="true"></i>
-					</div>
-					<div class="w3layouts_mail_grid_left2">
-						<h3>FREE GIFT COUPONS</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur</p>
+					<div class="col-md-6 contact-form">
+						<h4 class="white-w3ls">Contato<span></span></h4>
+						<form action="#" method="post">
+							<div class="styled-input agile-styled-input-top">
+								<input type="text" name="Name" required="">
+								<label>Nome</label>
+								<span></span>
+							</div>
+							<div class="styled-input">
+								<input type="email" name="Email" required=""> 
+								<label>Email</label>
+								<span></span>
+							</div> 
+							<div class="styled-input">
+								<textarea name="Message" required=""></textarea>
+								<label>Mensagem</label>
+								<span></span>
+							</div>	 
+							<input type="submit" value="ENVIAR">
+						</form>
 					</div>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
+       </div>
+	</div>
+ <!--//contact-->
 
-		</div>
-</div>
-<!--grids-->
+
+ <div class="contact-w3-agile1 map" data-aos="flip-right">
+			
+		   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100949.24429313939!2d-122.44206553967531!3d37.75102885910819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan+Francisco%2C+CA%2C+USA!5e0!3m2!1sen!2sin!4v1472190196783" class="map" style="border:0" allowfullscreen=""></iframe>
+	   </div>
+
+
+@include('site.partials._info_icons')
+
+
+
+
+  
 
 @include('site.partials._footer')
 

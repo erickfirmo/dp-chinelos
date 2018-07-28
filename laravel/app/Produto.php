@@ -13,6 +13,8 @@ class Produto extends Model
         'descricao',
         'unidades',
         'preco',
+        'unidades_lote',
+        'preco_lote',
         'imagem_principal',
         'imagem_2',
         'imagem_3',
@@ -35,4 +37,11 @@ class Produto extends Model
     {
         return $this->belongsTo(Status::class, 'status_id');
     }
+
+    public function tamanhos()
+    {
+        return $this->belongsToMany(Tamanho::class);
+    }
+
+    
 }

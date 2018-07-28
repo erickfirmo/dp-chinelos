@@ -61,12 +61,16 @@ class CategoriaController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'nome' => 'required',
+            'categoria' => 'required',
         ]);
-        
-        $categoria = Categoria::findOrFail($id)->update($request->all());
 
-        return redirect()->route('admin.categorias.index')
+        
+        
+        $categoria = Categoria::findOrFail($id)->update([
+            'nome' => $request->categoria,
+        ]);
+
+        return redirect()->route('admin.categorias.edit', compact('categoria'))
             ->with('success', "Categoria atualizada com sucesso !");
 
     }

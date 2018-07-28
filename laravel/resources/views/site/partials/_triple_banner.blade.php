@@ -2,6 +2,7 @@
   <div class="banner-bootom-w3-agileits">
   <div class="container">
 	  <h3 class="wthree_text_info">N<span>ovidades</span></h3>
+	  <hr>
   
 	  <div class="col-md-5 bb-grids bb-left-agileits-w3layouts">
 		  <a href="womens.html">

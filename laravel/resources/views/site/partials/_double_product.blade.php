@@ -6,8 +6,8 @@
 					<figure class="effect-roxy">
 						<img src="images/bottom1.jpg" alt=" " class="img-responsive" />
 						<figcaption>
-							<h3><span>F</span>all Ahead</h3>
-							<p>New Arrivals</p>
+							<h3><span>T</span>imes</h3>
+							<p>Lançamentos</p>
 						</figcaption>			
 					</figure>
 				</div>
@@ -15,8 +15,8 @@
 					<figure class="effect-roxy">
 						<img src="images/bottom2.jpg" alt=" " class="img-responsive" />
 						<figcaption>
-							<h3><span>F</span>all Ahead</h3>
-							<p>New Arrivals</p>
+							<h3><span>I</span>nfantil</h3>
+							<p>Lançamentos</p>
 						</figcaption>			
 					</figure>
 				</div>

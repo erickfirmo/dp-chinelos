@@ -1,3 +1,5 @@
+/* REMOVER PRODUTO */
+
 $(document).ready(function(){
    $('#product-exclude-button').on('click', function() {
      swal({
@@ -16,6 +18,9 @@ $(document).ready(function(){
    }); 
  });
 
+
+  /* SALVAR PRODUTO */
+
  $(document).ready(function(){
   $('#product-save-button').on('click', function() {
 
@@ -23,6 +28,9 @@ $(document).ready(function(){
         
   }); 
 });
+
+
+/* REMOVER CATEGORIA */
 
 
 $(document).ready(function(){
@@ -43,6 +51,8 @@ $(document).ready(function(){
   }); 
 });
 
+/* SALVAR CATEGORIA */
+
 $(document).ready(function(){
  $('#category-save-button').on('click', function() {
    
@@ -50,6 +60,12 @@ $(document).ready(function(){
        
  }); 
 });
+
+
+
+
+
+/* IMAGEM RULES SUBMIT */ 
 
 
 $(document).ready(function(){
