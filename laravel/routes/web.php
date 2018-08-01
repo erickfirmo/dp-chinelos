@@ -9,6 +9,8 @@ Route::prefix('/')->namespace('Site')->group(function () {
     Route::get('produtos', 'SiteController@produtos')->name('produtos');
 
     Route::get('carrinho', 'CarrinhoController@index')->name('carrinho');
+    
+    Route::resouce('carrinho', 'CarrinhoController');
 
     Route::resource('pedidos', 'PedidoController');
  
