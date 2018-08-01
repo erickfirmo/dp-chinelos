@@ -3,7 +3,7 @@
 	<div class="header-bot_inner_wthreeinfo_header_mid">
 	
 		<div class="col-md-2 col-sm-2 logo_agile">
-			<img src="{{ asset('vendor/site/assets/images/logo.jpeg') }}" style="width:100px; height:auto; border-radius:50%; box-shadow: 1px 1px 4px #606060; margin-top: 10px;">
+			<img src="{{ asset('vendor/site/assets/images/logo.png') }}" style="width:120px; height:auto; margin-top: 0px;">
 		</div>
 
 
@@ -46,6 +46,9 @@
 				  <ul class="nav navbar-nav menu__list">
 
 					<li class="menu__item menu__item--current"><a class="menu__link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a></li>
+					<li class="active menu__item menu__item--current"><a class="menu__link" href="{{ url('/sobre') }}">Sobre <span class="sr-only">(current)</span></a></li>
+					<li class="active menu__item menu__item--current"><a class="menu__link" href="{{ url('/produtos') }}">Produtos <span class="sr-only">(current)</span></a></li>
+
 					<li class="dropdown menu__item">
 						<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorias<span class="caret"></span></a>
 							<ul class="dropdown-menu multi-column">
@@ -55,17 +58,13 @@
 									</div>
 									<div class="col-sm-3 multi-gd-img">
 										<ul class="multi-column-dropdown">
-											@foreach($categorias as $categoria)
-											<li><a href="#"></a>{{ $categoria }}</li>
-											@endforeach
+											<li><a href="#"></a></li>
 										</ul>
 									</div>
 									<div class="clearfix"></div>
 								</div>
 							</ul>
 					</li>
-					<li class="active menu__item menu__item--current"><a class="menu__link" href="{{ url('/') }}">Feminino <span class="sr-only">(current)</span></a></li>
-					<li class="active menu__item menu__item--current"><a class="menu__link" href="{{ url('/') }}">Infantil <span class="sr-only">(current)</span></a></li>
 
 					
 					<li class=" menu__item"><a class="menu__link" href="{{ url('/contato') }}">Contato</a></li>
@@ -75,7 +74,14 @@
 			</nav>
 
 			
-			<div id="carrinho"><a href="{{ url('/carrinho') }}"><span>0</span><i class="fa fa-shopping-basket"></i></a></div>
+			<div id="carrinho">
+				<a href="{{ url('/carrinho') }}">
+					<span id="count_cart">
+						{{ $count_cart }}
+					</span>
+					<i class="fa fa-shopping-basket"></i>
+				</a>
+			</div>
 
 		</div>
 		

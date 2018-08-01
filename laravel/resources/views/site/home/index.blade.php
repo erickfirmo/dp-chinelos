@@ -8,6 +8,10 @@
 @include('site.partials._carousel')
 
 
+
+
+
+
     					
 <!-- /new_arrivals --> 
 <div class="new_arrivals_agile_w3ls_info"> 
@@ -49,23 +53,16 @@
 												<span class="item_price">R$ {{ str_replace('.', ',', number_format($produto->preco, 2, '.', '')) }}</span>
 												<del>R$ {{ str_replace('.', ',', number_format(($produto->preco + 9), 2, '.', '')) }}</del>
 											</div>
-											@if($produto->preco)
+											@if($produto->preco_lote)
 											<div class="info-product-price">
-												<span class="lote-info">R$ 6,00 a partir de 1000 pares*</span>
+												<span class="lote-info">R$ {{ number_format($produto->preco_lote, 2, ',', '')}} a partir de 1000 pares*</span>
 											</div>
 											@endif
 											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-												<form action="#" method="post">
+												<form id="form_cart{{ $produto->id }}">
 													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="{{ $produto->nome }}" />
-														<input type="hidden" name="amount" value="{{ $produto->preco }}" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
+														<input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+														<input type="hidden" name="produto_do_carrinho" value="{{ $produto->id }}"/>
 														<input type="submit" name="submit" value="Comprar" class="button"/>
 													</fieldset>
 												</form>
@@ -104,23 +101,16 @@
 												<span class="item_price">R$ {{ str_replace('.', ',', number_format($produto->preco, 2, '.', '')) }}</span>
 												<del>R$ {{ str_replace('.', ',', number_format(($produto->preco + 9), 2, '.', '')) }}</del>
 											</div>
-											@if($produto->preco)
+											@if($produto->preco_lote)
 											<div class="info-product-price">
 												<p><span class="lote-info">R$ 6,00 a partir de 1000 pares*</span></p>
 											</div>
 											@endif
 											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-												<form action="#" method="post">
+												<form id="form_cart{{ $produto->id}}">
 													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="{{ $produto->nome }}" />
-														<input type="hidden" name="amount" value="{{ $produto->preco }}" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
+														<input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+														<input type="hidden" name="produto_do_carrinho" value="{{ $produto->id }}"/>
 														<input type="submit" name="submit" value="Comprar" class="button"/>
 													</fieldset>
 												</form>
@@ -241,7 +231,6 @@
 
   
 
-@include('site.partials._footer')
 
 <!-- login -->
 			<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -307,5 +296,8 @@
 			</div>
 <!-- //login -->
 <a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+
+
 
 @endsection

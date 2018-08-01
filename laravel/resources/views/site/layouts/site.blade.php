@@ -20,7 +20,6 @@
     <link href="{{ asset('vendor/site/assets/css/font-awesome.css') }}" rel="stylesheet"> 
     <link href="{{ asset('vendor/site/assets/css/easy-responsive-tabs.css') }}" rel='stylesheet' type='text/css'/>
 	 <link href="{{ asset('vendor/site/assets/css/jquery-ui.css') }}" rel='stylesheet' type='text/css'/>
-	 <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
 
 	 <!-- //for bootstrap working -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
@@ -35,6 +34,10 @@
     <div id="app">
         @yield('content')
     </div>
+
+
+	 
+@include('site.partials._footer')
 
 
 
@@ -188,6 +191,9 @@
 <script type="text/javascript" src="{{ asset('vendor/site/assets/js/jquery.easing.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('vendor/site/assets/js/single-product.js') }}"></script>
 
+<script type="text/javascript" src="{{ asset('vendor/site/assets/js/slider.js') }}"></script>
+
+
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		
@@ -196,22 +202,69 @@
 		});
 	});
 </script>
-<!-- here stars scrolling icon -->
-	<script type="text/javascript">
-		$(document).ready(function() {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-				};
-			*/
-								
-			$().UItoTop({ easingType: 'easeOutQuart' });
-								
-			});
+
+<script type="text/javascript">
+	$(document).ready(function() {
+							
+		$().UItoTop({ easingType: 'easeOutQuart' });
+							
+		});
+</script>
+
+
+							
+<script>
+
+							
+	$(document).ready(function() {
+	    $("form").submit(function(e){
+	    	e.preventDefault();
+
+	    	var _token = $(this).find("input[name='_token']").val();
+	    	var produto_do_carrinho = $(this).find("input[name='produto_do_carrinho']").val();
+
+	        $.ajax({
+	            url: "{{route('carrinho.store')}}",
+	            type:'POST',
+	            data: {_token:_token, produto_do_carrinho:produto_do_carrinho},
+	            success: function(data) {
+	                if($.isEmptyObject(data.error)){
+							 $('#count_cart').html(data.count_cart);
+	                }else{
+	                	alert('nao')
+						 } 
+
+						 
+	            }
+			  });
+			  
+			  
+	    }); 
+	});
+
 	</script>
-    
+					
+	
+
+	
+
+<script type="text/javascript">
+
+/*var activeBanner = document.querySelector('.carousel-inner > .active');
+
+$('.carousel').css('background-size', '200%');
+if (activeBanner) {
+
+$('.carousel').css('background', "pink");
+
+} else if (activeBanner == '../images/banner-paralax.jpg'){
+$('.carousel').css('background', 'blue');
+}*/
+
+
+
+
+
+</script>
 </body>
 </html>

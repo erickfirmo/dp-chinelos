@@ -1,14 +1,17 @@
 <?php
 
 Route::prefix('/')->namespace('Site')->group(function () {
+
     Route::get('/', 'SiteController@index');
-    Route::get('produto/{produto}', 'ProdutoController@show')->name('produto');
+    Route::get('produto/{produto}', 'SiteController@produto')->name('produto');
+    Route::get('contato', 'SiteController@contato')->name('contato');
+    Route::get('sobre', 'SiteController@sobre')->name('sobre');
+    Route::get('produtos', 'SiteController@produtos')->name('produtos');
+
     Route::get('carrinho', 'CarrinhoController@index')->name('carrinho');
-    
-    Route::get('contato', 'ContatoController@index')->name('contato');
-    
-    Route::get('produtos', 'CategoriaController@ShowCategorias')->name('produtos');
-    Route::get('categoria/{categoria}', 'CategoriaController@show')->name('categoria');
+
+    Route::resource('pedidos', 'PedidoController');
+    Route::resource('carrinho', 'CarrinhoController@carrinho');
  
 });
 
@@ -22,7 +25,6 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
         Route::resource('imagens', 'ImagemController');
         Route::resource('categorias', 'CategoriaController');
         Route::resource('tamanhos', 'TamanhoDoProdutoController');
-        Route::put('tamanhos', 'TamanhoDoProdutoController@store');
 
 
     });    

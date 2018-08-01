@@ -8,28 +8,38 @@ use App\Categoria;
 use App\Status;
 use App\Imagem;
 use App\ImagemDoProduto;
-
+use Session;
 
 class ProdutoController extends Controller
 {
-    /* home site */
+    /* produtos */
     public function index()
     {
         $produtos = Produto::all();
         $categorias = Categoria::pluck('nome');
+        
+        $cart = Session::get('cart');
+        $count_cart = count($cart);
 
-        return view('site.home.index',['produtos' => $produtos, 'categorias' => $categorias]);
+        return view('site.home.produtos')
+            ->withProdutos($produtos)
+            ->withCategorias($categorias)
+            ->withCart($cart)
+            ->withCountCart($count_cart);
 
     }
 
-    /* single product */
-    public function show($id)
-    {
+    /* single produto */
+    public function produto($id)
+    {   
+        $cart = Session::get('cart');
+        $count_cart = count($cart);
         $produtos = Produto::all();
         $produto = Produto::findOrFail($id);
         $categorias = Categoria::pluck('nome');
         $categoria_do_produto = $produto->categorias->nome;
         $nome_do_produto = $produto->nome;
+
         return view('site.home.produto', compact('produto'), [
 
             'produtos' => $produtos,
@@ -37,9 +47,8 @@ class ProdutoController extends Controller
             'categoria_do_produto' => $categoria_do_produto,
             'nome_do_produto' => $nome_do_produto
             
-            ]);
-
+            ])
+            ->withCountCart($count_cart)
+            ->withCart($cart);
     }
-
-    
 }

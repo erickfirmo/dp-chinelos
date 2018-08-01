@@ -563,40 +563,14 @@ a.simpleCart_empty {
 }
 /*-- banner --*/  
 .carousel .item{    
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
-	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
-	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat; 
-	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
-	background-size:cover;	 
+	
+	background:url('../images/banner-paralax2.jpg') center center no-repeat;
+	background-size:100% auto;	 
 }
 .carousel .item.item2{   
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
-    background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
-    background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat; 
-    background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
-    background-size:cover;	
+	background:url('../images/banner-paralax.jpg') center center no-repeat;
+	background-size:100% auto;	
 }   
-.carousel .item.item3{   
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
-    background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
-    background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat; 
-    background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
-    background-size:cover;	 
-}   
-.carousel .item.item4{        
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
-    background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
-    background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat; 
-    background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
-    background-size:cover; 
-}  
-.carousel .item.item5{    
-	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
-    background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
-    background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat; 
-    background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url('http://www.portaldarevenda.com.br/Fotos/chinelos%20maquina%20fabricar_53e46e5b16cf962227b7b1c28617466a.jpg') no-repeat;
-    background-size:cover; 
-}  
 
 .carousel-caption h2, .carousel-caption h3 {
     font-size: 3em;
@@ -1672,7 +1646,7 @@ a.single-item{
 }
 /*-- /sale --*/
    .sale-w3ls {
-    background: url(../images/banner3.jpg)no-repeat 0px 0px;
+    background: url('../images/chinelos-estampados.jpg')no-repeat 0px 0px;
     background-attachment: fixed;
     background-size: cover;
 	-webkit-background-size: cover;
@@ -5941,29 +5915,29 @@ button.navbar-toggle {
     top: 124px;
 }
 
-button.navbar-toggle {
-    top: -10px;
-}
+	button.navbar-toggle {
+		top: -10px;
+	}
 
-.menu__list {
-    margin-top: 60px;
-
-
-}
-
-.product-new-top {
-    z-index: 0;
-}
+	.menu__list {
+		margin-top: 60px;
 
 
- h3.wthree_text_info {
-    margin-bottom: 15px;
-}
+	}
 
-#carrinho {
-	top: 30%;
-	right: 85px;
-}
+	.product-new-top {
+		z-index: 0;
+	}
+
+
+	h3.wthree_text_info {
+		margin-bottom: 15px;
+	}
+
+	#carrinho {
+		top: 30%;
+		right: 85px;
+	}
 
 
 

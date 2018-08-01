@@ -229,8 +229,11 @@ if (typeof jQuery === 'undefined') {
     if ($parent.length) {
       var $input = this.$element.find('input')
       if ($input.prop('type') == 'radio') {
+
+        
         if ($input.prop('checked') && this.$element.hasClass('active')) changed = false
         else $parent.find('.active').removeClass('active')
+        
       }
       if (changed) $input.prop('checked', !this.$element.hasClass('active')).trigger('change')
     } else {
@@ -325,7 +328,7 @@ if (typeof jQuery === 'undefined') {
   Carousel.TRANSITION_DURATION = 600
 
   Carousel.DEFAULTS = {
-    interval: 5000,
+    interval: 4000,
     pause: 'hover',
     wrap: true,
     keyboard: true
@@ -372,6 +375,7 @@ if (typeof jQuery === 'undefined') {
   Carousel.prototype.to = function (pos) {
     var that        = this
     var activeIndex = this.getItemIndex(this.$active = this.$element.find('.item.active'))
+    
 
     if (pos > (this.$items.length - 1) || pos < 0) return
 
@@ -2315,3 +2319,10 @@ if (typeof jQuery === 'undefined') {
   })
 
 }(jQuery);
+
+
+
+
+
+
+ 

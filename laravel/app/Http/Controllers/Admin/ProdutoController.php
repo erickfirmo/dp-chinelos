@@ -289,6 +289,21 @@ class ProdutoController extends Controller
 
     public function destroy($id)
     {   
+
+
+        $tamanhos_do_produto = TamanhoDoProduto::where('produto_id',$id)->pluck('id');
+        
+
+        foreach($tamanhos_do_produto as $tamanho_do_produto)
+        {
+
+                
+            $current_tamanho = TamanhoDoProduto::findOrFail($tamanho_do_produto);
+            $current_tamanho->delete();
+            
+        }
+
+
         $produto = Produto::findOrFail($id);
         $produto->delete();
         
