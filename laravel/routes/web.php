@@ -11,7 +11,6 @@ Route::prefix('/')->namespace('Site')->group(function () {
     Route::get('carrinho', 'CarrinhoController@index')->name('carrinho');
 
     Route::resource('pedidos', 'PedidoController');
-    Route::resource('carrinho', 'CarrinhoController@carrinho');
  
 });
 
