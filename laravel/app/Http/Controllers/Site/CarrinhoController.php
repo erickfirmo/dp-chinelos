@@ -12,6 +12,7 @@ use Session;
 
 class CarrinhoController extends Controller
 {
+
     public function index()
     {
         $produtos = Produto::all();

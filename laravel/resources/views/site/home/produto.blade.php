@@ -1,5 +1,5 @@
 @extends('site.layouts.site')
-@section('title', 'DP Chinelos | Home')
+@section('title', 'DP Chinelos')
 @section('description', 'Loja Oficial')
 @section('content')
 
@@ -16,7 +16,7 @@
        <!-- /banner_bottom_agile_info -->
 <div class="page-head_agile_info_w3l">
 		<div class="container">
-			<h3>{{ $produto->nome }}</h3>
+			<h3>{{ $single_product->nome }}</h3>
 			<!--/w3_short-->
 				 <div class="services-breadcrumb">
 						<div class="agile_inner_breadcrumb">
@@ -24,9 +24,9 @@
 						   <ul class="w3_short">
 								<li><a href="#">Home</a><i>|</i></li>
 								
-								<li>{{ $produto->categorias->nome }}<i>|</i></li>
+								<li>{{ $single_product->categorias->nome }}<i>|</i></li>
 								
-								<li>{{ $produto->nome }}</li>
+								<li>{{ $single_product->nome }}</li>
 							</ul>
 						 </div>
 				</div>
@@ -41,17 +41,17 @@
 			<div class="grid images_3_of_2">
 				<div class="flexslider">
 					<ul class="slides">	
-						<li data-thumb='{{ asset("storage/images/{$produto->imagem_principal}") }}'>
-							<div class="thumb-image"> <img src='{{ asset("storage/images/{$produto->imagem_principal}") }}' data-imagezoom="true" class="img-responsive"> </div>
+						<li data-thumb='{{ asset("storage/images/{$single_product->imagem_principal}") }}'>
+							<div class="thumb-image"> <img src='{{ asset("storage/images/{$single_product->imagem_principal}") }}' data-imagezoom="true" class="img-responsive"> </div>
 						</li>
-						@if($produto->imagem_2 != null)
-						<li data-thumb='{{ asset("storage/images/{$produto->imagem_2}") }}'>
-							<div class="thumb-image"> <img src='{{ asset("storage/images/{$produto->imagem_2}") }}' data-imagezoom="true" class="img-responsive"> </div>
+						@if($single_product->imagem_2 != null)
+						<li data-thumb='{{ asset("storage/images/{$single_product->imagem_2}") }}'>
+							<div class="thumb-image"> <img src='{{ asset("storage/images/{$single_product->imagem_2}") }}' data-imagezoom="true" class="img-responsive"> </div>
 						</li>
 						@endif
-						@if($produto->imagem_3 != null)	
-						<li data-thumb='{{ asset("storage/images/{$produto->imagem_3}") }}'>
-							<div class="thumb-image"> <img src='{{ asset("storage/images/{$produto->imagem_3}") }}' data-imagezoom="true" class="img-responsive"> </div>
+						@if($single_product->imagem_3 != null)	
+						<li data-thumb='{{ asset("storage/images/{$single_product->imagem_3}") }}'>
+							<div class="thumb-image"> <img src='{{ asset("storage/images/{$single_product->imagem_3}") }}' data-imagezoom="true" class="img-responsive"> </div>
 						</li>
 						@endif
 					</ul>
@@ -60,8 +60,8 @@
 			</div>
 		</div>
 		<div class="col-md-8 single-right-left simpleCart_shelfItem">
-					<h3>{{ $produto->nome }}</h3>
-					<p><span class="item_price">R$ {{ str_replace('.', ',', number_format($produto->preco, 2, '.', '')) }}</span> <del>R$ {{ str_replace('.', ',', number_format(($produto->preco+9), 2, '.', '')) }}</del></p>
+					<h3>{{ $single_product->nome }}</h3>
+					<p><span class="item_price">R$ {{ str_replace('.', ',', number_format($single_product->preco, 2, '.', '')) }}</span> <del>R$ {{ str_replace('.', ',', number_format(($single_product->preco+9), 2, '.', '')) }}</del></p>
 					<p><span class="lote-info-single">R$ 6,00 a partir de 1000 pares*</span></p>
 					<div class="rating1">
 						
@@ -147,8 +147,8 @@
 					   <div class="tab1">
 
 							<div class="single_page_agile_its_w3ls">
-							  <h6>{{ $produto->nome }}</h6>
-							   <p>{{ $produto->descricao }}</p>
+							  <h6>{{ $single_product->nome }}</h6>
+							   <p>{{ $single_product->descricao }}</p>
 							</div>
 						</div>
 						<!--//tab_one-->
@@ -165,56 +165,14 @@
 			<h3 class="wthree_text_info">Produtos <span>Relacionados</span></h3>
 
          @foreach($produtos as $produto)
-			@if((($produto->status->nome == 'Ativo') and ($produto->categorias->nome == $categoria_do_produto)) and $produto->nome != $nome_do_produto)
-				<div class="col-md-3 product-men">
-					<div class="men-pro-item simpleCart_shelfItem">
-						<div class="men-thumb-item">
-							<img src='{{ asset("storage/images/{$produto->imagem_principal}") }}' alt="" class="pro-image-front">
-							<img src='{{ asset("storage/images/{$produto->imagem_principal}") }}' alt="" class="pro-image-back">
-								<div class="men-cart-pro">
-									<div class="inner-men-cart-pro">
-										<a href='{{ url("produto/$produto->id") }}' class="link-product-add-cart">Ver Produto</a>
-									</div>
-								</div>
-								<span class="product-new-top">Novo</span>
-								
-						</div>
-						<div class="item-info-product ">
-							<h4><a href="single.html">{{ $produto->nome }}</a></h4>
-							<div class="info-product-price">
-								<span class="item_price">R$ {{ str_replace('.', ',', number_format($produto->preco, 2, '.', '')) }}</span>
-								<del>R$ {{ str_replace('.', ',', number_format(($produto->preco + 9), 2, '.', '')) }}</del>
-							</div>
-							<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="{{ $produto->nome }}" />
-														<input type="hidden" name="amount" value="{{ $produto->preco }}" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Comprar" class="button" />
-													</fieldset>
-												</form>
-											</div>
-																
-						</div>
-					</div>
-				</div>
-			@endif
-		@endforeach
-					  
-                       
-						 
+				@if(($produto->status->nome == 'Ativo') and $produto->categorias->nome == $categoria_do_produto)
+					@include('site.partials._product_grid')
+				@endif
+			@endforeach 
 					
-							<div class="clearfix"> </div>
-					<!--//slider_owl-->
-		         </div>
-	        </div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
  </div>
 <!--//single_page-->
 
@@ -295,7 +253,6 @@
 
 
 
-@include('site.partials._footer')
 
 
 @endsection

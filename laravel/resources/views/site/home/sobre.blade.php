@@ -39,7 +39,7 @@
 														</ul>
 					</div>
 					<div class="col-md-4">
-						<img src="#" alt="#">
+						<img class="img-responsive" src="{{ asset('vendor/site/assets/images/chinelos-sobre.jpg') }}" alt="chinelos estampados">
 					</div>
 				</div>
 				<div class="clearfix"> </div>

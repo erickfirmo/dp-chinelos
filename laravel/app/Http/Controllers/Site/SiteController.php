@@ -83,22 +83,59 @@ class SiteController extends Controller
     {   
         $cart = Session::get('cart');
         $count_cart = count($cart);
+        
+        $single_product = Produto::findOrFail($id);
+        $categoria_do_produto = $single_product->categorias->nome;
+        
         $produtos = Produto::all();
-        $produto = Produto::findOrFail($id);
+        
         $categorias = Categoria::pluck('nome');
-        $categoria_do_produto = $produto->categorias->nome;
-        $nome_do_produto = $produto->nome;
 
-        return view('site.home.produto', compact('produto'), [
 
-            'produtos' => $produtos,
+        return view('site.home.produto', compact('single_product'), [
+
             'categorias' => $categorias,
             'categoria_do_produto' => $categoria_do_produto,
-            'nome_do_produto' => $nome_do_produto
             
             ])
             ->withCountCart($count_cart)
+            ->withCart($cart)
+            ->withProdutos($produtos);
+    }
+
+    public function carrinho(Request $request)
+    {
+        
+        $cart = Session::get('cart');
+        $count_cart = count($cart);
+        
+
+        return view('site.home.carrinho')
+            ->withCountCart($count_cart)
             ->withCart($cart);
+
+    }
+
+    public function add(Request $request)
+    {
+        $produto_do_carrinho = Produto::findOrFail($request->produto_do_carrinho);
+        $count_cart = 0;
+        $cart = [];
+
+        if(Session::has('cart'))
+        {
+            $request->session()->push('cart', $produto_do_carrinho->nome);
+        } else {
+            Session::put('cart', []);
+        }
+
+        $cart = Session::get('cart');
+        $count_cart = count($cart);
+        
+        return response()->json([
+            'cart'=> $cart,
+            'count_cart'=> $count_cart,
+        ]);
     }
 
     

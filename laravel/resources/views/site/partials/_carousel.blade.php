@@ -10,6 +10,7 @@
 				<div class="">
 					<div class="carousel-caption">
 						<h1><i>Chinelos para Casamentos</i></h1>
+						<br>
 						<ul>
 							<li><i>- Padrinhos</i></li>
 							<li><i>- Noivos</i></li>
@@ -23,11 +24,13 @@
 			<div class="item item2"> 
 				<div class="">
 					<div class="carousel-caption">
-					<h1><i>Chinelos para Formandos</i></h1>
+						<h1><i>Chinelos para Formandos</i></h1>
+						<br>
 						<ul>
 							<li><i> - Bons momentos <br>durando por mais tempo</i></li>
 
 						</ul>
+						<br>
 						<a class="hvr-outline-out button2" href="{{ url('/contato') }}">Fazer Orçamento </a>
 					</div>
 				</div>
