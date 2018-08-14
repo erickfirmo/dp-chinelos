@@ -84,7 +84,9 @@
                           <select name="categoria_id" class="form-control select2" style="width: 100%;">
                               <option disabled selected value> -- </option>
                               @foreach($categorias as $key => $categoria)
+                                @if($categoria !== 'Todos')
                                 <option value='{{ $key }}'>{{ $categoria }}</option>
+                                @endif
                               @endforeach
                           </select>
                         </div>

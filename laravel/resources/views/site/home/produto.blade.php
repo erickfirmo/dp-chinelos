@@ -13,26 +13,6 @@
 
 
 
-       <!-- /banner_bottom_agile_info -->
-<div class="page-head_agile_info_w3l">
-		<div class="container">
-			<h3>{{ $single_product->nome }}</h3>
-			<!--/w3_short-->
-				 <div class="services-breadcrumb">
-						<div class="agile_inner_breadcrumb">
-
-						   <ul class="w3_short">
-								<li><a href="#">Home</a><i>|</i></li>
-								
-								<li>{{ $single_product->categorias->nome }}<i>|</i></li>
-								
-								<li>{{ $single_product->nome }}</li>
-							</ul>
-						 </div>
-				</div>
-	   <!--//w3_short-->
-	</div>
-</div>
 
   <!-- banner-bootom-w3-agileits -->
 <div class="banner-bootom-w3-agileits">
@@ -62,62 +42,69 @@
 		<div class="col-md-8 single-right-left simpleCart_shelfItem">
 					<h3>{{ $single_product->nome }}</h3>
 					<p><span class="item_price">R$ {{ str_replace('.', ',', number_format($single_product->preco, 2, '.', '')) }}</span> <del>R$ {{ str_replace('.', ',', number_format(($single_product->preco+9), 2, '.', '')) }}</del></p>
-					<p><span class="lote-info-single">R$ 6,00 a partir de 1000 pares*</span></p>
+					<p>
+						<span class="lote-info-single">
+						@if(($single_product->preco_lote) and ($single_product->unidades_lote))
+							R$ {{ number_format($single_product->preco_lote, 2, ',', '')}} a partir de {{ $single_product->unidades_lote }} pares*
+						@else
+							<br>
+						@endif
+						</span>
+					</p>
 					<div class="rating1">
 						
 					</div>
-					<div class="color-quality">
-						<div class="color-quality-right">
-							<h5>Unidades :</h5>
-							<input type="number" value="1" min="1" name="quantidade" id="#" class="input frm-field required sect">
+
+					<form id="form_cart{{ $single_product->id }}">
+						<div class="color-quality">
+							<div class="color-quality-right">
+								<h5>Unidades :</h5>
+								<input type="number" value="1" min="1" name="unidades_do_produto" class="input frm-field required sect">
+							</div>
 						</div>
-					</div>
-               <br>
-					
-               <div class="color-quality">
-						<div class="color-quality-right">
-							<h5>Numeração :</h5>
-							<select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
-								<option value="null">37/38</option>
-								<option value="null">39/40</option> 
-								<option value="null">41/42</option>					
-								<option value="null">43/44</option>								
-							</select>
+						<br>
+						
+						<div class="color-quality">
+							<div class="color-quality-right">
+								<h5>Tamanhos :</h5>
+
+								@foreach($single_product->tamanhos as $tamanho_do_produto)
+									<label class="label-size check-lg" for="{{$single_product->id.$tamanho_do_produto->tamanho}}" id="{{$single_product->id.$tamanho_do_produto->tamanho}}-label">
+										{{ $tamanho_do_produto->tamanho }}
+										<input class="radio-size hide" type="checkbox" value="{{ $tamanho_do_produto->tamanho }}" name="tamanho_do_produto" id="{{$single_product->id.$tamanho_do_produto->tamanho}}">
+									</label>
+								@endforeach
+								
+							</div>
 						</div>
-					</div>
-					
-					<div class="occasional">
-						<h5>Forma de pagamento :</h5>
-						<div class="colr ert">
-							<label class="radio"><input type="radio" name="radio" checked=""><i></i>Cartão de Crédito</label>
+						
+						<div class="occasional">
+							<h5>Forma de pagamento :</h5>
+							<div class="colr ert">
+								<label class="radio"><input type="radio" name="radio" checked=""><i></i>Cartão de Crédito</label>
+							</div>
+							<div class="colr">
+								<label class="radio"><input type="radio" name="radio"><i></i>Débito Automático</label>
+							</div>
+							<div class="colr">
+								<label class="radio"><input type="radio" name="radio"><i></i>A Vista</label>
+							</div>
+							<div class="clearfix"> </div>
 						</div>
-						<div class="colr">
-							<label class="radio"><input type="radio" name="radio"><i></i>Débito Automático</label>
+						<div class="occasion-cart">
+							<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+							
+								<fieldset>
+									<input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+									<input type="hidden" name="produto_id" value="{{ $single_product->id }}"/>
+									<input type="hidden" name="nome_do_produto" value="{{ $single_product->nome }}"/>
+									<input type="hidden" name="categoria_do_produto" value="{{ $single_product->categoria_id }}"/>
+									<input type="submit" name="submit" value="Comprar" class="button"/>
+								</fieldset>
+							</div>
 						</div>
-						<div class="colr">
-							<label class="radio"><input type="radio" name="radio"><i></i>A Vista</label>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="occasion-cart">
-						<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart">
-																	<input type="hidden" name="add" value="1">
-																	<input type="hidden" name="business" value=" ">
-																	<input type="hidden" name="item_name" value="Wing Sneakers">
-																	<input type="hidden" name="amount" value="650.00">
-																	<input type="hidden" name="discount_amount" value="1.00">
-																	<input type="hidden" name="currency_code" value="USD">
-																	<input type="hidden" name="return" value=" ">
-																	<input type="hidden" name="cancel_return" value=" ">
-																	<input type="submit" name="submit" value="Comprar" class="button">
-																</fieldset>
-															</form>
-														</div>
-																			
-					</div>
+					</form>
+								
 					<ul class="social-nav model-3d-0 footer-social w3_agile_social single_page_w3ls">
 						                                   <li class="share">Compartilhe : </li>
 															<li><a href="#" class="facebook">

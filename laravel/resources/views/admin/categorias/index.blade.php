@@ -35,27 +35,26 @@
 
             <thead>
             <tr>
-              <th>Id</th>
               <th>Nome da Categoria</th>
               <th>Ações</th>
             </tr>
             </thead>
             <tbody>
               @foreach($categorias as $categoria)
-              <tr class="clickable-tr pointer" data-href='{{ url("admin/categorias/$categoria->id") }}'>
-                <td>{{ $categoria->id }}</td>
-                <td>{{ $categoria->nome }}</td>
-                <td>
-                  <a href='{{ url("admin/categorias/$categoria->id/edit") }}'>
-                    <button class="btn btn-primary button-table">Ver/Editar</button>
-                  </a>
-                </td>
-              </tr>
+                @if($categoria->nome !== 'Todos')
+                <tr class="clickable-tr pointer" data-href='{{ url("admin/categorias/$categoria->id") }}'>
+                  <td>{{ $categoria->nome }}</td>
+                  <td>
+                    <a href='{{ url("admin/categorias/$categoria->id/edit") }}'>
+                      <button class="btn btn-primary button-table">Ver/Editar</button>
+                    </a>
+                  </td>
+                </tr>
+                @endif
               @endforeach
             </tbody>
             <tfoot>
             <tr>
-              <th>Id</th>
               <th>Nome da Categoria</th>
               <th>Ações</th>
             </tr>

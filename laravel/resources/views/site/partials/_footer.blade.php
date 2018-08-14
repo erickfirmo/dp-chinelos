@@ -26,7 +26,7 @@
 				
 				
 				<div class="col-md-6 sign-gd-two">
-					<h4>Informações <span> de Contato</span></h4>
+					<h4>Informações de Contato</h4>
 					<div class="w3-address">
 
 						<div class="w3-address-grid">

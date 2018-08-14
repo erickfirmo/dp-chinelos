@@ -15,7 +15,6 @@
 							<li><i>- Padrinhos</i></li>
 							<li><i>- Noivos</i></li>
 							<li><i>- Convidados</i></li>
-
 						</ul>
 						<a class="hvr-outline-out button2" href="{{ url('/contato') }}">Fazer Orçamento </a>
 					</div>

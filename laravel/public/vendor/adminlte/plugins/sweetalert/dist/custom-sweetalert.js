@@ -3,10 +3,11 @@
 $(document).ready(function(){
    $('#product-exclude-button').on('click', function() {
      swal({
-       title: "Tem certeza ?",
-       text: "Todas as informações do produto serão pedidas",
+       title: "Ops! Tem certeza ?",
+       text: "Todas as informações do produto serão pedidas !",
        icon: "warning",
        buttons: true,
+       buttons: ["Cancelar", "Sim, desejo excluir este produto"],
        dangerMode: true,
      })
      .then((willDelete) => {
@@ -36,11 +37,13 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('#category-exclude-button').on('click', function() {
     swal({
+      dangerMode: true,
       title: "Tem certeza ?",
-      text: "Todas os produtos com esta categoria serão alterados.",
+      text: "Todos os produtos com esta categoria serão removidos !",
       icon: "warning",
       buttons: true,
-      dangerMode: true,
+      buttons: ["Cancelar", "Sim, desejo excluir esta categoria"],
+      
     })
     .then((willDelete) => {
       if (willDelete) {
@@ -53,13 +56,13 @@ $(document).ready(function(){
 
 /* SALVAR CATEGORIA */
 
-$(document).ready(function(){
+/*$(document).ready(function(){
  $('#category-save-button').on('click', function() {
    
        $('#category-save-form').submit();
        
  }); 
-});
+});*/
 
 
 
@@ -68,10 +71,10 @@ $(document).ready(function(){
 /* IMAGEM RULES SUBMIT */ 
 
 
-$(document).ready(function(){
+/*$(document).ready(function(){
   $('#save-image-product-form').submit();
       
-});
+});*/
 
 /*$(window).ready(function(){
 
@@ -89,7 +92,7 @@ $(document).ready(function(){
       });
   });
 });*/
-
+/*
 $(document).ready(function(){
 
   $('#save-image-product').on('click', function() {
@@ -99,4 +102,4 @@ $(document).ready(function(){
   });
 
  });
- 
+ */

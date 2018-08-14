@@ -177,6 +177,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
+
+
 
 
 
@@ -233,6 +236,8 @@ return [
         // Laravel Collective 
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+
+        'JavaScript' => Laracasts\Utilities\JavaScript\JavaScriptFacade::class,
 
     ],
 

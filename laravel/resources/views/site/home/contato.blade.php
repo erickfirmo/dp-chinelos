@@ -92,7 +92,6 @@
 </div>
 
 @include('site.partials._info_icons')
-@include('site.partials._footer')
 
 
 @endsection

@@ -40,7 +40,7 @@ class Produto extends Model
 
     public function tamanhos()
     {
-        return $this->belongsToMany(Tamanho::class);
+        return $this->belongsToMany(Tamanho::class, 'tamanhos_do_produto', 'produto_id', 'tamanho_id');
     }
 
     

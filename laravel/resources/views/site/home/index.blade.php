@@ -6,96 +6,8 @@
 @include('site.partials._modal_1')
 @include('site.partials._modal_2')
 @include('site.partials._carousel')
-
-
-<!-- /new_arrivals --> 
-<div class="new_arrivals_agile_w3ls_info"> 
-		<div class="container">
-		    <h3 class="wthree_text_info">NOSSOS<span> MODELOS</span></h3>
-		    <hr class="hr-default">		
-				<div id="horizontalTab">
-						<ul class="resp-tabs-list">
-						<li style="width: {{ (100 / (count($categorias) + 1) ) }}% !important; font-size: 12px; padding: 10px 0;"> TODOS</li>
-
-							@foreach($categorias as $categoria)
-								<li style="width: {{ (100 / (count($categorias) + 1)) }}% !important; font-size: 12px; padding: 10px 0;"> {{ $categoria }}</li>
-								
-							@endforeach
-						</ul>
-					<div class="resp-tabs-container">
-					<!--/tab_one-->
-
-					<div class="tab1">
-						@foreach($produtos as $produto)
-							@if($produto->status->nome == 'Ativo')
-								@include('site.partials._product_grid')
-							@endif
-						@endforeach
-						<div class="clearfix"></div>
-					</div>
-						<!--//tab-->
-
-				@foreach($categorias as $categoria)
-					
-					<div class="tab1">
-						@foreach($produtos as $produto)
-							@if(($produto->status->nome == 'Ativo') and ($produto->categorias->nome == $categoria))
-					
-								<div class="col-md-3 product-men">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item">
-											<img src='{{ asset("storage/images/{$produto->imagem_principal}") }}' alt="" class="pro-image-front">
-											<img src='{{ asset("storage/images/{$produto->imagem_principal}") }}' alt="" class="pro-image-back"> 
-												<div class="men-cart-pro">
-													<div class="inner-men-cart-pro">
-														<a href='{{ url("produto/$produto->id") }}' class="link-product-add-cart">Ver Produto</a>
-													</div>
-												</div>
-												<span class="product-new-top">Novo</span>
-												
-										</div>
-										<div class="item-info-product ">
-											<h4><a href='{{ url("produto/$produto->id") }}'>{{ $produto->nome }}</a></h4>
-											<div class="info-product-price">
-												<span class="item_price">R$ {{ str_replace('.', ',', number_format($produto->preco, 2, '.', '')) }}</span>
-												<del>R$ {{ str_replace('.', ',', number_format(($produto->preco + 9), 2, '.', '')) }}</del>
-											</div>
-											@if($produto->preco_lote)
-											<div class="info-product-price">
-												<p><span class="lote-info">R$ 6,00 a partir de 1000 pares*</span></p>
-											</div>
-											@endif
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-												<form id="form_cart{{ $produto->id}}">
-													<fieldset>
-														<input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-														<input type="hidden" name="produto_do_carrinho" value="{{ $produto->id }}"/>
-														<input type="submit" name="submit" value="Comprar" class="button"/>
-													</fieldset>
-												</form>
-											</div>								
-										</div>
-									</div>
-								</div>
-							@endif
-						@endforeach
-							<div class="clearfix"></div>
-						</div>
-						<!--//tab-->
-					@endforeach
-
-					</div>
-				</div>	
-			</div>
-		</div>
-	<!-- //new_arrivals --> 
-
-
-
-
-
+@include('site.partials._product_grid')
 @include('site.partials._banner_parallax')
-
 
 <!-- Contato -->
 <div class="banner_bottom_agile_info">
@@ -176,11 +88,12 @@
 	</div>
  <!--//contact-->
 
+ <h3 class="wthree_text_info">LOCALIZAÇÃO</h3>
+ <hr>
 
  <div class="contact-w3-agile1 map" data-aos="flip-right">
-			
-		   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100949.24429313939!2d-122.44206553967531!3d37.75102885910819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan+Francisco%2C+CA%2C+USA!5e0!3m2!1sen!2sin!4v1472190196783" class="map" style="border:0" allowfullscreen=""></iframe>
-	   </div>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.187876554052!2d-46.48907098494924!3d-23.59759408466489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce67cf5a90cd07%3A0xb8b396174865e4b1!2sAv.+Mateo+Bei%2C+1650+-+Cidade+S%C3%A3o+Mateus%2C+S%C3%A3o+Paulo+-+SP%2C+03949-010!5e0!3m2!1spt-BR!2sbr!4v1533162886732" class="map" style="border:0" allowfullscreen=""></iframe>
+</div>
 
 
 @include('site.partials._info_icons')

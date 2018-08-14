@@ -7,6 +7,8 @@ Route::prefix('/')->namespace('Site')->group(function () {
     Route::get('contato', 'SiteController@contato')->name('contato');
     Route::get('sobre', 'SiteController@sobre')->name('sobre');
     Route::get('produtos', 'SiteController@produtos')->name('produtos');
+    Route::get('produtos/categoria/{category}', 'SiteController@produtosDaCategoria')->name('produtos');
+
 
     Route::get('carrinho', 'CarrinhoController@index')->name('carrinho');
     

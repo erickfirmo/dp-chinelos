@@ -16,7 +16,7 @@ class ProdutoController extends Controller
     public function index()
     {
         $produtos = Produto::all();
-        $categorias = Categoria::pluck('nome');
+        $categorias = Categoria::all();
         
         $cart = Session::get('cart');
         $count_cart = count($cart);
@@ -36,9 +36,27 @@ class ProdutoController extends Controller
         $count_cart = count($cart);
         $produtos = Produto::all();
         $produto = Produto::findOrFail($id);
-        $categorias = Categoria::pluck('nome');
+        $categorias = Categoria::all();
         $categoria_do_produto = $produto->categorias->nome;
         $nome_do_produto = $produto->nome;
+
+
+        if($produto) {
+
+
+        return view('site.home.nao-encontrado', [
+
+            'categorias' => $categorias,
+            'categoria_do_produto' => $categoria_do_produto,
+            'nome_do_produto' => $nome_do_produto
+            
+            ])
+            ->withCountCart($count_cart)
+            ->withCart($cart);
+
+
+        } else {
+
 
         return view('site.home.produto', compact('produto'), [
 
@@ -50,5 +68,8 @@ class ProdutoController extends Controller
             ])
             ->withCountCart($count_cart)
             ->withCart($cart);
+
+        }
+
     }
 }
