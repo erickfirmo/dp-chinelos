@@ -13,7 +13,7 @@
 									<div class="item-info-product ">
 										<h4><a href='{{ url("produto/$produto->id") }}'>{{ $produto->nome }}</a></h4>
 										
-										<form id="form_cart{{ $produto->id }}">
+										<form class="add-produto">
 											<div class="info-product-price">
 												<span class="item_price">R$ {{ str_replace('.', ',', number_format($produto->preco, 2, '.', '')) }}</span>
 												<del>R$ {{ str_replace('.', ',', number_format(($produto->preco + 9), 2, '.', '')) }}</del>
@@ -26,7 +26,7 @@
 														<br>
 													@endif
 													<div class="row">
-														@foreach($produto->tamanhos as $tamanho_do_produto)
+														@foreach(($produto->tamanhos)->sortBy('tamanho') as $tamanho_do_produto)
 															
 																	<label class="label-size check-mini" for="{{$produto->id.$tamanho_do_produto->tamanho.$count_size}}" id="{{$produto->id.$tamanho_do_produto->tamanho.$count_size}}-label">
 																		{{ $tamanho_do_produto->tamanho }}

@@ -48,8 +48,6 @@
 
 @include('footer')
 
-
-
 @include('site.partials._scripts')
 
 

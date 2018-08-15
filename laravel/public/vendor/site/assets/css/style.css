@@ -3255,7 +3255,9 @@ color: #000;
 }
 .colr {
     width: 33.333%;
-    float: left;
+	float: left;
+	margin-bottom: 22px;
+
 }
 .description input[type="text"]{
 	padding:8px 8px;
@@ -4101,6 +4103,8 @@ p.w3ls_para {
 	.colr {
 		width: 24%;
 		float: left;
+		margin-bottom: 22px;
+
 	}
 	.navbar-nav > li {
 		margin: 0 0px 0 0;
@@ -5114,6 +5118,8 @@ p.w3ls_para {
 	.colr {
 		width: 33%;
 		float: left;
+		margin-bottom: 22px;
+
 	}
 	.add-review input[type="submit"] {
 		padding: 6px 0;
@@ -6126,24 +6132,12 @@ div#header {
 }
 
 .product-thumbnail {
-	width: 140px;
-	height: auto;
+	
+	max-height: 140px;
+	width: auto;
 }
 
-span.remove-product-cart{
-	font-size: 10px;
-	color:#888;
-	text-decoration: underline;
-	text-align: center;
-	padding-left: 32px;
-}
 
-span.remove-product-cart:hover {
-	font-size: 10px;
-	color:rgb(91, 91, 91);
-	text-decoration: underline;
-	cursor: pointer;
-}
 
 .product-title, .product-title a {
 	color: #e91e1e;
@@ -6189,4 +6183,30 @@ input[type=number]::-webkit-inner-spin-button {
 
 table p {
 	font-size: 12px;
+}
+
+
+span.button-link {
+	background:none!important;
+	color:#888;
+	border:none; 
+	padding:0!important;
+	font: inherit;
+	/*border is optional*/
+	border-bottom:1px solid #444; 
+	cursor: pointer;
+	font-size: 10px;
+}
+
+
+span.button-link:hover {
+	background:none!important;
+	color:rgb(91, 91, 91);
+	border:none; 
+	padding:0!important;
+	font: inherit;
+	/*border is optional*/
+	border-bottom:1px solid rgb(91, 91, 91);
+	cursor: pointer;
+	font-size: 10px;
 }

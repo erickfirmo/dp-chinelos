@@ -6,14 +6,6 @@
 @include('site.partials._modal_1')
 @include('site.partials._modal_2')
 
-
-
-
-
-
-
-
-
   <!-- banner-bootom-w3-agileits -->
 <div class="banner-bootom-w3-agileits">
 	<div class="container">
@@ -55,7 +47,7 @@
 						
 					</div>
 
-					<form id="form_cart{{ $single_product->id }}">
+					<form class="add-produto">
 						<div class="color-quality">
 							<div class="color-quality-right">
 								<h5>Unidades :</h5>
@@ -78,19 +70,7 @@
 							</div>
 						</div>
 						
-						<div class="occasional">
-							<h5>Forma de pagamento :</h5>
-							<div class="colr ert">
-								<label class="radio"><input type="radio" name="radio" checked=""><i></i>Cartão de Crédito</label>
-							</div>
-							<div class="colr">
-								<label class="radio"><input type="radio" name="radio"><i></i>Débito Automático</label>
-							</div>
-							<div class="colr">
-								<label class="radio"><input type="radio" name="radio"><i></i>A Vista</label>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
+						
 						<div class="occasion-cart">
 							<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
 							

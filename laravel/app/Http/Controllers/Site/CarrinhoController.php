@@ -16,7 +16,6 @@ class CarrinhoController extends Controller
     public function index(Request $request)
     {
         $produtos = Produto::all();
-		
         $categorias = Categoria::whereHas('produtos', function($q) {
             $q->where('status_id', 1);
             })->get();
@@ -115,9 +114,121 @@ class CarrinhoController extends Controller
 
     public function destroy($product_key){
 
+
+
+
+        $produtos = Produto::all();
+        $categorias = Categoria::whereHas('produtos', function($q) {
+            $q->where('status_id', 1);
+            })->get();
+
+        //create session method
+        if((!Session::has('cart')) || !Session::has('count_cart'))
+        {
+            Session::put('cart', null);
+            Session::put('count_cart', 0);
+
+        }
+
         $cart = Session::get('cart');
-        unset($cart[$product_key]);
-        Session::put('cart', $cart);
+        $count_cart = Session::get('count_cart');
+        $count_cart -= $cart[$product_key]['unidades'];
+        Session::put('count_cart', $count_cart);
         
+        unset($cart[$product_key]);
+
+        Session::put('cart', $cart);
+        //##
+
+        $count_size = 0;
+
+        return redirect()->back();
+
+
+
+
+
+
+
+        
+    }
+
+
+    public function cartEdit(Request $request){
+        
+
+
+        $produtos = Produto::all();
+        $categorias = Categoria::whereHas('produtos', function($q) {
+            $q->where('status_id', 1);
+            })->get();
+
+        //create session method
+        if((!Session::has('cart')) || !Session::has('count_cart'))
+        {
+            Session::put('cart', null);
+            Session::put('count_cart', 0);
+
+        }
+
+        $cart = Session::get('cart');
+        
+        //##
+
+
+        $key_product = $request->prod;
+
+        $cart[$key_product]['unidades'] = $request->edit_unidades;
+
+        $count_cart = 0;
+        foreach($cart as $key => $product_cart){
+            $count_cart += $cart[$key]['unidades'];
+        }
+        Session::put('count_cart', $count_cart);
+
+
+        Session::put('cart', $cart);
+
+
+
+
+        $count_size = 0;
+
+        return redirect()->back();
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
     }
 }

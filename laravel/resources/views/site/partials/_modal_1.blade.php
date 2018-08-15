@@ -12,12 +12,12 @@
 						<form method="post" action="{{ route('login') }}">
 						{{ csrf_field() }}
 							<div class="styled-input">
-								<input id="email" type="email" name="email" value="{{ old('email') }}" required=""> 
+								<input type="email" name="email" value="{{ old('email') }}" required=""> 
 								<label>Email</label>
 								<span></span>
 							</div>
 							<div class="styled-input agile-styled-input-top">
-								<input id="password" type="password" name="password" required="">
+								<input type="password" name="password" required="">
 								<label>Senha</label>
 								<span></span>
 							</div>

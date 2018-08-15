@@ -41,7 +41,7 @@
 				@else 
 					<table id="cart-table" class="table">
 						<tbody>
-							@foreach($cart as $product_cart)
+							@foreach($cart as $key => $product_cart)
 								<tr>
 									<td>
 										<div class="row">
@@ -61,14 +61,18 @@
 										<div class="row">
 											<div class="col-md-12 color-quality-right">
 												<br>
-												<label>&nbsp;&nbsp;&nbsp;Unidades <br><input type="number" value="{{$product_cart['unidades']}}" name="" id="" class="input frm-field required sect"></label><br>
-												<span class="remove-product-cart">Excluir</span>
-												<form class="edit-unidades">
-												
+												<form id="{{$product_cart['id'].$product_cart['tamanho']}}" action='{{ route("cartedit") }}' method="post" class="set-unidades-form">
+													<input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+													<label>&nbsp;&nbsp;&nbsp;Unidades <br><input type="number" value="{{$product_cart['unidades']}}" name="edit_unidades" oninput="editUnidades({{$product_cart['id'].$product_cart['tamanho']}})" class="input frm-field required sect"></label><br>
+													<input type="hidden" name="prod" value="{{$key}}">
 												</form>
-
-												<form class="remove-product-cart">
 												
+												
+												<form class="remove-product-cart" action='{{ route("carrinho.destroy", $key) }}' method="POST" >
+													{{method_field('DELETE')}}
+													<input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+
+													<span class="button-link">Excluir</span>
 												</form>
 												
 											</div>

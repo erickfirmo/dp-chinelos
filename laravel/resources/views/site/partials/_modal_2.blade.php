@@ -12,42 +12,42 @@
 						 <form action="{{ route('register') }}" method="post">
 						 	{{ csrf_field() }}
 							<div class="styled-input">
-								<input id="name" type="text"  name="name" value="{{ old('name') }}" required autofocus>
+								<input type="text"  name="name" value="{{ old('name') }}" required autofocus>
 								<label>Nome</label>
 								<span></span>
 							</div>
 							<div class="styled-input">
-								<input id="lastname" type="text"  name="lastname" value="{{ old('lastname') }}" required>
+								<input type="text"  name="lastname" value="{{ old('lastname') }}" required>
 								<label>Sobrenome</label>
 								<span></span>
 							</div>
 							<div class="styled-input-date">
 								<label>Nascimento</label><br>
-								<input id="nascimento" type="date"  name="nascimento" value="{{ old('nascimento') }}" required>
+								<input type="date" name="nascimento" value="{{ old('nascimento') }}" required>
 								<span></span>
 							</div>
 							<div class="styled-input">
-								<input id="telefone" type="text"  name="telefone" value="{{ old('telefone') }}" required>
+								<input type="text"  name="telefone" value="{{ old('telefone') }}" required>
 								<label>Telefone</label>
 								<span></span>
 							</div>
 							<div class="styled-input">
-								<input id="celular" type="text"  name="celular" value="{{ old('celular') }}" required>
+								<input type="text"  name="celular" value="{{ old('celular') }}" required>
 								<label>Celular</label>
 								<span></span>
 							</div>
 							<div class="styled-input">
-							<input id="email" type="email" name="email" value="{{ old('email') }}" required>
+							<input type="email" name="email" value="{{ old('email') }}" required>
 								<label>Email</label>
 								<span></span>
 							</div> 
 							<div class="styled-input">
-								<input id="password" type="password" name="password" required>
+								<input type="password" name="password" required>
 								<label>Senha</label>
 								<span></span>
 							</div> 
 							<div class="styled-input">
-								<input id="password-confirm" type="password" name="password_confirmation" required>
+								<input type="password" name="password_confirmation" required>
 								<label>Confirmar Senha</label>
 								<span></span>
 							</div> 

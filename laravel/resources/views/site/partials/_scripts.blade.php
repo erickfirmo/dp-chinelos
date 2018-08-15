@@ -201,7 +201,7 @@
 
 
 
-	$("form").submit(function(e){
+	$("form.add-produto").submit(function(e){
 		e.preventDefault();
 		var tamanho_do_produto = $(this).find("input[name='tamanho_do_produto']:checked").val();
 
@@ -243,17 +243,13 @@
 		} else {
 			alert('Escolha o tamanho do produto !');
 		}
-	}); 
-
+   }); 
    
 
+		
 
-
-
-
-
-
-
+	
+	
 
 
 });
@@ -270,6 +266,91 @@ $(document).ready(function(){
 	 }); 
 });
 </script>
+
+
+<script>
+
+$(document).ready(function(){
+	
+	$('.button-link').on('click', function(){
+    swal({
+      dangerMode: true,
+      title: "Remover produto",
+      text: "Gostaria de remover este produto do carrinho ?",
+      icon: "warning",
+      buttons: true,
+      buttons: ["NÃO REMOVER", "SIM, REMOVER DO CARRINHO"],
+      
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+			$(this).parent('form').submit();
+      }
+    });
+  }); 
+});
+
+</script>
+
+
+
+
+
+
+
+<script>
+
+
+							
+
+	$(document).ready(function() {
+
+
+
+		$("input:checkbox").on('click', function() {
+			var box = $(this);
+
+
+
+			if (box.is(":checked")) {
+				var group = "input:checkbox[name='" + box.attr("name") + "']";
+				$(group).prop("checked", false);
+				
+				
+				box.parent('label').siblings('label').removeClass('radio-size-clicked');
+				box.parent('label').siblings('label').removeClass('radio-size-active');
+
+				box.parent('label').addClass('radio-size-clicked')
+				box.prop("checked", true);
+			} else {
+				box.prop("checked", false);
+				box.parent('label').removeClass('radio-size-clicked')
+				box.parent('label').removeClass('radio-size-active')
+			}
+
+		});
+
+	
+
+
+
+	
+		
+
+	
+	
+
+
+});
+
+
+
+function editUnidades(f){
+	$('#'+f).submit();
+
+}
+</script>
+
 
 
 
