@@ -130,13 +130,15 @@
 	
 		<div class="w3_agile_latest_arrivals">
 			<h3 class="wthree_text_info">Produtos <span>Relacionados</span></h3>
-
+			<div class="row">
          @foreach($produtos as $produto)
-				@if(($produto->status->nome == 'Ativo') and $produto->categorias->nome == $categoria_do_produto)
-					@include('site.partials._product_grid')
+				@if((($produto->status->nome == 'Ativo') and $produto->categorias->nome == $categoria_do_produto) and $produto->nome != $single_product->nome)
+					<div class="col-md-3 product-men">
+						@include('site.partials._product_box')
+					</div>
 				@endif
 			@endforeach 
-					
+			</div>
 			<div class="clearfix"> </div>
 		</div>
 	</div>

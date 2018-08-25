@@ -2,44 +2,54 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Produto;
 use App\Categoria;
-use App\Status;
-use App\Imagem;
-use App\ImagemDoProduto;
 use App\Tamanho;
 use App\TamanhoDoProduto;
+use App\User;
+use App\Endereco;
+use App\Pedido;
+use App\Status;
+use App\ProdutoDoPedido;
+use Session;
+use Auth;
 
-use App\Http\Controllers\Admin\TamanhoDoProdutoController;
-
-
-use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
 {
-    
+
     public function __construct()
     {
         $this->middleware('auth');
-
     }
+
+    public function loadCountPedidos()
+    {
+        $pedidos = Pedido::where('status_id', 1)->orderBy('id', 'desc')->paginate(10);
+
+        return count($pedidos);
+    }
+
 
 
     public function index()
     {
         $produtos = Produto::orderBy('id', 'desc')->paginate(50);
+        $count_novos_pedidos = $this->loadCountPedidos();
 
         return view('admin.produtos.index',[
-            
             'produtos' => $produtos
-            
-            ]);
+            ])->withCountNovosPedidos($count_novos_pedidos);
     }
 
 
     public function create()
     {
+        $count_novos_pedidos = $this->loadCountPedidos();
+
         $categorias = Categoria::pluck('nome', 'id');
         $status = Status::pluck('nome', 'id');
         $tamanhos = Tamanho::pluck('tamanho', 'id');
@@ -47,17 +57,23 @@ class ProdutoController extends Controller
         return view('admin.produtos.create')
             ->withCategorias($categorias)
             ->withStatus($status)
-            ->withTamanhos($tamanhos);
+            ->withTamanhos($tamanhos)
+            ->withCountNovosPedidos($count_novos_pedidos);
     }
 
 
     public function store(Request $request) 
     {
         $this->validate($request, [
-            'nome' => 'required|unique:produtos|max:30',
-            'unidades' => 'required',
-            'preco' => 'required',
+            'nome' => 'required|unique:produtos|max:40',
+            'preco' => 'required|min:0.01',
+            'unidades' => 'required|min:1|max:100000',
+            'unidades_lote' => 'required|min:1|max:100000',
             'file1' => 'required',
+            'preco_lote' => 'required|min:0.01',
+            'categoria_id' => 'required',
+            'status_id' => 'required',
+            'tamanho_id' => 'required',            
         ]);
         
         $produto = new Produto;
@@ -118,12 +134,14 @@ class ProdutoController extends Controller
     }
 
 
-    public function show($id)
+    /*public function show($id)
     {
+
+        $count_novos_pedidos = $this->loadCountPedidos();
         $produto = Produto::findOrFail($id);
         return view('admin.produtos.show', compact('produto'));
 
-    }
+    }*/
 
 
     public function edit(Produto $produto)
@@ -132,15 +150,16 @@ class ProdutoController extends Controller
         $status = Status::pluck('nome', 'id');
         $tamanhos = Tamanho::pluck('tamanho', 'id');
         $tamanhos_do_produto = TamanhoDoProduto::where('produto_id',$produto->id)->pluck('tamanho_id');
-        $imagens = Imagem::all();
+        $count_novos_pedidos = $this->loadCountPedidos();
+
 
         return view('admin.produtos.edit')
             ->withProduto($produto)
             ->withCategorias($categorias)
             ->withStatus($status)
-            ->withImagens($imagens)
             ->withTamanhos($tamanhos)
-            ->withTamanhosDoProduto($tamanhos_do_produto);
+            ->withTamanhosDoProduto($tamanhos_do_produto)
+            ->withCountNovosPedidos($count_novos_pedidos);
     }
 
     public function editTamanhos(){
@@ -155,11 +174,13 @@ class ProdutoController extends Controller
         $produto = Produto::findOrFail($id);
 
         $this->validate($request, [
-            'unidades' => 'required',
-            'preco' => 'required',
-            'tamanho_id' => 'required',
-            
-
+            'nome' => 'required|max:40',
+            'preco' => 'required|min:0.01',
+            'unidades' => 'required|min:1|max:100000',
+            'unidades_lote' => 'required|min:1|max:100000',
+            'preco_lote' => 'required|min:0.01',
+            'categoria_id' => 'required',
+            'status_id' => 'required',          
         ]);
 
         $fileName1 = $produto->imagem_principal;

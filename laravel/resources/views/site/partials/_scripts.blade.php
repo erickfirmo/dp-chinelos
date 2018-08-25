@@ -135,42 +135,26 @@
 <!-- start-smoth-scrolling -->
 <script type="text/javascript" src="{{ asset('vendor/site/assets/js/move-top.js') }}"></script>
 <script type="text/javascript" src="{{ asset('vendor/site/assets/js/jquery.easing.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('vendor/site/assets/js/single-product.js') }}"></script>
+<script type="text/javascript" src="{{ asset('vendor/site/assets/js/busca-cep.js') }}"></script>
 
 <script type="text/javascript" src="{{ asset('vendor/site/assets/js/slider.js') }}"></script>
 
-
-<script type="text/javascript">
-	jQuery(document).ready(function($) {
-		$(".scroll").click(function(event){		
-			event.preventDefault();
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-		});
-	});
-</script>
 
 <script type="text/javascript">
 	$(document).ready(function() {
 							
 		$().UItoTop({ easingType: 'easeOutQuart' });
 
-		var height_header = $('div#header').css( "height");
-		$('div#app').css('margin-top', height_header);
-
-
-	
-
-		});
+	});
 </script>
 
 
 							
 <script>
 
-
-							
-
 	$(document).ready(function() {
+
+		
 
 
 
@@ -228,10 +212,12 @@
 						$('#count_cart').html(data.count_cart);
 						$('#'+dado+'-label').removeClass('radio-size-clicked');
 						$('#'+dado+'-label').addClass('radio-size-active');
+						$('#total-cart').html(data.total_cart);
+						$('#total-table').html(data.total_cart);
 						swal("Adicionado ao Carrinho !", " ", "success", {
 							buttons: false,
 							type: "success",
-     						timer: 2200
+     						timer: 2000
 						});
 						
 					}else{
@@ -241,7 +227,11 @@
 			});
 
 		} else {
-			alert('Escolha o tamanho do produto !');
+			swal("Escolha um Tamanho !", " ", "warning", {
+					buttons: false,
+					type: "warning",
+					  timer: 1600
+				});
 		}
    }); 
    
@@ -326,6 +316,7 @@ $(document).ready(function(){
 				box.prop("checked", false);
 				box.parent('label').removeClass('radio-size-clicked')
 				box.parent('label').removeClass('radio-size-active')
+				
 			}
 
 		});
@@ -344,14 +335,92 @@ $(document).ready(function(){
 });
 
 
-
 function editUnidades(f){
 	$('#'+f).submit();
 
 }
+
+
+
+
+</script>
+
+
+<script>
+
+$(document).ready(function() {
+
+
+
+
+
+
+$("form.add-pedido").submit(function(e){
+e.preventDefault();
+
+	var _token = $(this).find("input[name='_token']").val();
+	var cep = $(this).find("input[name='cep']").val();
+	var endereco = $(this).find("input[name='endereco']").val();
+	var numero = $(this).find("input[name='numero']").val();
+	var complemento = $(this).find("input[name='complemento']").val();
+	var referencia = $(this).find("input[name='referencia']").val();
+	var bairro = $(this).find("input[name='bairro']").val();
+	var cidade = $(this).find("input[name='cidade']").val();
+	var estado = $(this).find("input[name='estado']").val();
+	var forma_de_pagamento = $(this).find("input[name='forma_de_pagamento']:checked").val();
+
+	var total_cart = $(this).find("input[name='total_cart']").val();
+
+	$.ajax({
+		url: "{{route('pedido.store')}}",
+		type:'POST',
+		data: {
+			_token:_token,
+			cep:cep,
+			endereco:endereco,
+			numero:numero,
+			complemento:complemento,
+			referencia:referencia,
+			bairro:bairro,
+			cidade:cidade,
+			estado:estado,
+			forma_de_pagamento:forma_de_pagamento,
+			total_cart:total_cart
+		},
+		success: function(data) {	
+			swal("Pedido Realizado !", "Em breve entraremos em contato.", "success", {
+					buttonConfirm: true,
+					buttonConfirmText: "OK",
+					type: "success",
+				});
+
+				
+		}
+
+	});
+
+}); 
+
+}); 
+
+
+
+
+
+
+
+
+
+
+
 </script>
 
 
 
+<script>
 
+setInterval(function(){ location.reload(); }, 60000 * (60 * 2));
+//refrash em 2 horas
+
+</script>
 

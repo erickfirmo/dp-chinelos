@@ -16,6 +16,7 @@
     <!--//tags -->
     <link href="{{ asset('vendor/site/assets/css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
 	 <link rel="stylesheet" href="{{ asset('vendor/site/assets/css/flexslider.css') }}" type="text/css" media="screen" />
+    <link href="{{ asset('vendor/site/assets/css/theme-style.css') }}" rel="stylesheet" type="text/css" media="all" />
     <link href="{{ asset('vendor/site/assets/css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
     <link href="{{ asset('vendor/site/assets/css/font-awesome.css') }}" rel="stylesheet"> 
     <link href="{{ asset('vendor/site/assets/css/easy-responsive-tabs.css') }}" rel='stylesheet' type='text/css'/>

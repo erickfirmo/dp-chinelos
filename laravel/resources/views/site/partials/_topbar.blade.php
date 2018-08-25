@@ -2,7 +2,7 @@
 <div class="header" id="home">
 	<div class="container-fluid">
 		<ul>
-			<li><i class="fa fa-phone" aria-hidden="true"></i> Ligue : 11 2020-2020</li>
+			<li><i class="fa fa-phone" aria-hidden="true"></i> Ligue : 11 95295-6926</li>
 			<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">contato@dpchinelos.com.br</a></li>
 			
 			@if (Auth::guest())
@@ -13,12 +13,10 @@
 			@else
 				<li>
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-					<i class="far fa-user"></i>
+					<i class="fa fa-user-circle-o"></i>
 						{{ Auth::user()->name }}
 					</a>
 				</li>
-
-
 				<li>
 					<a href="{{ route('logout') }}"
 					onclick="event.preventDefault();
@@ -36,4 +34,11 @@
 		</ul>
 	</div>
 </div>
+
+
+
+
+		
+		
+	
 <!-- //topbar -->

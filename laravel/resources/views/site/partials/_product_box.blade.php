@@ -28,10 +28,10 @@
 													<div class="row">
 														@foreach(($produto->tamanhos)->sortBy('tamanho') as $tamanho_do_produto)
 															
-																	<label class="label-size check-mini" for="{{$produto->id.$tamanho_do_produto->tamanho.$count_size}}" id="{{$produto->id.$tamanho_do_produto->tamanho.$count_size}}-label">
-																		{{ $tamanho_do_produto->tamanho }}
-																		<input class="radio-size hide" type="checkbox" value="{{ $tamanho_do_produto->tamanho }}" name="tamanho_do_produto" id="{{$produto->id.$tamanho_do_produto->tamanho.$count_size}}">
-																	</label>
+															<label class="label-size check-mini" for="{{$produto->id.$tamanho_do_produto->tamanho.$count_size}}" id="{{$produto->id.$tamanho_do_produto->tamanho.$count_size}}-label">
+																{{ $tamanho_do_produto->tamanho }}
+																<input class="radio-size hide" type="checkbox" value="{{ $tamanho_do_produto->tamanho }}" name="tamanho_do_produto" id="{{$produto->id.$tamanho_do_produto->tamanho.$count_size}}">
+															</label>
 															
 														@endforeach
 
@@ -48,7 +48,9 @@
 
 												<input type="hidden" name="unidades_do_produto" value="{{ 1 }}"/>
 												<div class="row">
-													<div class="col-md-6 col-sm-6">
+													
+
+													<div class="col-xs-6	col-sm-6	col-md-6	col-lg-6">
 														<fieldset>
 															<button type="submit" name="submit" class="btn btn-success btn-produto" data-toggle="tooltip" data-placement="top" title="Adicionar ao Carrinho">
 																<i class="fa fa-shopping-basket">
@@ -56,7 +58,7 @@
 															</button>
 														<fieldset>
 													</div>
-													<div class="col-md-6 col-sm-6">
+													<div class="col-xs-6	col-sm-6	col-md-6	col-lg-6">
 														<fieldset>
 															<a href='{{ url("produto/$produto->id") }}'>
 																<button type="button" class="btn btn-success btn-produto" data-toggle="tooltip" data-placement="top" title="Ver Produto">
@@ -65,6 +67,8 @@
 															</a>
 														<fieldset>
 													</div>
+
+
 												</div>
 												<br>
 												<div class="row">

@@ -12,4 +12,10 @@ class Status extends Model
         'id',
         'nome'
     ];
+
+    
+    public function produtos(){
+        return $this->hasMany(Produto::class);
+    }
+
 }

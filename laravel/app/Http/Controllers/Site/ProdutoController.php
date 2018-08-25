@@ -2,13 +2,20 @@
 
 namespace App\Http\Controllers\Site;
 
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Produto;
 use App\Categoria;
+use App\Tamanho;
+use App\TamanhoDoProduto;
+use App\User;
+use App\Endereco;
+use App\Pedido;
 use App\Status;
-use App\Imagem;
-use App\ImagemDoProduto;
+use App\ProdutoDoPedido;
 use Session;
+use Auth;
 
 class ProdutoController extends Controller
 {

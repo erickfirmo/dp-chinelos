@@ -21,25 +21,47 @@ class CarrinhoController extends Controller
             })->get();
 
         //create session method
-        if((!Session::has('cart')) || !Session::has('count_cart'))
+        if(!Session::has('cart'))
         {
             Session::put('cart', null);
+        }
+        if(!Session::has('count_cart'))
+        { 
             Session::put('count_cart', 0);
-
+        }
+        if(!Session::has('total_cart'))
+        {
+            Session::put('total_cart', 0);
         }
 
         $cart = Session::get('cart');
         $count_cart = Session::get('count_cart');
+        
+        $total_cart = 0;
         //##
 
+        if($cart != null)
+        {
+            foreach($cart as $key => $product_cart){
+                $total_cart += $cart[$key]['preco_total'];
+            }
+        }
+        
+
+
+        Session::put('total_cart', $total_cart);
+        //##
         $count_size = 0;
+
+
 
         return view('site.home.checkouts.carrinho')
             ->withProdutos($produtos)
             ->withCategorias($categorias)
             ->withCart($cart)
             ->withCountCart($count_cart)
-            ->withCountSize($count_size);
+            ->withCountSize($count_size)
+            ->withTotalCart($total_cart);
     }
 
 
@@ -54,7 +76,8 @@ class CarrinhoController extends Controller
             'id' => $request->produto_id,
             'nome' => $request->nome_do_produto,
             'unidades' => $request->unidades_do_produto,
-            'preco_total' => 0,
+            'preco_total' => ($produto->preco) * ($request->unidades_do_produto),
+            'preco_unitario' => $produto->preco,
             'tamanho' => $request->tamanho_do_produto,
             'imagem_principal' => $produto->imagem_principal,
             'imagem_2' => $produto->imagem_2,
@@ -85,6 +108,7 @@ class CarrinhoController extends Controller
 
             if($inCart == true){
                 $cart[$key_prod]['unidades'] += $produto_do_carrinho['unidades'];
+                $cart[$key_prod]['preco_total'] += $produto_do_carrinho['preco_total'];
                 Session::put('cart', $cart);
             } else {
                 $request->session()->push('cart', $produto_do_carrinho);
@@ -97,15 +121,26 @@ class CarrinhoController extends Controller
             
         
         $cart = Session::get('cart');
+        
+        $count_cart = 0;
+        $total_cart = 0;
 
-        Session::put('count_cart', $unidades);
-        $count_cart = Session::get('count_cart');
+
+        foreach($cart as $key => $product_cart){
+            $count_cart += $cart[$key]['unidades'];
+            $total_cart += $cart[$key]['preco_total'];
+        }
+
+
+        Session::put('count_cart', $count_cart);
+        Session::put('total_cart', $total_cart);
 
         
         return response()->json([
             'count_cart'=> $count_cart,
             'cart'=> $cart,
             'radio_size_id' => $radio_size_id,
+            'total_cart' => $total_cart,
         ]);
 
 
@@ -123,15 +158,32 @@ class CarrinhoController extends Controller
             })->get();
 
         //create session method
-        if((!Session::has('cart')) || !Session::has('count_cart'))
+        if(!Session::has('cart'))
         {
             Session::put('cart', null);
+        }
+        if(!Session::has('count_cart'))
+        { 
             Session::put('count_cart', 0);
-
+        }
+        if(!Session::has('total_cart'))
+        {
+            Session::put('total_cart', 0);
         }
 
         $cart = Session::get('cart');
         $count_cart = Session::get('count_cart');
+        $total_cart = 0;
+        if($cart != null)
+        {
+        foreach($cart as $key => $product_cart){
+            $total_cart += $cart[$key]['preco_total'];
+        }
+    }
+
+
+        Session::put('total_cart', $total_cart);
+
         $count_cart -= $cart[$product_key]['unidades'];
         Session::put('count_cart', $count_cart);
         
@@ -164,28 +216,49 @@ class CarrinhoController extends Controller
             })->get();
 
         //create session method
-        if((!Session::has('cart')) || !Session::has('count_cart'))
+        if(!Session::has('cart'))
         {
             Session::put('cart', null);
+        }
+        if(!Session::has('count_cart'))
+        { 
             Session::put('count_cart', 0);
-
+        }
+        if(!Session::has('total_cart'))
+        {
+            Session::put('total_cart', 0);
         }
 
+        
         $cart = Session::get('cart');
+        $count_cart = Session::get('count_cart');
         
         //##
+        $total_cart = 0;
+
+        
 
 
         $key_product = $request->prod;
 
         $cart[$key_product]['unidades'] = $request->edit_unidades;
+        $cart[$key_product]['preco_total'] = $request->edit_unidades * $cart[$key_product]['preco_unitario'];
+
+
+
+
 
         $count_cart = 0;
         foreach($cart as $key => $product_cart){
             $count_cart += $cart[$key]['unidades'];
-        }
-        Session::put('count_cart', $count_cart);
+            $total_cart += $cart[$key]['preco_total'];
 
+        }
+
+
+
+        Session::put('total_cart', $total_cart);
+        Session::put('count_cart', $count_cart);
 
         Session::put('cart', $cart);
 
@@ -195,38 +268,6 @@ class CarrinhoController extends Controller
         $count_size = 0;
 
         return redirect()->back();
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
 
 
 

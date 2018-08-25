@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableTamanhosDoProduto extends Migration
+class CreateProdutosDoPedidoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,24 @@ class CreateTableTamanhosDoProduto extends Migration
      */
     public function up()
     {
-        Schema::create('tamanhos_do_produto', function (Blueprint $table) {
+        Schema::create('produtos_do_pedido', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nome');
+            $table->integer('unidades');
+            $table->string('tamanho');
+            $table->float('preco_unitario');
+            $table->float('preco_total');
+            $table->unsignedInteger('pedido_id');
             $table->unsignedInteger('produto_id');
-            $table->unsignedInteger('tamanho_id');
             $table->timestamps();
-
 
             $table->foreign('produto_id')
                 ->references('id')
                 ->on('produtos');
 
-            $table->foreign('tamanho_id')
+            $table->foreign('pedido_id')
                 ->references('id')
-                ->on('tamanhos');
+                ->on('pedidos');
         });
     }
 
@@ -37,6 +41,7 @@ class CreateTableTamanhosDoProduto extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tamanhos_do_produto');
+        Schema::dropIfExists('produtos_do_pedido');
+
     }
 }

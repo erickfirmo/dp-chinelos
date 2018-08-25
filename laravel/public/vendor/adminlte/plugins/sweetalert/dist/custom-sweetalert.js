@@ -56,13 +56,13 @@ $(document).ready(function(){
 
 /* SALVAR CATEGORIA */
 
-/*$(document).ready(function(){
+$(document).ready(function(){
  $('#category-save-button').on('click', function() {
    
        $('#category-save-form').submit();
        
  }); 
-});*/
+});
 
 
 

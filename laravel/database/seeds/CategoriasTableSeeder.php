@@ -11,12 +11,6 @@ class CategoriasTableSeeder extends Seeder
      */
     public function run()
     {
-
-
-        $categoria = new App\Categoria;
-        $categoria->nome = 'Todos';
-        $categoria->save();
-
         $categoria = new App\Categoria;
         $categoria->nome = 'Casamento';
         $categoria->save();
@@ -32,5 +26,30 @@ class CategoriasTableSeeder extends Seeder
         $categoria = new App\Categoria;
         $categoria->nome = 'Times';
         $categoria->save();
+
+        $categoria = new App\Categoria;
+        $categoria->nome = 'Aniversário';
+        $categoria->save();
+
+        $categoria = new App\Categoria;
+        $categoria->nome = 'Infantis';
+        $categoria->save();
+
+        $categoria = new App\Categoria;
+        $categoria->nome = 'Super Heróis';
+        $categoria->save();
+
+        $categoria = new App\Categoria;
+        $categoria->nome = 'Debutante';
+        $categoria->save();
+
+        $categoria = new App\Categoria;
+        $categoria->nome = 'Times';
+        $categoria->save();
+
+        $categoria = new App\Categoria;
+        $categoria->nome = 'Outros';
+        $categoria->save();
+    
     }
 }

@@ -7,7 +7,7 @@
     <div class="container">
         <div class="card card-container">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-            <img id="profile-img" class="profile-img-card elevation-2" src="{{ asset('images/logo.jpeg') }}" />
+            <img id="profile-img" class="profile-img-card elevation-2" src="{{ asset('/images/logo.png') }}" />
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin" method="POST" action="{{ route('admin.login') }}">
             {{ csrf_field() }}

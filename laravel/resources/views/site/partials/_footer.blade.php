@@ -34,8 +34,8 @@
 								<i class="fa fa-phone" aria-hidden="true"></i>
 							</div>
 							<div class="w3-address-right">
-								<h6>Telefone</h6>
-								<p>11 2020-2020</p>
+								<h6>Telefones</h6>
+								<p>11 95295-6926 / 11 94550-0897</p>
 							</div>
 							<div class="clearfix"> </div>
 						</div>
@@ -57,9 +57,8 @@
 							</div>
 							<div class="w3-address-right">
 								<h6>Endereço</h6>
-								<p>Rua Harry Dannemberg, 000 - Vila Carmosina 
-								
-								</p>
+								<p>Av Mateo Bei, 1650 - São Matheus</p>
+								<p>São Paulo - SP</p>
 							</div>
 							<div class="clearfix"> </div>
 						</div>

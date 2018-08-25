@@ -6,8 +6,22 @@
 @include('site.partials._modal_1')
 @include('site.partials._modal_2')
 @include('site.partials._carousel')
+
+<div class="container-fluid container-call">
+	<div class="row">
+		<div class="col-md-12">
+			<a href="{{ url('/produtos') }}">
+				<button class="btn btn-default btn-center d-block">
+					Fazer Orçamento
+				</button>
+			</a>
+		</div>
+	</div>
+</div>
+
 @include('site.partials._product_grid')
 @include('site.partials._banner_parallax')
+
 
 <!-- Contato -->
 <div class="banner_bottom_agile_info">
@@ -19,14 +33,14 @@
 							<div class="mail-agileits-w3layouts">
 								<i class="fa fa-volume-control-phone" aria-hidden="true"></i>
 								<div class="contact-right">
-									<p>Telefone</p><span>(11) 2222-3333</span>
+									<p>Telefone</p><span>11 95295-6926</span>
 								</div>
 								<div class="clearfix"> </div>
 							</div>
 							<div class="mail-agileits-w3layouts">
 								<i class="fa fa-whatsapp" aria-hidden="true"></i>
 								<div class="contact-right">
-									<p>Whatsapp</p><span>(11) 92222-3333</span>
+									<p>Whatsapp</p><span>11 94550-0897</span>
 								</div>
 								<div class="clearfix"> </div>
 							</div>
@@ -40,7 +54,7 @@
 							<div class="mail-agileits-w3layouts">
 								<i class="fa fa-map-marker" aria-hidden="true"></i>
 								<div class="contact-right">
-									<p>Endereço</p><span>Rua Harry Dannemberg, 000 - Vila Carmosina</span>
+									<p>Endereço</p><span>Av. Mateo Bei, 1650 - Cidade São Mateus <br>São Paulo - SP</span>
 								</div>
 								<div class="clearfix"> </div>
 							</div>
@@ -87,9 +101,7 @@
        </div>
 	</div>
  <!--//contact-->
-
  <h3 class="wthree_text_info">LOCALIZAÇÃO</h3>
- <hr>
 
  <div class="contact-w3-agile1 map" data-aos="flip-right">
 	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.187876554052!2d-46.48907098494924!3d-23.59759408466489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce67cf5a90cd07%3A0xb8b396174865e4b1!2sAv.+Mateo+Bei%2C+1650+-+Cidade+S%C3%A3o+Mateus%2C+S%C3%A3o+Paulo+-+SP%2C+03949-010!5e0!3m2!1spt-BR!2sbr!4v1533162886732" class="map" style="border:0" allowfullscreen=""></iframe>

@@ -114,6 +114,25 @@ return [
             'required' => 'Informe as unidades do produto !',
         ],
 
+        'file1' => [
+            'required' => 'Imagem obrigatória!',
+        ],
+
+        /*'cep',
+
+
+        'endereco',
+
+        'numero',
+
+
+        'complemento',
+
+        'referencia'
+
+        'bairro'
+
+        'cidade'*/
     ],
 
     /*

@@ -2,8 +2,8 @@
   <aside id="sidebar" class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-      <img src="{{ asset('images/logo.jpeg') }}" alt="AdminLTE Logo" class="img-circle elevation-4"
-           style="opacity: 1; width: 120px; height: auto; margin: 0 auto; display:block;"><br>
+      <img src="{{ asset('images/logo.png') }}" alt="AdminLTE Logo" 
+           style="opacity: 1; width: 150px; height: auto; margin: 0 auto; display:block;"><br>
       <span class="brand-text centralize font-weight-light">&nbsp;&nbsp;Seja Bem Vindo, Hallo </span>
     </a>
     
@@ -40,9 +40,16 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Pedidos</p>
+              <a href="{{ url('admin/pedidos') }}" class="nav-link">
+              <i class="fa fa-circle-o nav-icon"></i>
+                  <p>
+                    Pedidos&nbsp;
+                    @if($count_novos_pedidos > 0)
+                    <span class="badge badge-danger right">{{ $count_novos_pedidos }}</span>
+                    
+
+                    @endif
+                  </p>
                 </a>
               </li>
             </ul>

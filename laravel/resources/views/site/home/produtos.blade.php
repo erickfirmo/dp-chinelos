@@ -32,13 +32,10 @@
 	</div>
 </div>
 
-  <!-- banner-bootom-w3-agileits -->
-	<div class="banner-bootom-w3-agileits">
+
+<div class="banner-bootom-w3-agileits">
 	<div class="container">
-         <!-- mens -->
-		<div class="col-md-3 products-left">
-			<br>
-			<div class="css-treeview">
+			<div class="css-treeview col-md-3 product-men">
 				<h4>CATEGORIAS</h4>
 				<ul class="tree-list-pad">
 						<li><a href="{{ url('/produtos') }}">Todos</a></li>
@@ -49,40 +46,18 @@
 				</ul>
 			</div>
 			
-			<div class="clearfix"></div>
-			<br>
-			<div class="css-treeview">
-				<h4>MEU CARRINHO</h4>
-				<ul class="tree-list-pad">
-						<li><a href="#">Todas</a></li>
-					@foreach($categorias as $categoria)
-						<li><a href="#">{{ $categoria->nome }}</a></li>
-					@endforeach
-							
-				</ul>
-			</div>
+	
+	@foreach($produtos as $key => $produto)
+		@if($produto->status->nome == 'Ativo')
+				<div class="col-md-3 product-men">
+					@include('site.partials._product_box')
+				</div>
+		@endif
+	@endforeach
 			
-			<div class="clearfix"></div>
-		</div>
-		<div class="col-md-9 products-right">
-			
-			<div class="men-wear-top">
-				
-				<div class="clearfix"></div>
-			</div>
-			
-			@foreach($produtos as $produto)
-				@if($produto->status->nome == 'Ativo')
-						<div class="col-md-4 product-men">
-							@include('site.partials._product_box')
-						</div>
-				@endif
-			@endforeach
-			
-				
-				<div class="clearfix"></div>
-		</div>
+	<div class="clearfix"></div>
 	</div>
+</div>
 		
 
 

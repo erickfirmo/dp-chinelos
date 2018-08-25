@@ -22,10 +22,20 @@
 			</a>
 		</div>
 		<div class="col-md-6 cart-option-right">
-		 	<a href='{{ url("/produtos") }}'>
+		@if($cart == null)
+		<a href='{{ url("/produtos") }}'>
+			<button class="btn btn-lg btn-success">CONCLUIR PEDIDO</button>
+		</a>
+	@else
+			<a href='{{ url("/checkout") }}'>
 				<button class="btn btn-lg btn-success">CONCLUIR PEDIDO</button>
 			</a>
+
+	@endif
 		</div>
+
+
+		
 
 	 </div>
  </div>
@@ -34,7 +44,7 @@
 <div class="banner-bootom-w3-agileits">
 	<div class="container-fluid">
 		<div class="col-md-12">
-			<div>
+			<div class="table-responsive">
 				@if($cart == null)
 					<h3>Nenhum produto no carrinho</h3>
 
@@ -63,7 +73,7 @@
 												<br>
 												<form id="{{$product_cart['id'].$product_cart['tamanho']}}" action='{{ route("cartedit") }}' method="post" class="set-unidades-form">
 													<input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-													<label>&nbsp;&nbsp;&nbsp;Unidades <br><input type="number" value="{{$product_cart['unidades']}}" name="edit_unidades" oninput="editUnidades({{$product_cart['id'].$product_cart['tamanho']}})" class="input frm-field required sect"></label><br>
+													<label>&nbsp;&nbsp;&nbsp;Unidades <br><input type="number" oninput="editUnidades('{{$product_cart['id'].$product_cart['tamanho']}}')" value="{{$product_cart['unidades']}}" name="edit_unidades" class="input frm-field required sect edit-unidades"></label><br>
 													<input type="hidden" name="prod" value="{{$key}}">
 												</form>
 												
@@ -83,7 +93,7 @@
 										<div class="row">
 											<div class="col-md-2"></div>
 											<div class="col-md-8">
-												<p><b>Preço Unitário: </b>R$ {{ number_format($product_cart['preco_total'], 2, ',', '')}}</p>
+												<p><b>Preço Unitário: </b>R$ {{ number_format($product_cart['preco_unitario'], 2, ',', '')}}</p>
 											</div>
 											<div class="col-md-2"></div>
 										</div>
@@ -92,7 +102,7 @@
 										<div class="row">
 											<div class="col-md-2"></div>
 											<div class="col-md-8">
-												<p><b>Preço Unitário: </b>R$ {{ number_format($product_cart['preco_total'], 2, ',', '')}}</p>
+												<p><b>Preço Total: </b>R$ {{ number_format($product_cart['preco_total'], 2, ',', '')}}</p>
 											</div>
 											<div class="col-md-2"></div>
 										</div>

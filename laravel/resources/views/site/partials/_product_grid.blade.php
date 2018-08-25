@@ -1,10 +1,10 @@
 <div class="new_arrivals_agile_w3ls_info"> 
 	<div class="container">
 		<h3 class="wthree_text_info">NOSSOS MODELOS</h3>
-		<hr>	
+		<br>	
 		<div id="horizontalTab">
 			<ul class="resp-tabs-list">
-			<li style="width: {{ (100 / (count($categorias) + 1)) }}% !important; font-size: 12px; padding: 10px 0;">TODOS</li>	
+			<li style="width: {{ (100 / (count($categorias) + 1)) }}% !important; font-size: 12px; padding: 10px 0;">Todos</li>	
 				@foreach($categorias as $categoria)
 					<li style="width: {{ (100 / (count($categorias) + 1)) }}% !important; font-size: 12px; padding: 10px 0;">{{ $categoria->nome }}</li>	
 				@endforeach
@@ -35,11 +35,6 @@
 									</div>
 									<div class="info-product-price">
 										<span class="lote-info" >
-											@if(($produto->preco_lote) and ($produto->unidades_lote))
-												R$ {{ number_format($produto->preco_lote, 2, ',', '')}} a partir de {{ $produto->unidades_lote }} pares*<br>
-											@else
-												<br>
-											@endif
 											<div class="row">
 											@foreach(($produto->tamanhos)->sortBy('tamanho') as $tamanho_do_produto)
 												<label class="label-size check-mini" for="{{$produto->id.$tamanho_do_produto->tamanho.$count_size}}" id="{{$produto->id.$tamanho_do_produto->tamanho.$count_size}}-label">
@@ -58,22 +53,24 @@
 										<input type="hidden" name="count_size" value="{{ $count_size++ }}"/>
 										<input type="hidden" name="unidades_do_produto" value="{{ 1 }}"/>
 										<div class="row">
-											<div class="col-md-6 col-sm-6">
-												<fieldset>
-													<button type="submit" name="submit" class="btn btn-success btn-produto" data-toggle="tooltip" data-placement="top" title="Adicionar ao Carrinho">
-														<i class="fa fa-shopping-basket">
-														</i>
-													</button>
-												<fieldset>
-											</div>
-											<div class="col-md-6 col-sm-6">
-												<fieldset>
-													<a href='{{ url("produto/$produto->id") }}'>
-														<button type="button" class="btn btn-success btn-produto" data-toggle="tooltip" data-placement="top" title="Ver Produto">
-															<i class="fa fa-eye"></i>
+											<div class="col-md-12">
+												<div class="col-xs-6	col-sm-6	col-md-6	col-lg-6">
+													<fieldset>
+														<button type="submit" name="submit" class="btn btn-success btn-produto" data-toggle="tooltip" data-placement="top" title="Adicionar ao Carrinho">
+															<i class="fa fa-shopping-basket">
+															</i>
 														</button>
-													</a>
-												<fieldset>
+													<fieldset>
+												</div>
+												<div class="col-xs-6	col-sm-6	col-md-6	col-lg-6">
+													<fieldset>
+														<a href='{{ url("produto/$produto->id") }}'>
+															<button type="button" class="btn btn-success btn-produto" data-toggle="tooltip" data-placement="top" title="Ver Produto">
+																<i class="fa fa-eye"></i>
+															</button>
+														</a>
+													<fieldset>
+												</div>
 											</div>
 										</div>
 										<br>
@@ -125,11 +122,7 @@
 											</div>
 											<div class="info-product-price">
 												<span class="lote-info" >
-													@if(($produto->preco_lote) and ($produto->unidades_lote))
-														R$ {{ number_format($produto->preco_lote, 2, ',', '')}} a partir de {{ $produto->unidades_lote }} pares*<br>
-													@else
-														<br>
-													@endif
+													
 													<div class="row">
 														@foreach(($produto->tamanhos)->sortBy('tamanho') as $tamanho_do_produto)
 															
@@ -155,22 +148,24 @@
 
 												<input type="hidden" name="unidades_do_produto" value="{{ 1 }}"/>
 												<div class="row">
-													<div class="col-md-6 col-sm-6">
-														<fieldset>
-															<button type="submit" name="submit" class="btn btn-success btn-produto" data-toggle="tooltip" data-placement="top" title="Adicionar ao Carrinho">
-																<i class="fa fa-shopping-basket">
-																</i>
-															</button>
-														<fieldset>
-													</div>
-													<div class="col-md-6 col-sm-6">
-														<fieldset>
-															<a href='{{ url("produto/$produto->id") }}'>
-																<button type="button" class="btn btn-success btn-produto" data-toggle="tooltip" data-placement="top" title="Ver Produto">
-																	<i class="fa fa-eye"></i>
+													<div class="col-md-12">
+														<div class="col-xs-6	col-sm-6	col-md-6	col-lg-6">
+															<fieldset>
+																<button type="submit" name="submit" class="btn btn-success btn-produto" data-toggle="tooltip" data-placement="top" title="Adicionar ao Carrinho">
+																	<i class="fa fa-shopping-basket">
+																	</i>
 																</button>
-															</a>
-														<fieldset>
+															<fieldset>
+														</div>
+														<div class="col-xs-6	col-sm-6	col-md-6	col-lg-6">
+															<fieldset>
+																<a href='{{ url("produto/$produto->id") }}'>
+																	<button type="button" class="btn btn-success btn-produto" data-toggle="tooltip" data-placement="top" title="Ver Produto">
+																		<i class="fa fa-eye"></i>
+																	</button>
+																</a>
+															<fieldset>
+														</div>
 													</div>
 												</div>
 												<br>

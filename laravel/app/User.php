@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'lastname', 'nascimento', 'telefone', 'celular', 'email', 'password',
+        'name', 'lastname', 'telefone', 'celular', 'email', 'password',
     ];
 
     /**
@@ -26,4 +26,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function enderecos()
+    {
+        return $this->hasMany(Endereco::class);
+    }
+
+    public function pedidos()
+    {
+        return $this->hasMany(Pedido::class);
+    }
+
+
 }

@@ -8,7 +8,7 @@
 					</div>
 						<div class="modal-body modal-body-sub_agile">
 						<div class="col-md-8 modal_body_left modal_body_left1">
-						<h3 class="agileinfo_sign">Cadastre-se <span>Agora</span></h3>
+						<h3 class="agileinfo_sign">Criar Conta</h3>
 						 <form action="{{ route('register') }}" method="post">
 						 	{{ csrf_field() }}
 							<div class="styled-input">
@@ -19,11 +19,6 @@
 							<div class="styled-input">
 								<input type="text"  name="lastname" value="{{ old('lastname') }}" required>
 								<label>Sobrenome</label>
-								<span></span>
-							</div>
-							<div class="styled-input-date">
-								<label>Nascimento</label><br>
-								<input type="date" name="nascimento" value="{{ old('nascimento') }}" required>
 								<span></span>
 							</div>
 							<div class="styled-input">
@@ -51,28 +46,9 @@
 								<label>Confirmar Senha</label>
 								<span></span>
 							</div> 
-							<input type="submit" value="Cadastrar - se">
+							<input type="submit" value="Cadastrar">
 						</form>
-						  <ul class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third">
-															<li><a href="#" class="facebook">
-																  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="twitter"> 
-																  <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="instagram">
-																  <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
-															<li><a href="#" class="pinterest">
-																  <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-																  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
-														</ul>
-														<div class="clearfix"></div>
-														<p><a href="#">Ao clicar em registrar, concordo com os termos e condições</a></p>
-
-						</div>
-						<div class="col-md-4 modal_body_right modal_body_right1">
-							<img src="images/log_pic.jpg" alt=" "/>
+						  
 						</div>
 						<div class="clearfix"></div>
 					</div>
