@@ -104,10 +104,7 @@ class PedidoController extends Controller
     {   
 
     
-        
-        $pedido = Pedido::findOrFail($id)->update([
-            'status_id' => 2,
-        ]);
+
 
 
         $pedido = Pedido::findOrFail($id);

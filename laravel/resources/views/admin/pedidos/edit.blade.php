@@ -107,8 +107,6 @@
                     </thead>
                     <tbody>
                     
-                    
-                    
                     @foreach($produtos_do_pedido->where('pedido_id',$pedido->id) as $produto_do_pedido)
                       <td>{{ $produto_do_pedido->nome }}</td>
                       <td>{{ $produto_do_pedido->tamanho }}</td>

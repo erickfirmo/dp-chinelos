@@ -41,7 +41,6 @@ div#carrinho {
 
 
 
-
 @media(min-width: 824px){
    .navbar-list {
       padding-right: 0px;
@@ -86,7 +85,7 @@ ul.nav.navbar-nav.navbar-right.navbar-list {
    border-bottom: 70px solid transparent;
    border-left: 60px solid rgb(255, 255, 255);
    position: relative;
-   left: 125px;
+   left: 124px;
  }
 
 

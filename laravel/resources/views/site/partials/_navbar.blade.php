@@ -1,127 +1,185 @@
-<!-- header -->
-		<nav class="navbar navbar-default">
-			  <div class="container-fluid">
+<nav class="navbar navbar-default" id="navbar">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+
+    
+    <div class="navbar-header" style="padding-left: 80px;">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="teste">
+      <a class="navbar-brand" href="#">
+        <img src="{{ asset('vendor/site/assets/images/logo.png') }}" style="width:110px; height:auto; margin-top: 0px;">
+
+      </a>
+
+      <div class="arrow-right"></div>
+      </div>
+    </div>
+
+    
+    <div id="carrinho" style="float:right;">
+      <a style="float:right;" href="{{ url('/carrinho') }}">
+					<span id="count_cart">
+						{{ $count_cart }}
+					</span>
+					<i class="fa fa-shopping-basket"></i>
+        </a> 
 
 
-				<img src="{{ asset('vendor/site/assets/images/logo.jpeg') }}" style="width:80px; height:auto; border-radius:50%; box-shadow: 1px 1px 4px #606060; margin-top: 10px;">
+        <ul id="toggle-cart">
+          
+        <div class="arrow-up"></div>
+				@if($cart == null)
+				<h4>Nenhum produto no carrinho</h4>
 
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				  </button>
-				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
-				  <ul class="nav navbar-nav menu__list">
-					<li class="active menu__item menu__item--current"><a class="menu__link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a></li>
-					<li class="dropdown menu__item">
-						<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Masculino<span class="caret"></span></a>
-							<ul class="dropdown-menu multi-column columns-3">
-								<div class="agile_inner_drop_nav_info">
-									<div class="col-sm-6 multi-gd-img1 multi-gd-text ">
-										<a href="mens.html"><img src="images/top2.jpg" alt=" "/></a>
-									</div>
-									<div class="col-sm-3 multi-gd-img">
-										<ul class="multi-column-dropdown">
-											<li><a href="mens.html">Lorem</a></li>
-											<li><a href="mens.html">Ipsum</a></li>
-											<li><a href="mens.html">Dolor</a></li>
-											<li><a href="mens.html">Sit Amet</a></li>
-											<li><a href="mens.html">Castium</a></li>
-											<li><a href="mens.html">Pulvinar</a></li>
-											<li><a href="mens.html">Quisque</a></li>
-										</ul>
-									</div>
-									<div class="col-sm-3 multi-gd-img">
-										<ul class="multi-column-dropdown">
-											<li><a href="mens.html">Nulla</a></li>
-											<li><a href="mens.html">Quisque</a></li>
-											<li><a href="mens.html">Phasellus</a></li>
-											<li><a href="mens.html">Lorem</a></li>
-											<li><a href="mens.html">Ipsum</a></li>
-											<li><a href="mens.html">Dolor</a></li>
-											<li><a href="mens.html">Sit Amet</a></li>
-										</ul>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</ul>
-					</li>
-					<li class="dropdown menu__item">
-						<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Feminino<span class="caret"></span></a>
-							<ul class="dropdown-menu multi-column columns-3">
-								<div class="agile_inner_drop_nav_info">
-									<div class="col-sm-3 multi-gd-img">
-									<ul class="multi-column-dropdown">
-										<li><a href="mens.html">Lorem</a></li>
-										<li><a href="mens.html">Ipsum</a></li>
-										<li><a href="mens.html">Dolor</a></li>
-										<li><a href="mens.html">Sit Amet</a></li>
-										<li><a href="mens.html">Castium</a></li>
-										<li><a href="mens.html">Pulvinar</a></li>
-										<li><a href="mens.html">Quisque</a></li>
-									</ul>
-								</div>
-								<div class="col-sm-3 multi-gd-img">
-									<ul class="multi-column-dropdown">
-										<li><a href="mens.html">Nulla</a></li>
-										<li><a href="mens.html">Quisque</a></li>
-										<li><a href="mens.html">Phasellus</a></li>
-										<li><a href="mens.html">Lorem</a></li>
-										<li><a href="mens.html">Ipsum</a></li>
-										<li><a href="mens.html">Dolor</a></li>
-										<li><a href="mens.html">Sit Amet</a></li>
-									</ul>
-									</div>
-									<div class="col-sm-6 multi-gd-img multi-gd-text ">
-										<a href="womens.html"><img src="images/top1.jpg" alt=" "/></a>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</ul>
-					</li>
-					<li class="dropdown menu__item">
-						<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Infantil<span class="caret"></span></a>
-							<ul class="dropdown-menu multi-column columns-3">
-								<div class="agile_inner_drop_nav_info">
-									<div class="col-sm-3 multi-gd-img">
-									<ul class="multi-column-dropdown">
-										<li><a href="mens.html">Lorem</a></li>
-										<li><a href="mens.html">Ipsum</a></li>
-										<li><a href="mens.html">Dolor</a></li>
-										<li><a href="mens.html">Sit Amet</a></li>
-										<li><a href="mens.html">Castium</a></li>
-										<li><a href="mens.html">Pulvinar</a></li>
-										<li><a href="mens.html">Quisque</a></li>
-									</ul>
-								</div>
-								<div class="col-sm-3 multi-gd-img">
-									<ul class="multi-column-dropdown">
-										<li><a href="mens.html">Nulla</a></li>
-										<li><a href="mens.html">Quisque</a></li>
-										<li><a href="mens.html">Phasellus</a></li>
-										<li><a href="mens.html">Lorem</a></li>
-										<li><a href="mens.html">Ipsum</a></li>
-										<li><a href="mens.html">Dolor</a></li>
-										<li><a href="mens.html">Sit Amet</a></li>
-									</ul>
-									</div>
-									<div class="col-sm-6 multi-gd-img multi-gd-text ">
-										<a href="womens.html"><img src="images/top1.jpg" alt=" "/></a>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</ul>
-					</li>
+				@else
+					<div id="table-cart" class="table-wrapper-scroll-y">
+						<div class="col-md-12">
+						<table class="table">
+							<tbody>
+								@foreach($cart as $key => $product_cart)
+									<tr>
+
+										<td>
+											<div class="row">
+												<div class="col-md-12">
+													<h5 class="product-title">{{$product_cart['nome']}}</h5>
+													<img class="product-thumbnail img-thumbnail" src='{{ asset("storage/images/{$product_cart["imagem_principal"]}") }}'>	
+												</div>
+											</div>
+
+											
+											<div class="row">
+												<div class="col-md-12">
+													<br>
+													<p><b>Tamanho: </b>{{$product_cart['tamanho']}}</p>
+												</div>
+											</div>
+
+											
+											<div class="row">
+												<div class="col-md-12">
+													<br>
+													<p><b>Preço Unitário: </b>R$ {{ number_format($product_cart['preco_unitario'], 2, ',', '')}}</p>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12">
+													<br>
+													<p><b>Preço Total: </b>R$ {{ number_format($product_cart['preco_total'], 2, ',', '')}}</p>
+												</div>
+											</div>
+											<div class="row">
+													<div class="col-md-12">
+												
+													<form id="{{$product_cart['id'].$product_cart['tamanho']}}-cart" action='{{ route("cartedit") }}' method="post" class="set-unidades-form">
+														<input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+														<br>
+														<label>Unidades <br><input type="number" style="padding: 5px 21px;" oninput="editUnidades('{{$product_cart['id'].$product_cart['tamanho']}}-cart')" value="{{$product_cart['unidades']}}" name="edit_unidades" class="input frm-field required sect edit-unidades"></label><br>
+														<input type="hidden" name="prod" value="{{$key}}">
+
+													</form>
+												
+													<form class="remove-product-cart" action='{{ route("carrinho.destroy", $key) }}' method="POST" >
+														{{method_field('DELETE')}}
+														<input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+
+														<span class="button-link">Excluir</span>
+													</form>
+												</div>
+											</div>
+
+
+
+
+										</td>
+									
+									</tr>
+								@endforeach
+							</tbody>
+						</table>
+						</div>
+					</div>
+
 					
-					<li class=" menu__item"><a class="menu__link" href="contact.html">Contato</a></li>
-				  </ul>
-				</div>
-			  </div>
-			</nav>
-	
-<!-- //header -->
+					<div class="col-md-12">
+						
+						<div class="row">
+
+
+							<div class="col-xs-7	col-sm-7	col-md-7	col-lg-7">
+								<h4 class="product-title">Total: R$ {{number_format($total_cart, '2', ',', '')}}</h4>
+							</div>
+							<div class="col-xs-5	col-sm-5	col-md-5	col-lg-5">
+								<a href="#">
+									<button class="btn btn-danger">Carrinho</button>
+								</a>
+							</div>
+
+							
+						</div>
+						
+					</div>
+					
+				@endif
+					</ul>
+				
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right navbar-list">
+        <li><a href="{{ url('/') }}">Home</a></li>
+        <li><a href="{{ url('/sobre') }}">Sobre</a></li>
+        
+        <li><a href="{{ url('/produtos') }}">Produtos</a></li>
+
+        <li class="dropdown">
+          <a href="{{ url('/categorias')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorias <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+          @foreach($categorias as $categoria)
+            <li><a href='{{ url("/produtos/categoria/$categoria->id") }}'>{{$categoria->nome}}</a></li>        
+          @endforeach
+          </ul>
+        </li>
+
+        
+        <li><a href="{{ url('/contato')}}">Contato</a></li>
+
+
+
+
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+
+
+    
+  
+    
+  </div><!-- /.container-fluid -->
+
+</nav>
+
+<!--
+
+        
+  <div id="carrinho" style="float:right;">
+    <a style="float:right;" href="{{ url('/carrinho') }}">
+					<span id="count_cart">
+						{{ $count_cart }}
+					</span>
+					<i class="fa fa-shopping-basket"></i>
+        </a> 
+				
+    </div>
+      
+      
+      
+      -->

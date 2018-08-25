@@ -99,7 +99,7 @@ class ProdutoController extends Controller
         }
 
         if ($request->hasFile('file3'))
-        {
+        {   
             $imageName3 = uniqid(date('HisYmd'));
             $extension3 = $request->file('file3')->extension();
             $fileName3 = "{$imageName3}.{$extension3}";   

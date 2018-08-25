@@ -321,17 +321,6 @@ $(document).ready(function(){
 
 		});
 
-	
-
-
-
-	
-		
-
-	
-	
-
-
 });
 
 
@@ -342,6 +331,22 @@ function editUnidades(f){
 
 
 
+
+</script>
+
+
+<script>
+
+$(".navbar-toggler-icon").add(window).on('resize load click',function(e){
+    espaco = 0; // ajuste de espaçamento à partir barra, em pixels
+    if(e.type != "click"){
+        $("body").css("padding-top",(($("nav#navbar").height()+espaco)+($("div#topbar").height()+espaco))+'px');
+    }else{
+        setTimeout(function(){
+            $("body").animate({ 'padding-top': (($("nav#navbar").height()+espaco)+($("div#topbar").height()+espaco))+'px' }, 0);
+        },0);
+    }
+});
 
 </script>
 
