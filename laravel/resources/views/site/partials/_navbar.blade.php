@@ -39,7 +39,7 @@
 
 				@else
 					<div id="table-cart" class="table-wrapper-scroll-y">
-						<div class="col-md-12">
+						<div class="col-md-12 table-responsive">
 						<table class="table">
 							<tbody>
 								@foreach($cart as $key => $product_cart)

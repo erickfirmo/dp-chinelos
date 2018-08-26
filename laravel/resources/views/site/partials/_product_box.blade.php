@@ -20,11 +20,6 @@
 											</div>
 											<div class="info-product-price">
 												<span class="lote-info" >
-													@if(($produto->preco_lote) and ($produto->unidades_lote))
-														R$ {{ number_format($produto->preco_lote, 2, ',', '')}} a partir de {{ $produto->unidades_lote }} pares*<br>
-													@else
-														<br>
-													@endif
 													<div class="row">
 														@foreach(($produto->tamanhos)->sortBy('tamanho') as $tamanho_do_produto)
 															

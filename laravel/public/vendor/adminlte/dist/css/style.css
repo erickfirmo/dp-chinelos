@@ -1,10 +1,10 @@
 #info-icon .info-box-icon {
-  background-color: #4cb94c; }
+  background-color: #4cb72c; }
 
 #sidebar a.active, #header a.active, #footer a.active {
-  background-color: #4cb94c; }
+  background-color: #4cb72c; }
 #sidebar ol.breadcrumb li a, #header ol.breadcrumb li a, #footer ol.breadcrumb li a {
-  color: #4cb94c; }
+  color: #4cb72c; }
 
 table td, table th {
   text-align: center;
@@ -42,10 +42,10 @@ table td, table th {
   display: block; }
 
 .pagination .active-paginate {
-  background-color: #4cb94c;
+  background-color: #4cb72c;
   color: #fff; }
 .pagination a {
-  color: #4cb94c; }
+  color: #4cb72c; }
 
 #sidebar a.brand-link img {
   opacity: 1;

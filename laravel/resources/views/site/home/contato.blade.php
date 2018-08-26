@@ -6,6 +6,7 @@
 @include('site.partials._modal_1')
 @include('site.partials._modal_2')
 
+
 <!-- Contato -->
 <div class="banner_bottom_agile_info">
 	<div class="container">
