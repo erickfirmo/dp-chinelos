@@ -19,317 +19,123 @@ use Auth;
 
 class SiteController extends Controller
 {
+    public function loadSession($sessionName, $defaulValue) 
+    {
+        //create sessions method//
+        if(!Session::has($sessionName))
+        {
+            if($sessionName == 'total_cart')
+            {
+                $total_cart = 0;
+                if(!Session::has('cart'))
+                {
+                    Session::put('cart', 0);
+                }
+                $cart = Session::get('cart');
+                if(!$cart && $cart != 0)
+                {
+                    foreach($cart as $key => $product_cart)
+                    {
+                        $total_cart += $cart[$key]['preco_total'];
+                    }
+                }
+                $sessionValue = $total_cart;
+            }
+            Session::put($sessionName, $defaulValue);
+        }
+        $sessionValue = Session::get($sessionName);
+        return $sessionValue;
+    }
+
+    public function varsToView($viewName, $categoriaId)
+    {
+        $cart = $this->loadSession('cart', 0);
+        $count_cart = $this->loadSession('count_cart', 0);
+        $total_cart = $this->loadSession('total_cart', 0);
+        
+        $count_size = 0;
+        $categorias = Categoria::whereHas('produtos', function($q) {
+            $q->where('status_id', 1);
+            })->get();
+
+        $produtos = ($categoriaId) ? Produto::where('categoria_id',$categoriaId)->get() : Produto::with('categorias')->with('tamanhos')->get();
+
+        if(!$categoriaId)
+        {
+            
+            $category = null;
+            return view($viewName)
+            ->withProdutos($produtos)
+            ->withCategorias($categorias)
+            ->withCountCart($count_cart)
+            ->withCart($cart)
+            ->withCountSize($count_size)
+            ->withTotalCart($total_cart)
+            ->withCategory($category);
+            
+        
+        } else {
+
+            
+            $category = Categoria::findOrFail($categoriaId);
+            
+            return view($viewName, compact('category'))
+            ->withProdutos($produtos)
+            ->withCategorias($categorias)
+            ->withCountCart($count_cart)
+            ->withCart($cart)
+            ->withCountSize($count_size)
+            ->withTotalCart($total_cart)
+            ->withCategory($category);
+        }
+    }
 
     public function index(Request $request)
     {
-        //create session method
-        if(!Session::has('cart'))
-        {
-            Session::put('cart', null);
-        }
-        if(!Session::has('count_cart'))
-        { 
-            Session::put('count_cart', 0);
-        }
-        if(!Session::has('total_cart'))
-        {
-            Session::put('total_cart', 0);
-        }
-
-        $cart = Session::get('cart');
-        $count_cart = Session::get('count_cart');
-        $total_cart = 0;
-        //##
-
-        
-        if($cart != null)
-        {
-            foreach($cart as $key => $product_cart){
-                $total_cart += $cart[$key]['preco_total'];
-            }
-        }
-
-
-        Session::put('total_cart', $total_cart);
-
-        $count_size = 0;
-        $produtos = Produto::with('categorias')->with('tamanhos')->get();
-
-        $categorias = Categoria::whereHas('produtos', function($q) {
-            $q->where('status_id', 1);
-            })->get();
-
-
-
-    
-        return view('site.home.index')
-            ->withProdutos($produtos)
-            ->withCategorias($categorias)
-            ->withCountCart($count_cart)
-            ->withCart($cart)
-            ->withCountSize($count_size)
-            ->withTotalCart($total_cart);
+        return $this->varsToView('site.home.index', 0);
     }
-    
+
     public function sobre(Request $request)
     {
-        //create session method
-        if(!Session::has('cart'))
-        {
-            Session::put('cart', null);
-        }
-        if(!Session::has('count_cart'))
-        { 
-            Session::put('count_cart', 0);
-        }
-        if(!Session::has('total_cart'))
-        {
-            Session::put('total_cart', 0);
-        }
-
-        $cart = Session::get('cart');
-        $count_cart = Session::get('count_cart');
-        
-        $total_cart = 0;
-        //##
-
-        
-        if($cart != null)
-        {
-            foreach($cart as $key => $product_cart){
-                $total_cart += $cart[$key]['preco_total'];
-            }
-        }
-
-
-        Session::put('total_cart', $total_cart);
-        //##
-
-        $produtos = Produto::all();
-        $categorias = Categoria::whereHas('produtos', function($q) {
-            $q->where('status_id', 1);
-            })->get();
-        $count_size = 0;
-
-        return view('site.home.sobre')
-            ->withProdutos($produtos)
-            ->withCategorias($categorias)
-            ->withCountCart($count_cart)
-            ->withCart($cart)
-            ->withCountSize($count_size)
-            ->withTotalCart($total_cart);
-    
+        return $this->varsToView('site.home.sobre', 0);
     }
 
     public function contato(Request $request)
     {
-        //create session method
-        if(!Session::has('cart'))
-        {
-            Session::put('cart', null);
-        }
-        if(!Session::has('count_cart'))
-        { 
-            Session::put('count_cart', 0);
-        }
-        if(!Session::has('total_cart'))
-        {
-            Session::put('total_cart', 0);
-        }
-
-        $cart = Session::get('cart');
-        $count_cart = Session::get('count_cart');
-        
-        $total_cart = 0;
-        //##
-
-        
-        if($cart != null)
-        {
-            foreach($cart as $key => $product_cart){
-                $total_cart += $cart[$key]['preco_total'];
-            }
-        }
-
-
-        Session::put('total_cart', $total_cart);
-        //##
-
-        $produtos = Produto::all();
-        $categorias = Categoria::whereHas('produtos', function($q) {
-            $q->where('status_id', 1);
-            })->get();
-        $count_size = 0;
-
-        
-        return view('site.home.contato')
-            ->withProdutos($produtos)
-            ->withCategorias($categorias)
-            ->withCountCart($count_cart)
-            ->withCart($cart)
-            ->withCountSize($count_size)
-            ->withTotalCart($total_cart);
+        return $this->varsToView('site.home.contato', 0);
     }
+
 
     public function produtos()
     {
-        //create session method
-        if(!Session::has('cart'))
-        {
-            Session::put('cart', null);
-        }
-        if(!Session::has('count_cart'))
-        { 
-            Session::put('count_cart', 0);
-        }
-        if(!Session::has('total_cart'))
-        {
-            Session::put('total_cart', 0);
-        }
 
-        $cart = Session::get('cart');
-        $count_cart = Session::get('count_cart');
-        
-        $total_cart = 0;
-        //##
-
-        
-        if($cart != null)
-        {
-            foreach($cart as $key => $product_cart){
-                $total_cart += $cart[$key]['preco_total'];
-            }
-        }
-
-
-        Session::put('total_cart', $total_cart);
-        //##
-        
-        $produtos = Produto::all();
-        $categorias = Categoria::whereHas('produtos', function($q) {
-            $q->where('status_id', 1);
-            })->get();
-        $category = false;
-        $count_size = 0;
-        
-
-        return view('site.home.produtos')
-            ->withProdutos($produtos)
-            ->withCategorias($categorias)
-            ->withCart($cart)
-            ->withCountCart($count_cart)
-            ->withCountSize($count_size)
-            ->withCategory($category)
-            ->withTotalCart($total_cart);
-    
-
+        return $this->varsToView('site.home.produtos', 0);
 
 
     }
 
+
     public function produtosDaCategoria($id)
     {
-
-        //create session method
-        if(!Session::has('cart'))
-        {
-            Session::put('cart', null);
-        }
-        if(!Session::has('count_cart'))
-        { 
-            Session::put('count_cart', 0);
-        }
-        if(!Session::has('total_cart'))
-        {
-            Session::put('total_cart', 0);
-        }
-
-        $cart = Session::get('cart');
-        $count_cart = Session::get('count_cart');
-        
-        $total_cart = 0;
-        //##
-
-        
-        if($cart != null)
-        {
-            foreach($cart as $key => $product_cart){
-                $total_cart += $cart[$key]['preco_total'];
-            }
-        }
-
-
-        Session::put('total_cart', $total_cart);
-        //##
-
-        $category = Categoria::findOrFail($id);
-        $produtos = Produto::where('categoria_id',$category->id)->get();
-        $categorias = Categoria::whereHas('produtos', function($q) {
-            $q->where('status_id', 1);
-            })->get();
-        
-        $count_size = 0;
-
-       
-
-        return view('site.home.produtos', compact('category'))
-            ->withProdutos($produtos)
-            ->withCategorias($categorias)
-            ->withCart($cart)
-            ->withCountCart($count_cart)
-            ->withCountSize($count_size)
-            ->withCategory($category)
-            ->withTotalCart($total_cart);
-
-
-
+        return $this->varsToView('site.home.produtos', $id);
     }
 
     /* single produto */
     public function produto($id)
     {   
-        //create session method
-        if(!Session::has('cart'))
-        {
-            Session::put('cart', null);
-        }
-        if(!Session::has('count_cart'))
-        { 
-            Session::put('count_cart', 0);
-        }
-        if(!Session::has('total_cart'))
-        {
-            Session::put('total_cart', 0);
-        }
-
-        $cart = Session::get('cart');
-        $count_cart = Session::get('count_cart');
-
         
-        
-        $total_cart = 0;
-        //##
-
-        if($cart != null)
-        {
-            foreach($cart as $key => $product_cart){
-                $total_cart += $cart[$key]['preco_total'];
-            }
-        }
-
-
-        Session::put('total_cart', $total_cart);
-        //##
+        $cart = $this->loadSession('cart', 0);
+        $count_cart = $this->loadSession('count_cart', 0);
+        $total_cart = $this->loadSession('total_cart', 0);
 
         $single_product = Produto::findOrFail($id);
         $categoria_do_produto = $single_product->categorias->nome;
-		
-		$categorias = Categoria::whereHas('produtos', function($q) {
+        
+        $count_size = 0;
+        $produtos = Produto::with('categorias')->with('tamanhos')->get();
+        $categorias = Categoria::whereHas('produtos', function($q) {
             $q->where('status_id', 1);
             })->get();
-			
-        $produtos = Produto::all();
-        $count_size = 0;
 
         
 
@@ -347,52 +153,25 @@ class SiteController extends Controller
     }
 
 
-    /*public function slogin(Request $request)
+    public function slogin(Request $request)
     {
-        //create session method
-        if(!Session::has('cart'))
-        {
-            Session::put('cart', null);
-        }
-        if(!Session::has('count_cart'))
-        { 
-            Session::put('count_cart', 0);
-        }
-        if(!Session::has('total_cart'))
-        {
-            Session::put('total_cart', 0);
-        }
-
-        $cart = Session::get('cart');
-        $count_cart = Session::get('count_cart');
-        
-        $total_cart = 0;
-        //##
-
-        
-        if($cart != null)
-        {
-            foreach($cart as $key => $product_cart)
-            {
-                $total_cart += $cart[$key]['preco_total'];
-            }
-        }
-        
-
-
-        Session::put('total_cart', $total_cart);
-        //##
+       
+        $cart = $this->loadSessions('cart', 0);
+        $count_cart = $this->loadSessions('count_cart', 0);
+        $total_cart = $this->loadSessions('total_cart', 0);
 
         $count_size = 0;
         $produtos = Produto::with('categorias')->with('tamanhos')->get();
-
         $categorias = Categoria::whereHas('produtos', function($q) {
             $q->where('status_id', 1);
             })->get();
     
-        if(Auth::check()){
+        if((Auth::check()) && $cart) {
+            return redirect('checkout');
+        } elseif(!$cart) {
             return redirect('carrinho');
         } else {
+
             return view('site.home.checkouts.slogin')
             ->withProdutos($produtos)
             ->withCategorias($categorias)
@@ -401,7 +180,5 @@ class SiteController extends Controller
             ->withCountSize($count_size)
             ->withTotalCart($total_cart);
         }
-    }*/
-
-
+    }
 }

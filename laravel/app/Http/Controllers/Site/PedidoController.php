@@ -27,6 +27,9 @@ class PedidoController extends Controller
     public function index()
     {
 
+
+        
+
          //create session method
         if(!Session::has('cart'))
         {

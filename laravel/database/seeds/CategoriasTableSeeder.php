@@ -46,10 +46,5 @@ class CategoriasTableSeeder extends Seeder
         $categoria = new App\Categoria;
         $categoria->nome = 'Times';
         $categoria->save();
-
-        $categoria = new App\Categoria;
-        $categoria->nome = 'Outros';
-        $categoria->save();
-    
     }
 }

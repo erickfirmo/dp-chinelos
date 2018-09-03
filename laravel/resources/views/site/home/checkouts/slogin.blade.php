@@ -6,19 +6,16 @@
 @include('site.partials._modal_1')
 @include('site.partials._modal_2')
 
-@extends('site.layouts.site')
-@section('title', 'DP Chinelos | Sobre')
-@section('description', 'Loja Oficial')
-@section('content')
-
-@include('site.partials._modal_1')
-@include('site.partials._modal_2')
-
-
+<div class="page-head_agile_info_w3l" style="min-height: 20px; max-height: 100px; padding: 15px 0;">
+	<div class="container">
+		<h3>CHECKOUT</h3>
+	</div>
+</div>
+ 
 <!-- Endereço e forma de pagamento -->
 <div class="banner_bottom_agile_info">
-
 	<div class="container">
+		<div class="col-md-12">
 			<div class="row">
 				<div class="col-md-6">
 					<span>Já possui cadastro?</span>
@@ -28,8 +25,21 @@
 					</a>
 				</div>
 				<div class="col-md-6">
-				<h3 class="agileinfo_sign">Criar Conta</h3>
-						<form action="{{ route('register') }}" method="post">
+					<h3 class="agileinfo_sign">Criar Conta</h3>
+					@if($errors->any())
+						<div class="alert alert-danger alert-dismissible in" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+							<h4><i class="icon fa fa-ban"></i> Erro!</h4>
+							<ul class="list-unstyled">
+								@foreach($errors->all() as $error)
+									<li>{{ $error }}</li>            
+								@endforeach
+							</ul>
+						</div>
+					@endif
+					<form action="{{ route('register') }}" method="post">
 						{{ csrf_field() }}
 						<div class="styled-input">
 							<input type="text"  name="name" value="{{ old('name') }}"  class="form-control" required>
@@ -69,20 +79,17 @@
 						<br>
 						<input class="btn btn-lg btn-success" type="submit" value="CRIAR CONTA">
 					</form>
-
-
 				</div>
+				<div class="clearfix"></div>
 			</div>
 		</div>
-	</div>
-		<div class="clearfix"></div>
 	</div>
 </div>
  <!-- // -->
 
 
- <div class="contact-w3-agile1 map" data-aos="flip-right">	
-   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100949.24429313939!2d-122.44206553967531!3d37.75102885910819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan+Francisco%2C+CA%2C+USA!5e0!3m2!1sen!2sin!4v1472190196783" class="map" style="border:0" allowfullscreen=""></iframe>
+ <div class="contact-w3-agile1 map" data-aos="flip-right">
+ <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.187876554052!2d-46.48907098494924!3d-23.59759408466489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce67cf5a90cd07%3A0xb8b396174865e4b1!2sAv.+Mateo+Bei%2C+1650+-+Cidade+S%C3%A3o+Mateus%2C+S%C3%A3o+Paulo+-+SP%2C+03949-010!5e0!3m2!1spt-BR!2sbr!4v1533162886732" class="map" style="border:0" allowfullscreen=""></iframe>
 </div>
 
 @include('site.partials._info_icons')

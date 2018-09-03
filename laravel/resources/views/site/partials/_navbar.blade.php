@@ -11,7 +11,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <div class="teste">
+      <div class="box-header">
       <a class="navbar-brand" href="#">
         <img src="{{ asset('vendor/site/assets/images/logo.png') }}" style="width:110px; height:auto; margin-top: 0px;">
 
