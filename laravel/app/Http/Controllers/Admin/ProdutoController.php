@@ -69,7 +69,9 @@ class ProdutoController extends Controller
             'preco' => 'required|min:0.01',
             'unidades' => 'required|min:1|max:100000',
             'unidades_lote' => 'required|min:1|max:100000',
-            'file1' => 'required',
+            'file1' => 'required|max:2048|mimes:jpeg,bmp,png,gif',
+            'file2' => 'max:2048|mimes:jpeg,bmp,png,gif',
+            'file3' => 'max:2048|mimes:jpeg,bmp,png,gif',
             'preco_lote' => 'required|min:0.01',
             'categoria_id' => 'required',
             'status_id' => 'required',
@@ -180,7 +182,8 @@ class ProdutoController extends Controller
             'unidades_lote' => 'required|min:1|max:100000',
             'preco_lote' => 'required|min:0.01',
             'categoria_id' => 'required',
-            'status_id' => 'required',          
+            'status_id' => 'required', 
+            'file1' => 'max:2048|mimes:jpeg,bmp,png,gif',        
         ]);
 
         $fileName1 = $produto->imagem_principal;
