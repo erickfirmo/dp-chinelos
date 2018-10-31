@@ -20,7 +20,7 @@ class CategoriasTableSeeder extends Seeder
         $categoria->save();
 
         $categoria = new App\Categoria;
-        $categoria->nome = 'Infantis';
+        $categoria->nome = 'Infantil';
         $categoria->save();
 
         $categoria = new App\Categoria;
@@ -29,10 +29,6 @@ class CategoriasTableSeeder extends Seeder
 
         $categoria = new App\Categoria;
         $categoria->nome = 'Aniversário';
-        $categoria->save();
-
-        $categoria = new App\Categoria;
-        $categoria->nome = 'Infantis';
         $categoria->save();
 
         $categoria = new App\Categoria;

@@ -86,8 +86,14 @@
 <script type="text/javascript" src="{{ asset('vendor/site/assets/js/bootstrap.js') }}"></script>
 
 <script>
+	var i = 0;
+	var resp_tab_item = document.getElementsByClassName("resp-tab-item");
+
+	for(i = 0; i < resp_tab_item.lenght; i++)
+	{
+		resp_tab_item[i].setAttribute("style", "width 16% !important");
+	}
 	
-	document.getElementByClass("resp-tab-item").setAttribute("style", "width 16%; !important");
 </script>
 
 <script src="{{ asset('vendor/site/assets/js/responsiveslides.min.js') }}"></script>
@@ -248,11 +254,11 @@
 <script>
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip({
-		{
+		
     trigger : 'focus',
 	 placement : 'top',
 	 class : 'tooltip'
-}
+
 	 }); 
 });
 </script>
@@ -422,10 +428,27 @@ e.preventDefault();
 
 
 
+
+
+
 <script>
 
+
+document.querySelector('a.navbar-brand img').style.postion = 'relative';
+
+if(window.innerWidth < 375){
+	   document.querySelector('div.navbar-header').style.paddingLeft = '40px';
+	   document.querySelector('a.navbar-brand img').style.left = '20px';
+} else {
+    
+	document.querySelector('div.navbar-header').style.paddingLeft = '80px';
+	
+	document.querySelector('a.navbar-brand img').style.position = 'relative';
+	document.querySelector('a.navbar-brand img').style.left = '0px';
+}
+
 setInterval(function(){ location.reload(); }, 60000 * (60 * 2));
-//refrash em 2 horas
+//refresh em 2 horas
 
 </script>
 

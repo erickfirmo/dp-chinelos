@@ -17,6 +17,9 @@ Route::prefix('/')->namespace('Site')->group(function () {
     Route::get('checkout', 'PedidoController@index')->name('checkout');
     Route::resource('pedido', 'PedidoController');
 
+    Route::get('admin', function () {
+        return redirect()->route('admin.home');
+    });
 
 
 

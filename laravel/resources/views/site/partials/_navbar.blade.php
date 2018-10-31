@@ -25,7 +25,7 @@
     <div id="carrinho" style="float:right;">
       <a style="float:right;" href="{{ url('/carrinho') }}">
 					<span id="count_cart">
-						{{ $count_cart }}
+						{{ isset($count_cart) ? $count_cart : 0 }}
 					</span>
 					<i class="fa fa-shopping-basket"></i>
         </a> 
@@ -34,7 +34,7 @@
         <ul id="toggle-cart">
           
         <div class="arrow-up"></div>
-				@if($cart == null)
+				@if(!isset($cart))
 				<h4>Nenhum produto no carrinho</h4>
 
 				@else
@@ -42,65 +42,80 @@
 						<div class="col-md-12 table-responsive">
 						<table class="table">
 							<tbody>
-								@foreach($cart as $key => $product_cart)
-									<tr>
+								@if($cart != 0)
+									@foreach($cart as $key => $product_cart)
+										<tr>
 
-										<td>
-											<div class="row">
-												<div class="col-md-12">
-													<h5 class="product-title">{{$product_cart['nome']}}</h5>
-													<img class="product-thumbnail img-thumbnail" src='{{ asset("storage/images/{$product_cart["imagem_principal"]}") }}'>	
-												</div>
-											</div>
-
-											
-											<div class="row">
-												<div class="col-md-12">
-													<br>
-													<p><b>Tamanho: </b>{{$product_cart['tamanho']}}</p>
-												</div>
-											</div>
-
-											
-											<div class="row">
-												<div class="col-md-12">
-													<br>
-													<p><b>Preço Unitário: </b>R$ {{ number_format($product_cart['preco_unitario'], 2, ',', '')}}</p>
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-md-12">
-													<br>
-													<p><b>Preço Total: </b>R$ {{ number_format($product_cart['preco_total'], 2, ',', '')}}</p>
-												</div>
-											</div>
-											<div class="row">
+											<td>
+												<div class="row">
 													<div class="col-md-12">
-												
-													<form id="{{$product_cart['id'].$product_cart['tamanho']}}-cart" action='{{ route("cartedit") }}' method="post" class="set-unidades-form">
-														<input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-														<br>
-														<label>Unidades <br><input type="number" style="padding: 5px 21px;" oninput="editUnidades('{{$product_cart['id'].$product_cart['tamanho']}}-cart')" value="{{$product_cart['unidades']}}" name="edit_unidades" class="input frm-field required sect edit-unidades"></label><br>
-														<input type="hidden" name="prod" value="{{$key}}">
-
-													</form>
-												
-													<form class="remove-product-cart" action='{{ route("carrinho.destroy", $key) }}' method="POST" >
-														{{method_field('DELETE')}}
-														<input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-
-														<span class="button-link">Excluir</span>
-													</form>
+														<h5 class="product-title">{{$product_cart['nome']}}</h5>
+														<img class="product-thumbnail img-thumbnail" src='{{ asset("storage/images/{$product_cart["imagem_principal"]}") }}'>	
+													</div>
 												</div>
-											</div>
+
+												
+												<div class="row">
+													<div class="col-md-12">
+														<br>
+														<p><b>Tamanho: </b>{{$product_cart['tamanho']}}</p>
+													</div>
+												</div>
+
+												
+												<div class="row">
+													<div class="col-md-12">
+														<br>
+														<p><b>Preço Unitário: </b>R$ {{ number_format($product_cart['preco_unitario'], 2, ',', '')}}</p>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-12">
+														<br>
+														<p><b>Preço Total: </b>R$ {{ number_format($product_cart['preco_total'], 2, ',', '')}}</p>
+													</div>
+												</div>
+												<div class="row">
+														<div class="col-md-12">
+													
+														<form id="{{$product_cart['id'].$product_cart['tamanho']}}-cart" action='{{ route("cartedit") }}' method="post" class="set-unidades-form">
+															<input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+															<br>
+															<label>Unidades <br><input type="number" style="padding: 5px 21px;" oninput="editUnidades('{{$product_cart['id'].$product_cart['tamanho']}}-cart')" value="{{$product_cart['unidades']}}" name="edit_unidades" class="input frm-field required sect edit-unidades"></label><br>
+															<input type="hidden" name="prod" value="{{$key}}">
+
+														</form>
+													
+														<form class="remove-product-cart" action='{{ route("carrinho.destroy", $key) }}' method="POST" >
+															{{method_field('DELETE')}}
+															<input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+
+															<span class="button-link">Excluir</span>
+														</form>
+													</div>
+												</div>
 
 
 
 
-										</td>
-									
-									</tr>
-								@endforeach
+											</td>
+										
+										</tr>
+
+
+
+
+									@endforeach
+
+
+								
+								@else 
+
+									<h4>Nenhum produto no carrinho</h4>
+
+
+
+								@endif
 							</tbody>
 						</table>
 						</div>
@@ -143,9 +158,17 @@
           <a href="{{ url('/categorias')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorias <span class="caret"></span></a>
           <ul class="dropdown-menu">
             
-          @foreach($categorias as $categoria)
-            <li><a href='{{ url("/produtos/categoria/$categoria->id") }}'>{{$categoria->nome}}</a></li>        
-          @endforeach
+          @if(isset($categorias))
+
+
+					
+						@foreach($categorias as $categoria)
+							<li><a href='{{ url("/produtos/categoria/$categoria->id") }}'>{{$categoria->nome}}</a></li>        
+						@endforeach
+
+
+
+					@endif
           </ul>
         </li>
 
@@ -166,20 +189,3 @@
   </div><!-- /.container-fluid -->
 
 </nav>
-
-<!--
-
-        
-  <div id="carrinho" style="float:right;">
-    <a style="float:right;" href="{{ url('/carrinho') }}">
-					<span id="count_cart">
-						{{ $count_cart }}
-					</span>
-					<i class="fa fa-shopping-basket"></i>
-        </a> 
-				
-    </div>
-      
-      
-      
-      -->
