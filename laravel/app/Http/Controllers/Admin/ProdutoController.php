@@ -65,7 +65,7 @@ class ProdutoController extends Controller
     public function store(Request $request) 
     {
         $this->validate($request, [
-            'nome' => 'required|unique:produtos|max:40',
+            'nome' => 'required|unique:produtos|max:30',
             'preco' => 'required|min:0.01',
             'unidades' => 'required|min:1|max:100000',
             'unidades_lote' => 'required|min:1|max:100000',
