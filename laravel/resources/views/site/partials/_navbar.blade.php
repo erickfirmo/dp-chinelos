@@ -127,7 +127,7 @@
 					<h4 class="product-title">Total: R$ {{number_format($total_cart, '2', ',', '')}}</h4>
 				</div>
 				<div class="col-xs-5	col-sm-5	col-md-5	col-lg-5">
-					<a href="#">
+						<a href="{{ url('/carrinho') }}">
 						<button class="btn btn-danger">Carrinho</button>
 					</a>
 				</div>

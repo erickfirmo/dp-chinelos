@@ -47,7 +47,7 @@
 
 													<div class="col-xs-6	col-sm-6	col-md-6	col-lg-6">
 														<fieldset>
-															<button type="submit" name="submit" class="btn btn-success btn-produto" data-toggle="tooltip" data-placement="top" title="Adicionar ao Carrinho">
+															<button type="submit" name="submit" class="btn btn-success btn-produto" data-toggle="tooltip" data-placement="top">
 																<i class="fa fa-shopping-basket">
 																</i>
 															</button>
@@ -56,7 +56,7 @@
 													<div class="col-xs-6	col-sm-6	col-md-6	col-lg-6">
 														<fieldset>
 															<a href='{{ url("produto/$produto->id") }}'>
-																<button type="button" class="btn btn-success btn-produto" data-toggle="tooltip" data-placement="top" title="Ver Produto">
+																<button type="button" class="btn btn-success btn-produto" data-toggle="tooltip" data-placement="top">
 																	<i class="fa fa-eye"></i>
 																</button>
 															</a>
