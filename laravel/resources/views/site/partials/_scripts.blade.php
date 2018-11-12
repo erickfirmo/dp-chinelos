@@ -447,6 +447,20 @@ if(window.innerWidth < 375){
 	document.querySelector('a.navbar-brand img').style.left = '0px';
 }
 
+//posicao do carrinho
+
+if($(window).width() < 752){
+	document.getElementById('toggle-cart').style.top = ($('#carrinho').offset().top+58)+'px';
+	document.getElementById('toggle-cart').style.right = '30px';
+
+} else {
+	document.getElementById('toggle-cart').style.top = ($('#carrinho').offset().top+58+36)+'px';
+	document.getElementById('toggle-cart').style.right = '4px';
+
+}
+
+
+
 setInterval(function(){ location.reload(); }, 60000 * (60 * 2));
 //refresh em 2 horas
 

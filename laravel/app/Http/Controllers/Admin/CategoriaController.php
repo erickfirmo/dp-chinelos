@@ -52,7 +52,7 @@ class CategoriaController extends Controller
     public function store(Request $request) 
     {
         $this->validate($request, [
-            'nome' => 'required|unique:categorias'
+            'nome' => 'required|unique:categorias|max:30'
         ]);
         $categoria = new Categoria;
         $categoria->nome = $request->nome;
@@ -80,7 +80,7 @@ class CategoriaController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'categoria' => 'required',
+            'categoria' => 'required|max:30',
         ]);
         $categoria = Categoria::findOrFail($id)->update([
             'nome' => $request->categoria,
