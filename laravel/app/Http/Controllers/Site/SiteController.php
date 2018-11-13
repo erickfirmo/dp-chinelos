@@ -156,9 +156,9 @@ class SiteController extends Controller
     public function slogin(Request $request)
     {
        
-        $cart = $this->loadSessions('cart', 0);
-        $count_cart = $this->loadSessions('count_cart', 0);
-        $total_cart = $this->loadSessions('total_cart', 0);
+        $cart = $this->loadSession('cart', 0);
+        $count_cart = $this->loadSession('count_cart', 0);
+        $total_cart = $this->loadSession('total_cart', 0);
 
         $count_size = 0;
         $produtos = Produto::with('categorias')->with('tamanhos')->get();
@@ -181,4 +181,6 @@ class SiteController extends Controller
             ->withTotalCart($total_cart);
         }
     }
+
+
 }

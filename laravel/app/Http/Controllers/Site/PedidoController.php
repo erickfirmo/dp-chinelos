@@ -62,6 +62,12 @@ class PedidoController extends Controller
          $categorias = Categoria::whereHas('produtos', function($q) {
              $q->where('status_id', 1);
              })->get();
+
+             if((!Auth::check()) && $cart) {
+                return redirect('slogin');
+            } elseif(!$cart) {
+                return redirect('carrinho');
+            } else {
      
 
 
@@ -72,7 +78,7 @@ class PedidoController extends Controller
                     ->withCart($cart)
                     ->withCountSize($count_size)
                     ->withTotalCart($total_cart);
-
+            }
     }
 
     public function store(Request $request)

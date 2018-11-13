@@ -37,7 +37,7 @@ class ProdutoController extends Controller
 
     public function index()
     {
-        $produtos = Produto::orderBy('id', 'desc')->paginate(50);
+        $produtos = Produto::orderBy('id', 'desc')->paginate(10);
         $count_novos_pedidos = $this->loadCountPedidos();
 
         return view('admin.produtos.index',[
